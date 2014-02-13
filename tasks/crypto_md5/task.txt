@@ -1,0 +1,32 @@
+Server, that accepting only authorized messages are listening on port 12345.
+It works like this:
+-------------------------------
+#!/usr/bin/python
+# checker
+import sys
+import socket
+from hashlib import md5
+
+password = ...
+port = int(sys.argv[1])
+s = socket.socket()
+s.bind(('127.0.0.1',port))
+s.listen(5)
+
+while 1:
+	c, a = s.accept()
+	c.settimeout(30)
+		try:
+			buf = c.recv(4096)
+			digest, msg = buf.split(" ", 1)
+			if (digest == md5(password+msg).hexdigest()):
+				c.send("Message accepted: {}\n".format(msg))
+			else:
+				c.send("Wrong signature\n")
+		except:
+			pass
+		finally:
+			c.close()
+-------------------------------
+You have intercepted one authorized message: "71061df348d5f5fa08a4ebcec51d7e06 my message". Construct your own authorized message (Should differ from given =) ) without knowing password.
+P.S. I can tell you one thing only: password's length is 8
