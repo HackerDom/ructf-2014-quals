@@ -1,21 +1,16 @@
-I have encrypted 2 consecutive very-very secret and urgent numbers and you've got my cryptograms:
-c1 = 60002319039193972817448079469954588703037040537494834888132396601867638888486648024579945206430549307011604982075312968627354130062140776977143942314263846048220262692887594818437662488556389132094227461841805990145182898472515924651322209063382504522480167398896731999250655202235238546766574964020749166677
-c2 = 95532755187723709094020007176203909227111105959674581919241776404204576921639614613373629262390193341404486925898218840133427506204187573037201648308426880696584528026765416249945642143778132462028867460113465891399426752496978082533061456410626798263048578962512137765100853088744606860928093234709609986149
+Two agents, Alex and Jane, have simultaneously known very secret message and transmitted it to Center. You know following:
+1) They used RSA with this public key (key.pub)
+2) They sent exactly the same messages except the signatures (name appended, eg. "[message]Alex")
+3) They did encryption this way:
+	c, = pubKey.encrypt(str_to_num(message), 1) # using RSA from Crypto.PublicKey
+	c = num_to_str(c)
+4) And here are cryptograms you have intercepted:
 
-Also my crypto-system params were:
+"#\x10ebb9\xbc\x8a\xe0&DL'K\x8eB\x07Zd\x11Teo\x1c\xb0\xe8\x82\xa2w\xb4\x8cP\x9d`\xd4\xa7\xfa \xbe\xe3\xabch\xb40\xdeZ'\xfc\x868&0m\x03\x1d'\xfbY\xb0%\xb0\xea,\x9d\xe7\x7f{\xf0\x077\xf88\xbe\x85\x95Y\xa4D\xf0y\x9a[1\xef\\\xe4\xe1\xc4\xcb\x0c\xd3\x88?\xa0\x85BJ\xe8\x8c\x0e/\xc3\x90\x8c\x07\xd7\xaa\xaf\xe4\x973JstLp\xe9\xc7\xf4Q\x9f\x8c\xf0\x15\xf8\xe0\x8d"
 
-n = 116670767481034788387624433424101624406720661538965813122206919317877222388112757499902649149707474671950813539201166777704463866196102240137444508451635857552215778547316136311453429610789702274227385083406117077587548609067040924247497225095087359473233494515501474238670428220731538237787575492195459794549
-e = 23
+"&\x9b#\xb7\xf7`\n\x89\xf4\x1a\x05\xc8\x02\x8f\xf6\xa3\xa2\xc3\xe6q\xe5\xe9F{\xd23\xdf\xa5@\xd3\xf3u}\xc2j\x11\xbe\xe6\xcc,\xb5XG\x9b\xfc\xb8\xb2\xd7\xdc1\xfcp\xaf0\x01\x06\x8d\xa5]\xe8\x90&qz\x14\xfb\x97\x9b/\x15\x00[J\x14?dV}\x96'\x7fl\x91\xca3\x964\xa0\xb5\xaec\xbb\x067\xdd\xe9\xe4gc\xebIR\xf3.\x12\xd0\xf6T\xed\x92\x19og\x15\xcdUx\xa5wl\x7f\xfbLS\xc0o\xfd9"
 
-And I did encryption like this:
----------------------------------
-K = RSA.generate(1024, e=23)
-m1 = randint(2, 10**20)
-m2 = m1 + 1
-c1, = K.encrypt(m1, 1)
-c2, = K.encrypt(m2, 1)
----------------------------------
-Reveal m1 and m2.
-P.S. May be you'll find awesome module "sage". Handy example can be found in example.sage
-to run it: "sage yourfile.sage"
-P.P.S. If you are looking for solution, you can get sage here (http://www.sagemath.org/). If you have regenerated the task - you should fill your values into c.sage.
+Now tell me that secret message!
+
+Hint 1. You may need up to 15 minutes to calculate the answer
+Hint 2. So m2 = m2 + ('Alex' - 'Jane'). Now do the Math!
