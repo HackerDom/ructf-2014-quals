@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="admin" id="admin:300" proto="xmlquest-2.0">
+    <name>Strange image</name>
+    <task type="html" lang="en"><a href="static/b812ef1c62695eae6e4bc56167539d42/task.ima">Find the key</a></task>
+    <task type="html" lang="ru"><a href="static/b812ef1c62695eae6e4bc56167539d42/task.ima">Найдите ключ</a></task>
+    <checker strict="yes">
+        <solution case="sensitive">RUCTF_1m4g3_32202</solution>
+    </checker>
+</quest>
