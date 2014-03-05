@@ -4,6 +4,7 @@ class VM:
          self.host,
          self.name,
          self.admin,
+         self.admin_cn,
          self.cpus,
          self.mem,
          self.disk,
