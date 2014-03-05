@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import nginx, vm
+import iptables, nginx, vm
 import re, socket, sys
 
 CFG='vms.cfg'
@@ -91,6 +91,10 @@ def check_res(vms, _):
                     res, host,
                     resources[host][res],
                     capacity[host][res])
+
+@cmd
+def gen_iptables(vms, args):
+    return iptables.gen(vms, args[0], args[1])
 
 @cmd
 def gen_nginx(vms, _):

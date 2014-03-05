@@ -10,7 +10,11 @@ class VM:
          net_spec,
          self.os] = map(str.strip, cfg_line.split(','))
         self.ID = int(ID)
+
         self.http = False
+        self.tcp_ports = None
+        self.udp_ports = None
+
         if net_spec.startswith('ext'):
             [self.iface, self.addr] = net_spec.split(':', 2)
         elif net_spec.startswith('int'):
