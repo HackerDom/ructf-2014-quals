@@ -101,6 +101,10 @@ def gen_nginx(vms, _):
     return nginx.gen(vms)
 
 if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print >> sys.stderr, cmds.keys()
+        sys.exit(1)
+
     with open(CFG, 'r') as cfg:
         vms = map(vm.VM, filter(lambda line:
             len(line.strip()) != 0 and not line.startswith('#'), cfg))
@@ -110,3 +114,4 @@ if __name__ == '__main__':
         cmds[cmd](vms, args)
     else:
         print >> sys.stderr, cmds.keys()
+        sys.exit(1)
