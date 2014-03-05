@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 class VM:
     def __init__(self, cfg_line):
         [ID,
@@ -12,10 +10,11 @@ class VM:
          net_spec,
          self.os] = map(str.strip, cfg_line.split(','))
         self.ID = int(ID)
+        self.http = False
         if net_spec.startswith('ext'):
             [self.iface, self.addr] = net_spec.split(':', 2)
         elif net_spec.startswith('int'):
-            self.iface = net_spec
+            [self.iface, self.addr] = [net_spec, '172.16.16.%d' % self.ID]
         elif net_spec == 'http':
             [self.iface, self.addr] = ['int', '172.16.16.%d' % self.ID]
             self.http = True

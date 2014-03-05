@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import vm
+import nginx, vm
 import re, socket, sys
 
 CFG='vms.cfg'
@@ -91,6 +91,10 @@ def check_res(vms, _):
                     res, host,
                     resources[host][res],
                     capacity[host][res])
+
+@cmd
+def gen_nginx(vms, _):
+    return nginx.gen(vms)
 
 if __name__ == '__main__':
     with open(CFG, 'r') as cfg:
