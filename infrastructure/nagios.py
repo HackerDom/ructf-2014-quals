@@ -64,3 +64,13 @@ define service {
     contacts            ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets
 }
 """ % (vm.name, vm.admin.partition('@')[0])
+        if vm.http:
+            print """
+define service {
+    use                 generic-service
+    host_name           %s
+    service_description Web server
+    check_command       check_http
+    contacts            ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets
+}
+""" % (vm.name, vm.admin.partition('@')[0])
