@@ -33,7 +33,8 @@ def gen_user_chains(vms, ipp_name, iface, target):
                 users[user] = []
             users[user].append(ipp2src(ip))
     for vm in vms:
-        users[vm.admin_cn] = []
+        if not vm.admin_cn in users:
+            users[vm.admin_cn] = []
     for user in users:
         chain = cn2chain(user)
         init(chain)
