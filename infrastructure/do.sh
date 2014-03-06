@@ -100,7 +100,7 @@ debootstrap() {
     vm=$2
     os=$3
     if [ "$os" == 'debian' ]; then arch=amd64; kernel=linux-image-3.2.0-4-amd64
-    elif [ "$os" == 'debian32' ]; then arch=i386; kernel=linux-image-3.2.0-4-i386
+    elif [ "$os" == 'debian32' ]; then arch=i386; kernel=linux-image-3.2.0-4-686-pae
     else echo >&2 "wrong os: $os"; exit 1; fi
     suite=stable
     mirror='http://mirror.yandex.ru/debian/'
@@ -113,7 +113,7 @@ debootstrap() {
         mkdir -p $target
         mount /dev/mapper/\${partition} $target
         debootstrap \
-            --include=$include,$kernel \
+            --include=$include,$kernel --arch=$arch \
             $suite $target $mirror
         chroot $target bash -c "mount dev /dev -t devtmpfs; \
                                 mount proc /proc -t proc; \
