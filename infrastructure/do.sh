@@ -114,7 +114,6 @@ debootstrap() {
         mount /dev/mapper/\${partition} $target
         debootstrap \
             --include=$include,$kernel \
-            --variant=minbase \
             $suite $target $mirror
         chroot $target bash -c "mount dev /dev -t devtmpfs; \
                                 mount proc /proc -t proc; \
