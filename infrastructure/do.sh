@@ -151,7 +151,7 @@ setup_debian() {
         host=${line%%:*}
         vm=${line##*:}
         os=$(python $MAIN get_attr $vm os)
-        if [ $os == 'debian' ] || [ $os == 'debian32' ]; then
+        if [ "$os" == 'debian' ] || [ "$os" == 'debian32' ]; then
             prepare_partition $host $vm
             debootstrap $host $vm $os
             customize $host $vm
