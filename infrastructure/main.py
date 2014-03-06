@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 
 import iptables, nginx, vm
-import re, socket, sys
+import os, re, socket, sys
 
-CFG='vms.cfg'
+CFG=os.path.dirname(os.path.realpath(__file__)) + '/vms.cfg'
 
 cmds = {}
+
+def find(vms, name):
+    match = filter(lambda vm: vm.name == name, vms)
+    if len(match) != 1:
+        raise Exception(match)
+    return match[0]
 
 def cmd(fn):
     cmds[fn.__name__] = lambda cfg, args: fn(cfg, args)
@@ -19,10 +25,17 @@ def list(vms, args):
 
 @cmd
 def get_attr(vms, args):
-    match = filter(lambda vm: vm.name == args[0], vms)
-    if len(match) != 1:
-        raise Exception(match)
-    print getattr(match[0], args[1])
+    print getattr(find(vms, args[0]), args[1])
+
+@cmd
+def addr(vms, args):
+    vm = find(vms, args[0])
+    print vm.addr
+
+@cmd
+def vnc(vms, args):
+    vm = find(vms, args[0])
+    print '%s.urgu.org:%d' % (vm.host, 6000 + vm.ID)
 
 @cmd
 def gen_xen(vms, args):
