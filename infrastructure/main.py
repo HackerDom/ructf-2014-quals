@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import custom, iptables, nginx, vm
+import custom, iptables, nagios, nginx, vm
 import os, re, socket, sys
 
 CFG=os.path.dirname(os.path.realpath(__file__)) + '/vms.cfg'
@@ -36,6 +36,10 @@ def addr(vms, args):
 def vnc(vms, args):
     vm = find(vms, args[0])
     print '%s.urgu.org:%d' % (vm.host, 6000 + vm.ID)
+
+@cmd
+def gen_nagios(vms, _):
+    return nagios.gen_nagios(vms)
 
 @cmd
 def gen_xen(vms, args):

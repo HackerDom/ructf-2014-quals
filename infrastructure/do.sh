@@ -80,6 +80,15 @@ gen_iptables() {
     gen_xen_vnc
 }
 
+gen_nagios() {
+    file=/var/lib/cfg/nagios/ructf2014q.cfg
+    python $MAIN gen_nagios > $file.new
+    if ! [ -e $file ] || ! cmp $file.new $file; then
+        mv $file.new $file
+        /etc/init.d/nagios3 reload
+    fi
+}
+
 prepare_partition() {
     host=$1
     vm=$2
