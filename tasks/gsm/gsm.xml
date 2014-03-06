@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<quest series="misc" id="misc:500" proto="xmlquest-2.0">
+    <name>GSM</name>
+    <task type="html" lang="en"><a href="static/0d6d6b808766f952a6c20e07de45f94a/4ac71c244a9a5b7537cb0fd618df249c.GSM.zip">Find the key</a></task>
+    <task type="html" lang="ru"><a href="static/0d6d6b808766f952a6c20e07de45f94a/4ac71c244a9a5b7537cb0fd618df249c.GSM.zip">Найдите ключ</a></task>
+    <checker strict="yes">
+        <solution case="insensitive">RUCTF_CRACK_MY_GSM_WITH_20$_DONGLE</solution>
+    </checker>
+</quest>
