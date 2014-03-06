@@ -54,4 +54,28 @@ check_res() {
     python $MAIN check_res
 }
 
+gen_user_chains() {
+    ipp=/etc/openvpn/runc/ipp.txt
+    iface=tun0
+    target=UaA
+
+    python $MAIN gen_user_chains $ipp $iface $target | sh -s
+}
+
+gen_int_access() {
+    chain=ructf2014q-int
+    python $MAIN gen_int_access $chain | sh -s
+}
+
+gen_xen_vnc() {
+    chain=ructf2014q-xen
+    python $MAIN gen_xen_vnc $chain | sh -s
+}
+
+gen_iptables() {
+    gen_user_chains
+    gen_int_access
+    gen_xen_vnc
+}
+
 $@

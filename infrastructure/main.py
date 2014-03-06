@@ -106,8 +106,20 @@ def check_res(vms, _):
                     capacity[host][res])
 
 @cmd
-def gen_iptables(vms, args):
-    return iptables.gen(vms, args[0], args[1])
+def gen_fwd(vms, args):
+    return iptables.gen_fwd(vms, *args)
+
+@cmd
+def gen_user_chains(vms, args):
+    return iptables.gen_user_chains(vms, *args)
+
+@cmd
+def gen_int_access(vms, args):
+    return iptables.gen_int_access(vms, *args)
+
+@cmd
+def gen_xen_vnc(vms, args):
+    return iptables.gen_xen_vnc(vms, *args)
 
 @cmd
 def gen_nginx(vms, _):
