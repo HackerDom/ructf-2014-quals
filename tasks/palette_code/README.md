@@ -3,14 +3,14 @@
 
 ---
 #### Possible solution:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guess to [look at the palette](./nyan-task-code-colored.bmp), and guess the palette contains some [code](./nyan-task-code.bmp).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guess to [look at the palette](./src/nyan-task-code-colored.bmp), and guess the palette contains some [code](./src/nyan-task-code.bmp).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove unnecessary colors from the code and decode it.
 
 ---
 #### Tools used:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QR and DataMatrix generator:&emsp;&emsp;http://keremerkan.net/qr-code-and-2d-code-generator/<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Link shortener:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;http://u.to/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Embedding tool:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[image_into_palette_png.py](./image_into_palette_png.py)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Embedding tool:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[image_into_palette_png.py](./src/image_into_palette_png.py)
 
 ---
 #### Flag:
