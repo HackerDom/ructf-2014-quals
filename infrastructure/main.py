@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import iptables, nginx, vm
+import custom, iptables, nginx, vm
 import os, re, socket, sys
 
 CFG=os.path.dirname(os.path.realpath(__file__)) + '/vms.cfg'
@@ -124,6 +124,13 @@ def gen_xen_vnc(vms, args):
 @cmd
 def gen_nginx(vms, _):
     return nginx.gen(vms)
+
+@cmd
+def customize(vms, args):
+    return custom.customize(
+        vms,
+        find(vms, args[0]),
+        os.path.dirname(os.path.realpath(__file__)) + '/keys')
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:

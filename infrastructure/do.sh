@@ -95,7 +95,7 @@ END
 }
 
 debootstrap() {
-    include='openssh-server,augeas-tools,htop,mc,less,vim,grub2'
+    include='openssh-server,augeas-tools,htop,mc,less,vim,grub2,ifupdown,locales'
     host=$1
     vm=$2
     os=$3
@@ -112,7 +112,6 @@ debootstrap() {
         kpartx -a $disk
         mkdir -p $target
         mount /dev/mapper/\${partition} $target
-        mount
         debootstrap \
             --include=$include,$kernel \
             --variant=minbase \
@@ -129,6 +128,25 @@ debootstrap() {
 END
 }
 
+customize() {
+    host=$1
+    vm=$2
+    script="/root/ructf2014-quals/ructf2014q-$vm.custom"
+    python $MAIN customize $vm | $ssh $host "cat > $script"
+    disk=/dev/data/ructf2014q-$vm
+    target="/root/ructf2014-quals/ructf2014q-$vm"
+    $ssh $host <<END
+        partition=\$(kpartx -l $disk | cut -f1 -d' ')
+        kpartx -a $disk
+        mount /dev/mapper/\${partition} $target
+        cp $script $target/root/customize.sh
+        chmod +x $target/root/customize.sh
+        chroot $target /root/customize.sh
+        umount $target
+        kpartx -d $disk
+END
+}
+
 setup_debian() {
     list "$1" | while read line; do
         host=${line%%:*}
@@ -137,6 +155,7 @@ setup_debian() {
         if [ $os == 'debian' ] || [ $os == 'debian32' ]; then
             prepare_partition $host $vm
             debootstrap $host $vm $os
+            customize $host $vm
         fi
     done
 }
