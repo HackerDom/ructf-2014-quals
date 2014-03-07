@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="stegano" id="stegano:100" proto="xmlquest-2.0">
     <name>Cat's eye</name>
-    <task type="html" lang="en"><a href="static/task.gif">Find the key. Format is "RUCTF_.*"</a></task>
-    <task type="html" lang="ru"><a href="static/task.gif">Найдите ключ. Формат: "RUCTF_.*"</a></task>
+    <task type="html" lang="en">
+        <div>
+            <a href="static/task.gif">Find the key</a>.<br />
+            Format is "RUCTF_.*"
+        </div>
+    </task>
+    <task type="html" lang="ru">
+        <div>
+            <a href="static/task.gif">Найдите ключ</a>.<br />
+            Формат: "RUCTF_.*"
+        </div>
+    </task>
     <checker strict="yes">
         <solution case="sensitive">RUCTF_e4dd9f5cee307b322c3a27abe66e3df9</solution>
     </checker>
