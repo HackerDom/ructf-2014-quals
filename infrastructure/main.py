@@ -136,6 +136,10 @@ def customize(vms, args):
         find(vms, args[0]),
         os.path.dirname(os.path.realpath(__file__)) + '/keys')
 
+@cmd
+def get_ports(vms, args):
+    return iptables.get_ports(find(vms, args[0]))
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print >> sys.stderr, cmds.keys()

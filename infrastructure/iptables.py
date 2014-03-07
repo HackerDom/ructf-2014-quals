@@ -58,3 +58,8 @@ def gen_xen_vnc(vms, chain):
             dest = socket.gethostbyname_ex('%s.urgu.org' % vm.host)[2][0]
             print ('iptables -A %s -d %s -p tcp --dport %d -m state --state NEW '
                 '-j %s' % (chain, dest, 6000 + vm.ID, cn2chain(vm.admin_cn)))
+
+def get_ports(vm):
+    if vm.http: print 'tcp:80'
+    for port in vm.tcp_ports: print 'tcp:%s' % port
+    for port in vm.udp_ports: print 'udp:%s' % port

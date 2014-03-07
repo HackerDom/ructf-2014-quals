@@ -161,6 +161,13 @@ setup_iptables() {
                     -m state --state NEW -j ACCEPT;
             " </dev/null
 
+            python $MAIN get_ports $vm | while read portspec; do
+                proto=${portspec%%:*}
+                port=${portspec##*:}
+                $ssh $addr "iptables -A INPUT -p $proto --dport $port \
+                            -m state --state NEW -j ACCEPT" </dev/null
+            done
+
             $ssh $addr "\
                 iptables -P INPUT DROP; iptables -P OUTPUT DROP; \
                 iptables -P FORWARD DROP; \

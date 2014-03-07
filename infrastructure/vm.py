@@ -13,8 +13,8 @@ class VM:
         self.ID = int(ID)
 
         self.http = False
-        self.tcp_ports = None
-        self.udp_ports = None
+        self.tcp_ports = []
+        self.udp_ports = []
         self.network = '255.255.255.0'
 
         if net_spec.startswith('ext'):
