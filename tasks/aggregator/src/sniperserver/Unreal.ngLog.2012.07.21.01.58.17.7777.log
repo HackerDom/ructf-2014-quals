@@ -1,0 +1,631 @@
+0.00	info	Log_Standard	ngLog
+0.00	info	Log_Version	1.2
+0.00	info	Log_Info_URL	http://www.netgamesusa.com/ngLog/
+0.00	info	Game_Name	Unreal
+0.00	info	Game_Version	436
+0.00	info	Game_Creator	Epic MegaGames, Inc.
+0.00	info	Game_Creator_URL	http://www.epicgames.com/
+0.00	info	Game_Decoder_Ring_URL	http://unreal.epicgames.com/Unreal_Log_Decoder_Ring.html
+0.00	info	Absolute_Time	2012.07.21.01.58.17.144.+6.0
+0.00	info	Server_ServerName	zp2| [DQ] Sniper Server
+0.00	info	Server_AdminName	[DQ]Krait
+0.00	info	Server_AdminEmail	dqkrait@gmail.com
+0.00	info	Server_Region	0
+0.00	info	Server_MOTDLine1	
+0.00	info	Server_MOTDLine2	
+0.00	info	Server_MOTDLine3	
+0.00	info	Server_MOTDLine4	
+0.00	info	Server_IP	0.0.0.0
+0.00	info	Server_Port	7777
+0.00	map	Name	CTF-2ChickenBlenders.unr
+0.00	map	Title	  - 2 Chicken Blenders -
+0.00	map	Author	Zencoder <britton_wesley@yahoo.com>
+0.00	map	IdealPlayerCount	12-16
+0.00	map	LevelEnterText	One Chciken Puree Coming up!
+0.00	game	GameMutator	Class Botpack.DMMutator
+0.00	game	GameMutator	Class MapVoteLA13.BDBMapVote
+0.00	game	GameMutator	Class ZPBasicWeaponsAddOnV208.SniperArena
+0.00	game	GameName	Capture the Flag
+0.00	game	GameClass	Botpack.CTFGame
+0.00	game	GameVersion	436
+0.00	game	MinNetVersion	400
+0.00	game	NoMonsters	False
+0.00	game	MuteSpectators	False
+0.00	game	HumansOnly	False
+0.00	game	WeaponsStay	True
+0.00	game	ClassicDeathmessages	False
+0.00	game	LowGore	False
+0.00	game	VeryLowGore	False
+0.00	game	TeamGame	True
+0.00	game	GameSpeed	125
+0.00	game	MaxSpectators	2
+0.00	game	MaxPlayers	16
+0.00	game	FragLimit	0
+0.00	game	TimeLimit	0
+0.00	game	MultiPlayerBots	False
+0.00	game	HardCore	True
+0.00	game	MegaSpeed	False
+0.00	game	AirControl	0.350000
+0.00	game	JumpMatch	False
+0.00	game	UseTranslocator	True
+0.00	game	TournamentMode	False
+0.00	game	NetMode	DedicatedServer
+0.00	game	GoalTeamScore	5
+0.00	game	FriendlyFireScale	0.000000
+0.59	player	Rename	Fledi	0
+0.59	player	Teamchange	0	0
+0.59	player	Connect	Fledi	0	False
+0.59	player	TeamName	0	Red
+0.59	player	Team	0	0
+0.59	player	TeamID	0	0
+0.59	player	Ping	0	0
+0.59	player	IsABot	0	False
+0.59	player	Skill	0	1.000000
+0.59	player	Novice	0	False
+0.99	player	Rename	Sniper-Ace>Nero<	1
+0.99	player	Teamchange	1	1
+0.99	player	Connect	Sniper-Ace>Nero<	1	False
+0.99	player	TeamName	1	Blue
+0.99	player	Team	1	1
+0.99	player	TeamID	1	0
+0.99	player	Ping	1	0
+0.99	player	IsABot	1	False
+0.99	player	Skill	1	1.000000
+0.99	player	Novice	1	False
+0.99	player	Rename	Mina	2
+0.99	player	Teamchange	2	0
+0.99	player	Connect	Mina	2	False
+0.99	player	TeamName	2	Red
+0.99	player	Team	2	0
+0.99	player	TeamID	2	1
+0.99	player	Ping	2	0
+0.99	player	IsABot	2	False
+0.99	player	Skill	2	1.000000
+0.99	player	Novice	2	False
+0.99	player	Rename	Dune2000	3
+0.99	player	Teamchange	3	1
+0.99	player	Connect	Dune2000	3	False
+0.99	player	TeamName	3	Blue
+0.99	player	Team	3	1
+0.99	player	TeamID	3	1
+0.99	player	Ping	3	0
+0.99	player	IsABot	3	False
+0.99	player	Skill	3	1.000000
+0.99	player	Novice	3	False
+15.11	game_start
+20.89	item_get	Sniper Rifle	3
+24.22	item_get	Sniper Rifle	1
+24.70	item_get	SearchLight	1
+24.70	item_activate	SearchLight	1
+27.35	typing	True	1
+29.11	typing	False	1
+29.59	typing	True	1
+30.00	player	Ping	0	0
+30.00	player	Ping	0	124
+30.00	player	Ping	1	124
+30.00	player	Ping	2	120
+30.00	player	Ping	3	150
+32.05	typing	False	1
+34.63	item_get	SearchLight	1
+35.24	player	Rename	[DQ]Moe_Lesto	4
+35.24	player	Teamchange	4	1
+35.24	player	Connect	[DQ]Moe_Lesto	4	False
+35.24	player	TeamName	4	Blue
+35.24	player	Team	4	1
+35.24	player	TeamID	4	2
+35.24	player	Ping	4	0
+35.24	player	IsABot	4	False
+35.24	player	Skill	4	1.000000
+35.24	player	Novice	4	False
+36.13	typing	True	4
+37.76	typing	True	1
+39.05	typing	False	1
+41.64	item_get	SearchLight	1
+42.05	typing	False	4
+43.95	item_get	Sniper Rifle	2
+46.82	typing	True	4
+47.70	typing	False	4
+57.71	player	Teamchange	4	0
+57.71	suicide	4	Sniper Rifle	Unknown	None
+59.42	player	Teamchange	1	1
+60.03	player	Ping	0	0
+60.03	player	Ping	0	124
+60.03	player	Ping	1	131
+60.03	player	Ping	2	118
+60.03	player	Ping	3	148
+60.03	player	Ping	4	93
+69.52	typing	True	1
+73.41	typing	False	1
+75.94	typing	True	2
+78.54	headshot	4	3
+78.54	kill	4	Sniper Rifle	3	Sniper Rifle	Decapitated
+79.97	typing	True	4
+81.54	typing	False	2
+81.60	typing	False	4
+84.95	typing	True	1
+88.02	typing	False	1
+90.00	player	Ping	0	0
+90.00	player	Ping	0	124
+90.00	player	Ping	1	124
+90.00	player	Ping	2	124
+90.00	player	Ping	3	149
+90.00	player	Ping	4	25
+90.96	item_get	Sniper Rifle	3
+91.17	player	Teamchange	4	1
+91.17	suicide	4	Sniper Rifle	Unknown	None
+94.58	typing	True	2
+99.50	typing	False	2
+100.39	player	Teamchange	1	0
+100.39	suicide	1	Sniper Rifle	Unknown	None
+106.67	item_get	Sniper Rifle	0
+106.88	typing	True	1
+108.38	typing	False	1
+110.23	typing	True	1
+110.71	item_get	Sniper Rifle	2
+111.33	item_get	Sniper Rifle	2
+111.67	headshot	4	0
+111.67	kill	4	Sniper Rifle	0	Sniper Rifle	Decapitated
+112.42	typing	False	1
+116.79	item_get	SearchLight	1
+116.79	item_activate	SearchLight	1
+120.06	player	Ping	0	0
+120.06	player	Ping	0	124
+120.06	player	Ping	1	123
+120.06	player	Ping	2	124
+120.06	player	Ping	3	153
+120.06	player	Ping	4	25
+120.47	typing	True	2
+122.45	flag_taken	4	0
+122.92	typing	False	2
+126.46	item_get	Sniper Rifle	3
+127.35	item_get	SearchLight	3
+127.35	item_activate	SearchLight	3
+131.17	item_get	Sniper Rifle	3
+131.64	item_get	Sniper Rifle	2
+137.45	flag_dropped	4	0
+137.45	headshot	2	4
+137.45	kill	2	Sniper Rifle	4	Sniper Rifle	Decapitated
+139.49	item_get	Box of Rifle Rounds	4
+142.69	flag_returned	2	0
+144.26	item_get	SearchLight	1
+147.40	flag_taken	1	1
+150.06	player	Ping	0	0
+150.06	player	Ping	0	124
+150.06	player	Ping	1	124
+150.06	player	Ping	2	124
+150.06	player	Ping	3	150
+150.06	player	Ping	4	25
+150.47	headshot	1	4
+150.47	kill	1	Sniper Rifle	4	Sniper Rifle	Decapitated
+152.39	item_get	Box of Rifle Rounds	1
+152.59	item_get	Sniper Rifle	1
+153.62	item_get	SearchLight	1
+157.52	item_get	SearchLight	3
+161.35	headshot	2	4
+161.35	kill	2	Sniper Rifle	4	Sniper Rifle	Decapitated
+164.02	headshot	2	3
+164.02	kill	2	Sniper Rifle	3	Sniper Rifle	Decapitated
+165.45	kill	4	Sniper Rifle	2	Sniper Rifle	shot
+171.68	item_get	Sniper Rifle	4
+175.22	item_get	Sniper Rifle	4
+180.00	player	Ping	0	0
+180.00	player	Ping	0	124
+180.00	player	Ping	1	124
+180.00	player	Ping	2	115
+180.00	player	Ping	3	152
+180.00	player	Ping	4	25
+180.82	item_get	SearchLight	1
+183.68	item_get	MedBox	1
+186.00	flag_captured	1	1
+188.32	headshot	2	3
+188.32	kill	2	Sniper Rifle	3	Sniper Rifle	Decapitated
+188.39	item_get	MedBox	1
+189.01	item_get	MedBox	1
+189.68	item_get	Box of Rifle Rounds	2
+190.16	item_get	MedBox	1
+193.02	item_get	SearchLight	1
+195.13	headshot	4	1
+195.13	kill	4	Sniper Rifle	1	Sniper Rifle	Decapitated
+197.51	item_get	Box of Rifle Rounds	1
+201.86	item_get	Sniper Rifle	4
+205.48	item_get	MedBox	3
+207.45	item_get	SearchLight	1
+207.45	item_activate	SearchLight	1
+208.00	item_get	MedBox	3
+210.04	player	Ping	0	0
+210.04	player	Ping	0	124
+210.04	player	Ping	1	124
+210.04	player	Ping	2	119
+210.04	player	Ping	3	151
+210.04	player	Ping	4	25
+213.71	kill	3	Sniper Rifle	2	Sniper Rifle	shot
+213.85	item_get	MedBox	4
+214.67	kill	1	Sniper Rifle	4	Sniper Rifle	shot
+217.05	item_get	MedBox	1
+217.73	item_get	MedBox	1
+218.82	item_get	MedBox	1
+221.62	item_get	Box of Rifle Rounds	4
+222.09	item_get	Box of Rifle Rounds	1
+224.20	item_get	Box of Rifle Rounds	3
+225.36	item_get	Sniper Rifle	3
+228.42	item_get	SearchLight	1
+231.90	item_get	Sniper Rifle	3
+240.00	player	Ping	0	0
+240.00	player	Ping	0	124
+240.00	player	Ping	1	123
+240.00	player	Ping	2	124
+240.00	player	Ping	3	154
+240.00	player	Ping	4	25
+250.70	flag_taken	2	1
+252.13	flag_taken	4	0
+256.28	item_get	SearchLight	1
+263.72	headshot	1	3
+263.72	kill	1	Sniper Rifle	3	Sniper Rifle	Decapitated
+263.72	item_get	Sniper Rifle	1
+268.02	item_get	SearchLight	1
+270.00	player	Ping	0	0
+270.00	player	Ping	0	124
+270.00	player	Ping	1	124
+270.00	player	Ping	2	123
+270.00	player	Ping	3	151
+270.00	player	Ping	4	25
+277.15	item_get	SearchLight	1
+283.69	flag_dropped	4	0
+283.69	kill	1	Sniper Rifle	4	Sniper Rifle	shot
+285.47	flag_returned	1	0
+285.60	item_get	MedBox	1
+287.24	kill	3	Sniper Rifle	1	Sniper Rifle	shot
+290.51	item_get	Box of Rifle Rounds	1
+292.14	item_get	Sniper Rifle	3
+296.92	flag_captured	2	1
+298.56	item_get	SearchLight	1
+298.56	item_activate	SearchLight	1
+300.06	player	Ping	0	0
+300.06	player	Ping	0	124
+300.06	player	Ping	1	124
+300.06	player	Ping	2	124
+300.06	player	Ping	3	158
+300.06	player	Ping	4	26
+307.02	item_get	MedBox	3
+312.96	flag_taken	4	0
+326.08	item_get	SearchLight	1
+328.82	flag_taken	1	1
+330.05	player	Ping	0	0
+330.05	player	Ping	0	124
+330.05	player	Ping	1	120
+330.05	player	Ping	2	123
+330.05	player	Ping	3	152
+330.05	player	Ping	4	25
+332.10	item_get	SearchLight	1
+333.81	headshot	3	2
+333.81	kill	3	Sniper Rifle	2	Sniper Rifle	Decapitated
+335.45	item_get	Sniper Rifle	3
+353.73	item_get	MedBox	3
+354.41	item_get	MedBox	3
+360.00	player	Ping	0	0
+360.00	player	Ping	0	124
+360.00	player	Ping	1	124
+360.00	player	Ping	2	118
+360.00	player	Ping	3	152
+360.00	player	Ping	4	25
+370.64	item_get	Box of Rifle Rounds	2
+371.46	item_get	Box of Rifle Rounds	2
+374.95	flag_dropped	1	1
+374.95	kill	3	Sniper Rifle	1	Sniper Rifle	shot
+376.93	item_get	Box of Rifle Rounds	1
+377.95	flag_returned	3	1
+378.15	item_get	Sniper Rifle	3
+380.41	flag_dropped	4	0
+380.41	headshot	2	4
+380.41	kill	2	Sniper Rifle	4	Sniper Rifle	Decapitated
+382.86	flag_taken	2	1
+383.34	flag_returned	2	0
+383.68	item_get	SearchLight	1
+383.68	item_activate	SearchLight	1
+384.64	item_get	Thigh Pads	2
+385.39	typing	True	1
+387.09	typing	False	1
+390.03	player	Ping	0	0
+390.03	player	Ping	0	124
+390.03	player	Ping	1	124
+390.03	player	Ping	2	141
+390.03	player	Ping	3	149
+390.03	player	Ping	4	25
+397.90	flag_dropped	2	1
+397.90	headshot	4	2
+397.90	kill	4	Sniper Rifle	2	Sniper Rifle	Decapitated
+399.40	flag_returned	4	1
+399.40	typing	True	2
+400.01	item_get	Sniper Rifle	4
+402.20	typing	False	2
+404.32	headshot	4	1
+404.32	kill	4	Sniper Rifle	1	Sniper Rifle	Decapitated
+406.22	item_get	Sniper Rifle	4
+412.37	item_get	SearchLight	1
+412.37	item_activate	SearchLight	1
+420.02	player	Ping	0	0
+420.02	player	Ping	0	124
+420.02	player	Ping	1	124
+420.02	player	Ping	2	124
+420.02	player	Ping	3	162
+420.02	player	Ping	4	25
+421.31	headshot	1	4
+421.31	kill	1	Sniper Rifle	4	Sniper Rifle	Decapitated
+421.31	item_get	Sniper Rifle	1
+423.29	item_get	Box of Rifle Rounds	4
+436.75	flag_taken	2	1
+438.53	flag_dropped	2	1
+438.53	headshot	4	2
+438.53	kill	4	Sniper Rifle	2	Sniper Rifle	Decapitated
+443.72	item_get	SearchLight	1
+449.11	item_get	Thigh Pads	4
+450.06	player	Ping	0	0
+450.06	player	Ping	0	124
+450.06	player	Ping	1	124
+450.06	player	Ping	2	124
+450.06	player	Ping	3	153
+450.06	player	Ping	4	25
+451.77	kill	4	Sniper Rifle	1	Sniper Rifle	shot
+454.15	flag_returned	4	1
+459.21	headshot	1	3
+459.21	kill	1	Sniper Rifle	3	Sniper Rifle	Decapitated
+463.58	item_get	SearchLight	1
+463.58	item_activate	SearchLight	1
+464.88	item_get	Sniper Rifle	1
+469.80	flag_taken	2	1
+471.23	headshot	2	3
+471.23	kill	2	Sniper Rifle	3	Sniper Rifle	Decapitated
+477.29	flag_taken	4	0
+477.97	flag_dropped	2	1
+477.97	kill	3	Sniper Rifle	2	Sniper Rifle	shot
+480.01	player	Ping	0	0
+480.01	player	Ping	0	124
+480.01	player	Ping	1	124
+480.01	player	Ping	2	120
+480.01	player	Ping	3	152
+480.01	player	Ping	4	25
+483.56	item_get	SearchLight	3
+483.56	item_activate	SearchLight	3
+485.27	item_get	Sniper Rifle	3
+485.34	flag_returned	3	1
+488.13	item_get	Box of Rifle Rounds	4
+491.00	item_get	SearchLight	1
+495.83	flag_taken	1	1
+498.97	item_get	SearchLight	1
+505.11	flag_dropped	1	1
+505.11	kill	4	Sniper Rifle	1	Sniper Rifle	shot
+507.83	item_get	Box of Rifle Rounds	1
+510.02	player	Ping	0	0
+510.02	player	Ping	0	124
+510.02	player	Ping	1	123
+510.02	player	Ping	2	124
+510.02	player	Ping	3	154
+510.02	player	Ping	4	25
+510.43	flag_returned	4	1
+512.34	item_get	Box of Rifle Rounds	1
+513.15	item_get	SearchLight	1
+513.15	item_activate	SearchLight	1
+514.51	flag_taken	2	1
+518.40	headshot	1	3
+518.40	kill	1	Sniper Rifle	3	Sniper Rifle	Decapitated
+519.23	flag_dropped	2	1
+519.23	headshot	4	2
+519.23	kill	4	Sniper Rifle	2	Sniper Rifle	Decapitated
+522.09	flag_returned	4	1
+526.27	flag_captured	4	0
+528.59	item_get	MedBox	4
+529.21	item_get	MedBox	4
+534.75	item_get	Sniper Rifle	1
+537.69	headshot	3	0
+537.69	kill	3	Sniper Rifle	0	Sniper Rifle	Decapitated
+540.01	player	Ping	0	0
+540.01	player	Ping	0	124
+540.01	player	Ping	1	124
+540.01	player	Ping	2	114
+540.01	player	Ping	3	155
+540.01	player	Ping	4	25
+541.92	item_get	SearchLight	1
+544.79	headshot	3	1
+544.79	kill	3	Sniper Rifle	1	Sniper Rifle	Decapitated
+551.35	headshot	2	3
+551.35	kill	2	Sniper Rifle	3	Sniper Rifle	Decapitated
+552.58	item_get	Box of Rifle Rounds	1
+553.26	item_get	SearchLight	1
+553.26	item_activate	SearchLight	1
+554.56	flag_taken	2	1
+554.97	item_get	Sniper Rifle	1
+559.82	item_get	Sniper Rifle	3
+561.53	headshot	4	0
+561.53	kill	4	Sniper Rifle	0	Sniper Rifle	Decapitated
+567.96	flag_taken	4	0
+569.81	item_get	MedBox	4
+570.01	player	Ping	0	0
+570.01	player	Ping	0	125
+570.01	player	Ping	1	124
+570.01	player	Ping	2	123
+570.01	player	Ping	3	150
+570.01	player	Ping	4	25
+571.79	item_get	Sniper Rifle	2
+573.50	flag_dropped	4	0
+573.50	headshot	0	4
+573.50	kill	0	Sniper Rifle	4	Sniper Rifle	Decapitated
+578.90	flag_returned	0	0
+579.37	flag_captured	2	1
+584.41	item_get	Sniper Rifle	0
+594.83	item_get	Box of Rifle Rounds	0
+600.01	player	Ping	0	0
+600.01	player	Ping	0	124
+600.01	player	Ping	1	124
+600.01	player	Ping	2	117
+600.01	player	Ping	3	149
+600.01	player	Ping	4	25
+601.10	item_get	SearchLight	1
+601.71	flag_taken	4	0
+603.82	flag_taken	1	1
+610.85	headshot	3	0
+610.85	kill	3	Sniper Rifle	0	Sniper Rifle	Decapitated
+613.23	item_get	Box of Rifle Rounds	4
+615.61	item_get	Thigh Pads	3
+624.83	typing	True	1
+626.54	typing	False	1
+626.74	headshot	3	0
+626.74	kill	3	Sniper Rifle	0	Sniper Rifle	Decapitated
+629.20	flag_dropped	1	1
+629.20	suicide	1	Sniper Rifle	Highway	Self
+630.02	player	Ping	0	0
+630.02	player	Ping	0	124
+630.02	player	Ping	1	119
+630.02	player	Ping	2	119
+630.02	player	Ping	3	154
+630.02	player	Ping	4	25
+641.70	item_get	Box of Rifle Rounds	4
+644.92	kill	1	Sniper Rifle	3	Sniper Rifle	shot
+649.43	item_get	MedBox	0
+649.70	item_get	MedBox	0
+654.20	flag_returned_timeout	1
+655.35	typing	True	2
+657.60	typing	False	2
+659.58	typing	True	2
+660.06	player	Ping	0	0
+660.06	player	Ping	0	124
+660.06	player	Ping	1	123
+660.06	player	Ping	2	118
+660.06	player	Ping	3	152
+660.06	player	Ping	4	25
+661.50	suicide	2	Sniper Rifle	Suicided	None
+661.50	typing	False	2
+662.79	flag_captured	4	0
+662.86	flag_taken	1	1
+666.76	headshot	1	4
+666.76	kill	1	Sniper Rifle	4	Sniper Rifle	Decapitated
+669.43	item_get	SearchLight	1
+669.43	item_activate	SearchLight	1
+670.59	item_get	Sniper Rifle	3
+673.61	item_get	SearchLight	3
+673.61	item_activate	SearchLight	3
+676.00	headshot	1	3
+676.00	kill	1	Sniper Rifle	3	Sniper Rifle	Decapitated
+680.57	headshot	3	0
+680.57	kill	3	Sniper Rifle	0	Sniper Rifle	Decapitated
+682.55	item_get	Sniper Rifle	3
+689.32	item_get	SearchLight	3
+689.32	item_activate	SearchLight	3
+690.00	player	Ping	0	0
+690.00	player	Ping	0	125
+690.00	player	Ping	1	120
+690.00	player	Ping	2	112
+690.00	player	Ping	3	152
+690.00	player	Ping	4	25
+692.19	item_get	Sniper Rifle	3
+695.68	headshot	0	4
+695.68	kill	0	Sniper Rifle	4	Sniper Rifle	Decapitated
+697.59	item_get	SearchLight	1
+700.26	typing	True	4
+700.26	item_get	MedBox	1
+701.28	typing	False	4
+702.58	flag_captured	1	1
+705.04	flag_taken	2	1
+705.18	item_get	MedBox	1
+705.79	item_get	MedBox	1
+709.21	item_get	SearchLight	2
+709.21	item_activate	SearchLight	2
+709.21	item_get	SearchLight	1
+709.28	item_get	Box of Rifle Rounds	4
+710.78	headshot	1	3
+710.78	kill	1	Sniper Rifle	3	Sniper Rifle	Decapitated
+711.46	flag_dropped	2	1
+711.46	kill	4	Sniper Rifle	2	Sniper Rifle	shot
+712.27	item_get	SearchLight	4
+712.27	item_activate	SearchLight	4
+713.70	flag_returned	4	1
+715.67	item_get	Sniper Rifle	1
+719.08	flag_taken	0	1
+720.03	player	Ping	0	0
+720.03	player	Ping	0	124
+720.03	player	Ping	1	122
+720.03	player	Ping	2	121
+720.03	player	Ping	3	261
+720.03	player	Ping	4	25
+721.46	flag_dropped	0	1
+721.46	headshot	3	0
+721.46	kill	3	Sniper Rifle	0	Sniper Rifle	Decapitated
+722.63	headshot	1	4
+722.63	kill	1	Sniper Rifle	4	Sniper Rifle	Decapitated
+723.65	flag_returned	3	1
+727.47	item_get	Sniper Rifle	1
+736.15	kill	4	Sniper Rifle	1	Sniper Rifle	shot
+740.45	item_get	SearchLight	3
+740.45	item_activate	SearchLight	3
+741.89	item_get	Sniper Rifle	3
+742.92	item_get	Sniper Rifle	3
+745.10	item_get	SearchLight	1
+745.10	item_activate	SearchLight	1
+750.02	player	Ping	0	0
+750.02	player	Ping	0	125
+750.02	player	Ping	1	123
+750.02	player	Ping	2	117
+750.02	player	Ping	3	150
+750.02	player	Ping	4	25
+755.70	headshot	1	3
+755.70	kill	1	Sniper Rifle	3	Sniper Rifle	Decapitated
+757.95	item_get	Sniper Rifle	1
+759.38	flag_taken	4	0
+761.43	flag_taken	2	1
+765.53	flag_dropped	2	1
+765.53	headshot	3	2
+765.53	kill	3	Sniper Rifle	2	Sniper Rifle	Decapitated
+767.57	item_get	Box of Rifle Rounds	4
+767.64	flag_returned	3	1
+768.60	item_get	Box of Rifle Rounds	0
+769.69	item_get	Box of Rifle Rounds	0
+770.44	item_get	Box of Rifle Rounds	0
+771.94	item_get	MedBox	4
+772.56	flag_dropped	4	0
+772.56	kill	0	Sniper Rifle	4	Sniper Rifle	shot
+772.76	item_get	SearchLight	1
+774.33	headshot	1	3
+774.33	kill	1	Sniper Rifle	3	Sniper Rifle	Decapitated
+774.81	flag_returned	0	0
+775.62	flag_taken	1	1
+776.92	item_get	Sniper Rifle	1
+778.55	headshot	1	4
+778.55	kill	1	Sniper Rifle	4	Sniper Rifle	Decapitated
+779.30	flag_dropped	1	1
+779.30	headshot	3	1
+779.30	kill	3	Sniper Rifle	1	Sniper Rifle	Decapitated
+780.05	player	Ping	0	0
+780.05	player	Ping	0	125
+780.05	player	Ping	1	122
+780.05	player	Ping	2	124
+780.05	player	Ping	3	150
+780.05	player	Ping	4	25
+780.59	item_get	Box of Rifle Rounds	4
+782.16	flag_returned	3	1
+785.58	item_get	Box of Rifle Rounds	1
+786.53	item_get	SearchLight	1
+786.53	item_activate	SearchLight	1
+792.48	item_get	SearchLight	3
+792.48	item_activate	SearchLight	3
+803.55	headshot	3	1
+803.55	kill	3	Sniper Rifle	1	Sniper Rifle	Decapitated
+803.55	item_get	Sniper Rifle	3
+805.80	flag_taken	0	1
+806.28	item_get	Box of Rifle Rounds	1
+807.51	flag_taken	4	0
+807.51	flag_dropped	4	0
+807.51	kill	2	Sniper Rifle	4	Sniper Rifle	shot
+810.04	player	Ping	0	0
+810.04	player	Ping	0	124
+810.04	player	Ping	1	124
+810.04	player	Ping	2	119
+810.04	player	Ping	3	150
+810.04	player	Ping	4	25
+810.10	flag_returned	2	0
+814.81	item_get	SearchLight	1
+814.81	item_activate	SearchLight	1
+817.34	headshot	1	3
+817.34	kill	1	Sniper Rifle	3	Sniper Rifle	Decapitated
+820.06	item_get	Sniper Rifle	1
+829.77	item_get	Thigh Pads	2
+832.31	flag_captured	0	1
+832.31	game_end	teamscorelimit

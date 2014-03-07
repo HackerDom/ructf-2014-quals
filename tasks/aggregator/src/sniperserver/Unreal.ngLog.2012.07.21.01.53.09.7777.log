@@ -1,0 +1,316 @@
+0.00	info	Log_Standard	ngLog
+0.00	info	Log_Version	1.2
+0.00	info	Log_Info_URL	http://www.netgamesusa.com/ngLog/
+0.00	info	Game_Name	Unreal
+0.00	info	Game_Version	436
+0.00	info	Game_Creator	Epic MegaGames, Inc.
+0.00	info	Game_Creator_URL	http://www.epicgames.com/
+0.00	info	Game_Decoder_Ring_URL	http://unreal.epicgames.com/Unreal_Log_Decoder_Ring.html
+0.00	info	Absolute_Time	2012.07.21.01.53.09.510.+6.0
+0.00	info	Server_ServerName	zp2| [DQ] Sniper Server
+0.00	info	Server_AdminName	[DQ]Krait
+0.00	info	Server_AdminEmail	dqkrait@gmail.com
+0.00	info	Server_Region	0
+0.00	info	Server_MOTDLine1	
+0.00	info	Server_MOTDLine2	
+0.00	info	Server_MOTDLine3	
+0.00	info	Server_MOTDLine4	
+0.00	info	Server_IP	0.0.0.0
+0.00	info	Server_Port	7777
+0.00	map	Name	CTF-KK.unr
+0.00	map	Title	Untitled
+0.00	map	Author	
+0.00	map	IdealPlayerCount	
+0.00	map	LevelEnterText	
+0.00	game	GameMutator	Class Botpack.DMMutator
+0.00	game	GameMutator	Class MapVoteLA13.BDBMapVote
+0.00	game	GameMutator	Class ZPBasicWeaponsAddOnV208.SniperArena
+0.00	game	GameName	Capture the Flag
+0.00	game	GameClass	Botpack.CTFGame
+0.00	game	GameVersion	436
+0.00	game	MinNetVersion	400
+0.00	game	NoMonsters	False
+0.00	game	MuteSpectators	False
+0.00	game	HumansOnly	False
+0.00	game	WeaponsStay	True
+0.00	game	ClassicDeathmessages	False
+0.00	game	LowGore	False
+0.00	game	VeryLowGore	False
+0.00	game	TeamGame	True
+0.00	game	GameSpeed	125
+0.00	game	MaxSpectators	2
+0.00	game	MaxPlayers	16
+0.00	game	FragLimit	0
+0.00	game	TimeLimit	0
+0.00	game	MultiPlayerBots	False
+0.00	game	HardCore	True
+0.00	game	MegaSpeed	False
+0.00	game	AirControl	0.350000
+0.00	game	JumpMatch	False
+0.00	game	UseTranslocator	True
+0.00	game	TournamentMode	False
+0.00	game	NetMode	DedicatedServer
+0.00	game	GoalTeamScore	5
+0.00	game	FriendlyFireScale	0.000000
+0.98	player	Rename	Mina	0
+0.98	player	Teamchange	0	0
+0.98	player	Connect	Mina	0	False
+0.98	player	TeamName	0	Red
+0.98	player	Team	0	0
+0.98	player	TeamID	0	0
+0.98	player	Ping	0	0
+0.98	player	IsABot	0	False
+0.98	player	Skill	0	1.000000
+0.98	player	Novice	0	False
+0.98	player	Rename	Sniper-Ace>Nero<	1
+0.98	player	Teamchange	1	1
+0.98	player	Connect	Sniper-Ace>Nero<	1	False
+0.98	player	TeamName	1	Blue
+0.98	player	Team	1	1
+0.98	player	TeamID	1	0
+0.98	player	Ping	1	0
+0.98	player	IsABot	1	False
+0.98	player	Skill	1	1.000000
+0.98	player	Novice	1	False
+0.98	player	Rename	Dune2000	2
+0.98	player	Teamchange	2	1
+0.98	player	Connect	Dune2000	2	False
+0.98	player	TeamName	2	Blue
+0.98	player	Team	2	1
+0.98	player	TeamID	2	1
+0.98	player	Ping	2	0
+0.98	player	IsABot	2	False
+0.98	player	Skill	2	1.000000
+0.98	player	Novice	2	False
+1.38	player	Rename	[DQ]Moe_Lesto	3
+1.38	player	Teamchange	3	0
+1.38	player	Connect	[DQ]Moe_Lesto	3	False
+1.38	player	TeamName	3	Red
+1.38	player	Team	3	0
+1.38	player	TeamID	3	1
+1.38	player	Ping	3	0
+1.38	player	IsABot	3	False
+1.38	player	Skill	3	1.000000
+1.38	player	Novice	3	False
+3.96	player	Rename	Fledi	4
+3.96	player	Teamchange	4	0
+3.96	player	Connect	Fledi	4	False
+3.96	player	TeamName	4	Red
+3.96	player	Team	4	0
+3.96	player	TeamID	4	2
+3.96	player	Ping	4	0
+3.96	player	IsABot	4	False
+3.96	player	Skill	4	1.000000
+3.96	player	Novice	4	False
+4.84	typing	False	1
+7.70	typing	True	1
+8.17	typing	False	1
+15.11	game_start
+15.38	typing	True	1
+16.33	typing	False	1
+16.53	typing	True	3
+17.89	typing	True	1
+18.91	typing	False	1
+19.59	typing	True	1
+19.86	typing	False	3
+20.27	typing	True	3
+25.98	typing	False	1
+26.32	typing	False	3
+30.05	player	Ping	0	0
+30.05	player	Ping	0	124
+30.05	player	Ping	1	124
+30.05	player	Ping	2	148
+30.05	player	Ping	3	25
+30.05	player	Ping	4	125
+31.62	typing	True	1
+32.43	typing	False	1
+33.25	typing	True	1
+33.73	typing	True	0
+34.95	typing	False	0
+35.09	suicide	2	Sniper Rifle	shredded	None
+37.68	typing	False	1
+40.26	typing	True	1
+40.67	typing	True	2
+41.35	typing	True	0
+42.64	player	Teamchange	3	1
+42.64	suicide	3	Sniper Rifle	Unknown	None
+46.11	typing	False	1
+46.11	typing	False	2
+46.38	typing	False	0
+50.40	typing	True	0
+53.86	typing	False	0
+58.48	typing	True	1
+60.04	player	Ping	0	0
+60.04	player	Ping	0	125
+60.04	player	Ping	1	123
+60.04	player	Ping	2	148
+60.04	player	Ping	3	25
+60.04	player	Ping	4	124
+64.60	typing	False	1
+69.24	typing	True	1
+73.34	typing	False	1
+74.77	typing	True	3
+77.29	typing	False	3
+82.87	typing	True	3
+87.57	headshot	4	1
+87.57	kill	4	Sniper Rifle	1	Sniper Rifle	Decapitated
+90.03	player	Ping	0	0
+90.03	player	Ping	0	125
+90.03	player	Ping	1	124
+90.03	player	Ping	2	154
+90.03	player	Ping	3	25
+90.03	player	Ping	4	124
+94.39	typing	True	1
+95.20	player	Disconnect	0
+95.41	typing	False	3
+101.66	typing	False	1
+105.81	kill	4	Sniper Rifle	3	Sniper Rifle	shot
+106.15	typing	True	1
+107.85	typing	False	1
+120.05	player	Ping	0	0
+120.05	player	Ping	1	137
+120.05	player	Ping	2	166
+120.05	player	Ping	3	25
+120.05	player	Ping	4	124
+122.83	player	Teamchange	2	0
+122.83	suicide	2	Sniper Rifle	Unknown	None
+125.35	typing	True	1
+128.21	suicide	1	Sniper Rifle	RocketDeath	None
+128.42	typing	False	1
+129.44	player	Rename	Mina	5
+129.44	player	Teamchange	5	0
+129.44	player	Connect	Mina	5	False
+129.44	player	TeamName	5	Red
+129.44	player	Team	5	0
+129.44	player	TeamID	5	1
+129.44	player	Ping	5	0
+129.44	player	IsABot	5	False
+129.44	player	Skill	5	1.000000
+129.44	player	Novice	5	False
+135.91	headshot	3	4
+135.91	kill	3	Sniper Rifle	4	Sniper Rifle	Decapitated
+138.15	flag_taken	3	0
+141.22	headshot	1	5
+141.22	kill	1	Sniper Rifle	5	Sniper Rifle	Decapitated
+145.38	kill	1	Sniper Rifle	2	Sniper Rifle	shot
+148.59	kill	5	Sniper Rifle	1	Sniper Rifle	shot
+150.02	player	Ping	0	0
+150.02	player	Ping	1	142
+150.02	player	Ping	2	243
+150.02	player	Ping	3	26
+150.02	player	Ping	4	124
+150.02	player	Ping	5	198
+152.47	item_get	Sniper Rifle	5
+155.19	headshot	1	5
+155.19	kill	1	Sniper Rifle	5	Sniper Rifle	Decapitated
+159.14	flag_captured	3	0
+162.48	headshot	5	3
+162.48	kill	5	Sniper Rifle	3	Sniper Rifle	Decapitated
+163.57	flag_taken	1	0
+169.71	headshot	3	5
+169.71	kill	3	Sniper Rifle	5	Sniper Rifle	Decapitated
+172.51	item_get	Sniper Rifle	3
+178.99	item_get	Sniper Rifle	5
+180.01	player	Ping	0	0
+180.01	player	Ping	1	126
+180.01	player	Ping	2	152
+180.01	player	Ping	3	25
+180.01	player	Ping	4	125
+180.01	player	Ping	5	124
+181.65	kill	5	Sniper Rifle	3	Sniper Rifle	shot
+190.31	flag_captured	1	0
+191.47	headshot	3	5
+191.47	kill	3	Sniper Rifle	5	Sniper Rifle	Decapitated
+194.20	headshot	2	1
+194.20	kill	2	Sniper Rifle	1	Sniper Rifle	Decapitated
+200.47	item_get	Sniper Rifle	1
+202.86	flag_taken	3	0
+206.87	flag_dropped	3	0
+206.87	suicide	3	Sniper Rifle	shredded	None
+208.57	item_get	Sniper Rifle	2
+209.73	item_get	Sniper Rifle	5
+209.80	flag_returned	5	0
+210.01	player	Ping	0	0
+210.01	player	Ping	1	235
+210.01	player	Ping	2	152
+210.01	player	Ping	3	76
+210.01	player	Ping	4	124
+210.01	player	Ping	5	127
+213.62	flag_taken	1	0
+225.98	headshot	3	2
+225.98	kill	3	Sniper Rifle	2	Sniper Rifle	Decapitated
+235.45	headshot	3	2
+235.45	kill	3	Sniper Rifle	2	Sniper Rifle	Decapitated
+239.14	kill	3	Sniper Rifle	5	Sniper Rifle	shot
+239.34	flag_captured	1	0
+240.03	player	Ping	0	0
+240.03	player	Ping	1	133
+240.03	player	Ping	2	149
+240.03	player	Ping	3	25
+240.03	player	Ping	4	124
+240.03	player	Ping	5	125
+243.77	headshot	1	2
+243.77	kill	1	Sniper Rifle	2	Sniper Rifle	Decapitated
+246.91	item_get	Sniper Rifle	1
+251.48	kill	5	Sniper Rifle	1	Sniper Rifle	shot
+252.84	kill	3	Sniper Rifle	2	Sniper Rifle	shot
+254.48	item_get	Sniper Rifle	3
+255.92	kill	5	Sniper Rifle	3	Sniper Rifle	shot
+256.60	item_get	Sniper Rifle	5
+258.44	headshot	1	5
+258.44	kill	1	Sniper Rifle	5	Sniper Rifle	Decapitated
+259.06	suicide	2	Sniper Rifle	shredded	None
+264.85	item_get	Sniper Rifle	1
+265.81	flag_taken	1	0
+266.01	item_get	Sniper Rifle	1
+268.67	flag_dropped	1	0
+268.67	kill	5	Sniper Rifle	1	Sniper Rifle	shot
+270.04	player	Ping	0	0
+270.04	player	Ping	1	136
+270.04	player	Ping	2	153
+270.04	player	Ping	3	25
+270.04	player	Ping	4	124
+270.04	player	Ping	5	128
+272.02	item_get	Sniper Rifle	1
+272.49	flag_returned	2	0
+273.58	item_get	Sniper Rifle	2
+274.33	flag_taken	3	0
+276.24	item_get	Sniper Rifle	1
+291.53	headshot	1	2
+291.53	kill	1	Sniper Rifle	2	Sniper Rifle	Decapitated
+294.26	flag_captured	3	0
+297.46	flag_taken	1	0
+298.69	flag_taken	5	1
+300.05	player	Ping	0	0
+300.05	player	Ping	1	124
+300.05	player	Ping	2	150
+300.05	player	Ping	3	25
+300.05	player	Ping	4	124
+300.05	player	Ping	5	129
+300.46	flag_dropped	1	0
+300.46	suicide	1	Sniper Rifle	shredded	None
+304.08	suicide	3	Sniper Rifle	shredded	None
+305.84	flag_returned	2	0
+306.60	item_get	Sniper Rifle	2
+309.26	headshot	1	2
+309.26	kill	1	Sniper Rifle	2	Sniper Rifle	Decapitated
+309.81	item_get	Sniper Rifle	1
+312.80	flag_dropped	5	1
+312.80	kill	3	Sniper Rifle	5	Sniper Rifle	shot
+315.18	flag_taken	1	0
+315.18	item_get	Sniper Rifle	2
+316.07	flag_returned	3	1
+320.43	suicide	3	Sniper Rifle	shredded	None
+330.02	player	Ping	0	0
+330.02	player	Ping	1	125
+330.02	player	Ping	2	149
+330.02	player	Ping	3	25
+330.02	player	Ping	4	124
+330.02	player	Ping	5	124
+332.27	kill	3	Sniper Rifle	5	Sniper Rifle	shot
+335.46	headshot	3	2
+335.46	kill	3	Sniper Rifle	2	Sniper Rifle	Decapitated
+339.34	headshot	5	3
+339.34	kill	5	Sniper Rifle	3	Sniper Rifle	Decapitated
+343.23	flag_captured	1	0
+343.23	game_end	teamscorelimit
