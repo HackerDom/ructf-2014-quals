@@ -26,7 +26,7 @@ function exit_gameover($st, $msg = "") {
 
 	if ($_SESSION["wins"] >= 3) {
 		$status = "flag";
-		$msg = md5("flag");
+		$msg = "RUCTF_7a81cfd2c9376c6f2f853e0230b95e04";
 	}
 
 	exit_engine($status, $msg, $img, $face, $flags);
