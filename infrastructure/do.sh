@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAIN=`dirname $0`/main.py
+MAIN=$(dirname $0)/main.py
 
 ssh='ssh -l root'
 
@@ -105,6 +105,69 @@ gen_nagios() {
         mv $file.new $file
         /etc/init.d/nagios3 reload
     fi
+}
+
+gather_ssh() {
+    list ":" | while read line; do
+        vm=${line##*:}
+        addr=$(python $MAIN addr $vm)
+        os=$(python $MAIN get_attr $vm os)
+        if [ "$os" == debian ] || [ "$os" == debian32 ] || [ "$os" == arch ]; then
+            $ssh -o StrictHostKeyChecking=no $addr hostname </dev/null
+        fi
+    done
+}
+
+setup_iptables() {
+    list "$1" | while read line; do
+        vm=${line##*:}
+        addr=$(python $MAIN addr $vm)
+        os=$(python $MAIN get_attr $vm os)
+        base=$(dirname $0)
+        if [ "$os" == debian ] || [ "$os" == debian32 ]; then
+            scp $base/iptables/init root@$addr:/etc/init.d/iptables
+            scp $base/iptables/default root@$addr:/etc/default/iptables
+            $ssh $addr update-rc.d iptables defaults </dev/null
+            $ssh $addr mkdir -p /var/lib/iptables </dev/null
+
+            $ssh $addr "\
+                iptables -P INPUT ACCEPT; iptables -P OUTPUT ACCEPT; \
+                iptables -F INPUT; iptables -F OUTPUT; \
+                \
+                if ! iptables -L custom-input &>/dev/null; then \
+                    iptables -N custom-input; \
+                fi; \
+                iptables -A INPUT -j custom-input; \
+                \
+                if ! iptables -L custom-output &>/dev/null; then \
+                    iptables -N custom-output; \
+                fi; \
+                iptables -A OUTPUT -j custom-output; \
+                \
+                iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT; \
+                iptables -A INPUT -p icmp -j ACCEPT; \
+                iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT; \
+                \
+                iptables -A OUTPUT -p icmp -j ACCEPT; \
+                iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT; \
+                :                                       DNS 1; \
+                iptables -A OUTPUT -p udp --dport 53 -d 194.226.244.126 \
+                    -m state --state NEW -j ACCEPT; \
+                :                                       DNS 2; \
+                iptables -A OUTPUT -p udp --dport 53 -d 194.226.235.22 \
+                    -m state --state NEW -j ACCEPT; \
+                :                                       mirror.yandex.ru; \
+                iptables -A OUTPUT -p tcp --dport 80 -d 213.180.204.183 \
+                    -m state --state NEW -j ACCEPT;
+            " </dev/null
+
+            $ssh $addr "\
+                iptables -P INPUT DROP; iptables -P OUTPUT DROP; \
+                iptables -P FORWARD DROP; \
+                /etc/init.d/iptables save active
+            " </dev/null
+        fi
+    done
 }
 
 prepare_partition() {
