@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="stegano" id="stegano:300" proto="xmlquest-2.0">
     <name>nyan-task</name>
-    <task type="html" lang="en"><p>We think, that <a href="static/0c9bc9dadb765971dad77a8c94f9f690/nyan-task.png">this image</a> contains some hidden message, but our expert found nothing unusual in it. Maybe you will find something?</p></task>
-    <task type="html" lang="ru"><p>Мы считаем, что <a href="static/0c9bc9dadb765971dad77a8c94f9f690/nyan-task.png">это изображение</a> содержит скрытое сообщение, но наш эксперт не нашёл в нём ничего необычного. Может быть, вы сможете найти что-то?</p></task>
+    <task type="html" lang="en"><p>We think, that <a href="static/0c9bc9dadb765971dad77a8c94f9f690/nyan-task.png">this image</a> contains some hidden message, but our expert found nothing unusual in it. Maybe you will find something?<br>Flag format is "RUCTF_.*"</p></task>
+    <task type="html" lang="ru"><p>Мы считаем, что <a href="static/0c9bc9dadb765971dad77a8c94f9f690/nyan-task.png">это изображение</a> содержит скрытое сообщение, но наш эксперт не нашёл в нём ничего необычного. Может быть, вы сможете найти что-то?<br>Формат флага &mdash; "RUCTF_.*"</p></task>
     <checker strict="yes">
         <solution case="sensitive">RUCTF_ca8250c2b4b50581afc9ffd1f403f3f2</solution>
     </checker>
