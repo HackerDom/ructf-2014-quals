@@ -1,2 +1,0 @@
-(Ru) Q: Был введен номер кредитной карты. Найдите его.
-(En) Q: What credit card number has been entered?

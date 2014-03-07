@@ -1,0 +1,96 @@
+Описание таска (внутреннее, для разработчиков)
+
+    Даны "испорченные" файлы (3 шт) базы MongoDB
+    Как испортили файлы: заменили сигнатуру extent-а с "DCBA" на "RCTF"
+    Имя базы - ructf
+    В базе одна коллекция - letters
+    В коллекции 31375 документов, из них 31337 - удаленные
+    Структура документов: { Id: ObjectId, Letter: char, Position: int }
+
+Предполагаемое решение
+
+ 1. Догадаться, что это MongoDB (можно погуглить "0 1 ns расширения файлов" или "0 1 ns file extensions")
+
+ 2. Пробуем положить эти файлы последней версии MongoDB - она не запускается:
+
+    [initandlisten]  ructf Assertion failure isOk() d:\slave\windows_32bit_v2.4\mongo\src\mongo\db\pdfile.h 392 
+
+    Пробуем запустить mongod с ключом --repair - не помогает
+
+ 3. Смотрим, как устроены файлы базы MongoDB
+
+     http://www.slideshare.net/mongodb/mongodb-london-2013understanding-mongodb-storage-for-performance-and-data-safety-by-christian-kvalheim-10gen
+     https://github.com/mongodb/mongo/blob/master/src/mongo/db/storage/data_file.h
+     https://github.com/mongodb/mongo/blob/master/src/mongo/db/storage/extent.h
+     https://github.com/mongodb/mongo/blob/master/src/mongo/db/storage/record.h
+
+ 4. Сравниваем с реальностью
+
+     В extent.h: "extentSignature = 0x41424344" - это байты "DCBA" (little-endian)
+     А в наших файлах на этом месте "RCTF"
+
+ 5. Меняем "RCTF" на DCBA"
+
+ 6. Запускаем MongoDB, смотрим что же в базе ructf находится:
+
+    > show dbs
+    local   0.03125GB
+    ructf   0.0625GB
+
+    > use ructf
+    switched to db ructf
+
+    > show collections
+    letters
+    system.indexes
+
+    > db.letters.find()
+    { "_id" : ObjectId("530a0532de56321a507b64e4"), "Position" : 21, "Letter" : 53 }
+    { "_id" : ObjectId("530a0532de56321a507b66ac"), "Position" : 25, "Letter" : 56 }
+    { "_id" : ObjectId("530a0532de56321a507b68f5"), "Position" : 0, "Letter" : 82 }
+    { "_id" : ObjectId("530a0532de56321a507b6b69"), "Position" : 30, "Letter" : 57 }
+    { "_id" : ObjectId("530a0532de56321a507b6d50"), "Position" : 27, "Letter" : 66 }
+    { "_id" : ObjectId("530a0532de56321a507b6f57"), "Position" : 1, "Letter" : 85 }
+    { "_id" : ObjectId("530a0532de56321a507b71e8"), "Position" : 11, "Letter" : 56 }
+    { "_id" : ObjectId("530a0532de56321a507b725f"), "Position" : 26, "Letter" : 50 }
+    { "_id" : ObjectId("530a0532de56321a507b7343"), "Position" : 14, "Letter" : 66 }
+    { "_id" : ObjectId("530a0532de56321a507b73be"), "Position" : 32, "Letter" : 53 }
+    { "_id" : ObjectId("530a0532de56321a507b73f5"), "Position" : 23, "Letter" : 50 }
+    { "_id" : ObjectId("530a0532de56321a507b77f6"), "Position" : 31, "Letter" : 48 }
+    { "_id" : ObjectId("530a0532de56321a507b7ab5"), "Position" : 3, "Letter" : 84 }
+    { "_id" : ObjectId("530a0533de56321a507b849d"), "Position" : 16, "Letter" : 48 }
+    { "_id" : ObjectId("530a0533de56321a507b84d0"), "Position" : 15, "Letter" : 57 }
+    { "_id" : ObjectId("530a0533de56321a507b8515"), "Position" : 22, "Letter" : 56 }
+    { "_id" : ObjectId("530a0533de56321a507b8787"), "Position" : 4, "Letter" : 70 }
+    { "_id" : ObjectId("530a0533de56321a507b898f"), "Position" : 7, "Letter" : 70 }
+    { "_id" : ObjectId("530a0533de56321a507b8dd5"), "Position" : 9, "Letter" : 69 }
+    { "_id" : ObjectId("530a0533de56321a507b8de6"), "Position" : 37, "Letter" : 49 }
+    Type "it" for more
+
+    > it
+    { "_id" : ObjectId("530a0533de56321a507b8ea8"), "Position" : 12, "Letter" : 66 }
+    { "_id" : ObjectId("530a0533de56321a507b9032"), "Position" : 24, "Letter" : 70 }
+    { "_id" : ObjectId("530a0533de56321a507b9388"), "Position" : 34, "Letter" : 66 }
+    { "_id" : ObjectId("530a0533de56321a507b97be"), "Position" : 13, "Letter" : 55 }
+    { "_id" : ObjectId("530a0533de56321a507b98fd"), "Position" : 28, "Letter" : 55 }
+    { "_id" : ObjectId("530a0534de56321a507b9e7d"), "Position" : 18, "Letter" : 52 }
+    { "_id" : ObjectId("530a0534de56321a507ba0a6"), "Position" : 8, "Letter" : 68 }
+    { "_id" : ObjectId("530a0534de56321a507bab37"), "Position" : 2, "Letter" : 67 }
+    { "_id" : ObjectId("530a0535de56321a507bac85"), "Position" : 33, "Letter" : 54 }
+    { "_id" : ObjectId("530a0535de56321a507bad62"), "Position" : 29, "Letter" : 66 }
+    { "_id" : ObjectId("530a0535de56321a507badcd"), "Position" : 17, "Letter" : 52 }
+    { "_id" : ObjectId("530a0535de56321a507bbe80"), "Position" : 35, "Letter" : 55 }
+    { "_id" : ObjectId("530a0535de56321a507bc868"), "Position" : 5, "Letter" : 95 }
+    { "_id" : ObjectId("530a0536de56321a507bce20"), "Position" : 19, "Letter" : 55 }
+    { "_id" : ObjectId("530a0536de56321a507bce46"), "Position" : 6, "Letter" : 67 }
+    { "_id" : ObjectId("530a0536de56321a507bce49"), "Position" : 20, "Letter" : 66 }
+    { "_id" : ObjectId("530a0536de56321a507bd6cf"), "Position" : 10, "Letter" : 50 }
+    { "_id" : ObjectId("530a0536de56321a507bd6ee"), "Position" : 36, "Letter" : 70 }
+
+ 7. Делаем правильный запрос (сортируем буквы по полю Position):
+
+    var a = "";
+    db.letters.find().sort({Position:1}).forEach(function(c){ a += String.fromCharCode(c.Letter) });
+    print(a);
+
+ 8. Получаем ответ: RUCTF_CFDE28B7B90447B582F82B7B9056B7F1
