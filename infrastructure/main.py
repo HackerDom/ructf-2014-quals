@@ -48,7 +48,7 @@ def gen_xen(vms, args):
     if len(match) != 1:
         raise Exception(match)
     vm = match[0]
-    if args[2] == 'setup' and not vm.os.startswith('debian'):
+    if args[2] == 'setup' and vm.os == '2k8r2':
         bootdev = 'd'
     else:
         bootdev = 'c'
@@ -61,8 +61,8 @@ def gen_xen(vms, args):
         disk_str = ('"phy://dev/data/ructf2014q-%s,ioemu:hda,w",' % vm.name +
             '"file://root/2k8r2.iso,hdc:cdrom,r"')
     elif vm.os == 'arch':
-        disk_str = ('"phy://dev/data/ructf2014q-%s,ioemu:hda,w",' % vm.name +
-            '"file://root/arch.iso,hdc:cdrom,r"')
+        disk_str = ('"phy://dev/data/ructf2014q-%s,ioemu:hda,w",' % vm.name)
+            #'"file://root/arch.iso,hdc:cdrom,r"')
     print """
 kernel="/usr/lib/xen-4.1/boot/hvmloader"
 builder="hvm"
