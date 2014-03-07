@@ -19,7 +19,7 @@ class VM:
 
         if net_spec.startswith('ext'):
             [self.iface, self.addr] = net_spec.split(':', 2)
-            self.network = '255.255.255.248'
+            self.network = '255.255.255.240'
         elif net_spec.startswith('int'):
             [self.iface, self.addr] = [net_spec, '172.16.16.%d' % self.ID]
         elif net_spec == 'http':
