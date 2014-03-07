@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="misc" id="misc:100" proto="xmlquest-2.0">
+    <name>Ructf radio</name>
+    <task type="html" lang="en"><p>Just listen our <a href="http://myradiostream.com/ructf">radio</a>. Sometimes it talking the flag.<br>Flag will be the phrase, each word should be separated by "_". So, flag format is "RUCTF_some_phrase".</p></task>
+    <task type="html" lang="ru"><p>Просто слушайте наше <a href="http://myradiostream.com/ructf">радио</a>. Иногда  оно говорит флаг.<br>Флаг будет фразой, каждое слово которой должно быть отделено "_". Таким образом, формат флага "RUCTF_.*"</p></task>
+    <checker strict="yes">
+        <solution case="sensitive">RUCTF_sounds_good_to_me</solution>
+		<solution case="sensitive">RUCTF_sound_good_to_me</solution>
+    </checker>
+</quest>
