@@ -139,11 +139,13 @@ setup_iptables() {
                     iptables -N custom-input; \
                 fi; \
                 iptables -A INPUT -j custom-input; \
+                iptables -A INPUT -i lo -j ACCEPT; \
                 \
                 if ! iptables -L custom-output &>/dev/null; then \
                     iptables -N custom-output; \
                 fi; \
                 iptables -A OUTPUT -j custom-output; \
+                iptables -A OUTPUT -o lo -j ACCEPT; \
                 \
                 iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT; \
                 iptables -A INPUT -p icmp -j ACCEPT; \
