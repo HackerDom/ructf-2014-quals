@@ -119,6 +119,7 @@ gather_ssh() {
 }
 
 setup_iptables() {
+    custom="$2"
     list "$1" | while read line; do
         vm=${line##*:}
         addr=$(python $MAIN addr $vm)
@@ -161,12 +162,14 @@ setup_iptables() {
                     -m state --state NEW -j ACCEPT;
             " </dev/null
 
-            python $MAIN get_ports $vm | while read portspec; do
-                proto=${portspec%%:*}
-                port=${portspec##*:}
-                $ssh $addr "iptables -A INPUT -p $proto --dport $port \
-                            -m state --state NEW -j ACCEPT" </dev/null
-            done
+            if [ "$custom" == custom ]; then
+                python $MAIN get_ports $vm | while read portspec; do
+                    proto=${portspec%%:*}
+                    port=${portspec##*:}
+                    $ssh $addr "iptables -A INPUT -p $proto --dport $port \
+                                -m state --state NEW -j ACCEPT" </dev/null
+                done
+            fi
 
             $ssh $addr "\
                 iptables -P INPUT DROP; iptables -P OUTPUT DROP; \
