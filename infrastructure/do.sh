@@ -25,7 +25,7 @@ gen_lvm() {
         size=$(python $MAIN get_attr $vm disk)
         $ssh $host "[ -e /dev/data/ructf2014q-$vm ] || lvcreate -L${size}G -nructf2014q-$vm data" \
             </dev/null
-   done
+    done
 }
 
 startvms() {
@@ -33,7 +33,7 @@ startvms() {
         host=${line%%:*}
         vm=${line##*:}
         $ssh $host "xm create /root/ructf2014-quals/ructf2014q-$vm.cfg" </dev/null
-   done
+    done
 }
 
 stopvms() {
@@ -41,7 +41,7 @@ stopvms() {
         host=${line%%:*}
         vm=${line##*:}
         $ssh $host "xm shutdown ructf2014q-$vm.cfg" </dev/null
-   done
+    done
 }
 
 killvms() {
@@ -49,6 +49,23 @@ killvms() {
         host=${line%%:*}
         vm=${line##*:}
         $ssh $host "xm destroy ructf2014q-$vm.cfg" </dev/null
+    done
+}
+
+add_startup() {
+    list "$1" | while read line; do
+        host=${line%%:*}
+        vm=${line##*:}
+        $ssh $host "ln -sf /root/ructf2014-quals/ructf2014q-$vm.cfg\
+                    /etc/xen/auto/" </dev/null
+   done
+}
+
+remove_startup() {
+    list "$1" | while read line; do
+        host=${line%%:*}
+        vm=${line##*:}
+        $ssh $host "rm -f /etc/xen/auto/ructf2014q-$vm.cfg" </dev/null
    done
 }
 
