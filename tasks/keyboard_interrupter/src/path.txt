@@ -1,0 +1,4 @@
+Check. Must be 10: 10
+Check. Must be 10: 10
+Check. Must be 1: 1
+Path is [22, 39, 17, 36, 42, 43, 9, 48, 6, 11, 7, 20]
