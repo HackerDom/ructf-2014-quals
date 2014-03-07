@@ -41,6 +41,8 @@ def gen_user_chains(vms, ipp_name, iface, target):
         for ip in users[user]:
             print ('iptables -A %s -i %s -s %s -p tcp -m state --state NEW '
                 '-j %s' % (chain, iface, ip, target))
+            print ('iptables -A %s -i %s -s %s -p udp -m state --state NEW '
+                '-j %s' % (chain, iface, ip, target))
 
 def gen_int_access(vms, chain):
     init(chain)
