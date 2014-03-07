@@ -95,6 +95,7 @@ gen_iptables() {
     gen_user_chains
     gen_int_access
     gen_xen_vnc
+    echo "don't forget to /etc/init.d/iptables save active"
 }
 
 gen_nagios() {
