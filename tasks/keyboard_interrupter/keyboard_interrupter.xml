@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="misc" id="misc:300" proto="xmlquest-2.0">
+    <name>PIN code</name>
+    <task type="html" lang="en"><div><a href="static/main.45c1ec963414c50855bcb1172dd808d2">Guess pin code</a>.</div></task>
+    <task type="html" lang="ru"><div><a href="static/main.45c1ec963414c50855bcb1172dd808d2">Отгадайте пин-код</a>.</div></task>
+    <checker strict="yes">
+        <solution case="insensitive">05281792536</solution>
+    </checker>
+</quest>
