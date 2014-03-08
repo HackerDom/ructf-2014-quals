@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <quest series="hardware" id="hardware:400" proto="xmlquest-2.0">
     <name>Microcontroller</name>
-    <task type="html" lang="en"><div><a href="static/mc.b8e612ed6c296b76cd213f21bdc9e2f3.zip">Task</a></div></task>
-    <task type="html" lang="ru"><div><a href="static/mc.b8e612ed6c296b76cd213f21bdc9e2f3.zip">Task</a></div></task>
+    <task type="html" lang="en"><div>We have a <a href="static/mc.b8e612ed6c296b76cd213f21bdc9e2f3.zip">special device</a> for converting numbers into images. Can you tell us which keys did we press?</div></task>
+    <task type="html" lang="ru"><div>У нас есть <a href="static/mc.b8e612ed6c296b76cd213f21bdc9e2f3.zip">специальный прибор</a> для преобразования чисел в картинки. Не подскажете, какие кнопки были нажаты?</div></task>
     <checker strict="yes">
         <solution case="insensitive">424986074</solution>
     </checker>
