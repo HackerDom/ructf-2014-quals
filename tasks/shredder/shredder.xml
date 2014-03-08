@@ -2,7 +2,7 @@
 <quest series="misc" id="misc:200" proto="xmlquest-2.0">
     <name>Shredder</name>
     <task type="html" lang="en"><div><a href="static/6a78901e9f9e4dffa8c83f942eba3046/shredder.af3ab921a9895c1aa9c032a37677e1d7.jpg">Find the key</a><br/>Flag format is "RUCTF_.*"</div></task>
-    <task type="html" lang="ru"><div><a href="static/6a78901e9f9e4dffa8c83f942eba3046/shredder.af3ab921a9895c1aa9c032a37677e1d7.jpg">Найдите ключ</a><br/>Формат флага &mdash; "RUCTF_.*"</div></task>
+    <task type="html" lang="ru"><div><a href="static/6a78901e9f9e4dffa8c83f942eba3046/shredder.af3ab921a9895c1aa9c032a37677e1d7.jpg">Найдите ключ</a><br/>Формат флага — "RUCTF_.*"</div></task>
     <checker strict="yes">
         <solution case="insensitive">RUCTF_TO_SHRED_IS_NOT_ENOUGH</solution>
     </checker>
