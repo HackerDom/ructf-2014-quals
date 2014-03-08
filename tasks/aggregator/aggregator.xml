@@ -3,7 +3,7 @@
     <name>Log aggregator</name>
     <task type="html" lang="en">
 	<div>
-		aggregator.quals.ructf.org:16711
+		vuln1.quals.ructf.org:16711
 		<a href="static/aggregator">binary</a>
 		<br/>
 	        Flag format is "RUCTF_.*".
@@ -11,7 +11,7 @@
     </task>
     <task type="html" lang="ru">
 	<div>
-		aggregator.quals.ructf.org:16711
+		vuln1.quals.ructf.org:16711
 		<a href="static/aggregator">бинарник</a>
 		<br/>
 	        Формат флага — "RUCTF_.*".

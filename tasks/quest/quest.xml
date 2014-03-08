@@ -3,7 +3,7 @@
     <name>Quest server</name>
     <task type="html" lang="en">
 	<div>
-		telnet://quest.quals.ructf.org:16710
+		telnet://vuln1.quals.ructf.org:16710
 		<a href="static/quest">binary</a>
 		<br/>
 	        Flag format is "RUCTF_.*".
@@ -11,7 +11,7 @@
     </task>
     <task type="html" lang="ru">
 	<div>
-		telnet://quest.quals.ructf.org:16710
+		telnet://vuln1.quals.ructf.org:16710
 		<a href="static/quest">бинарник</a>
 		<br/>
 	        Формат флага — "RUCTF_.*".
