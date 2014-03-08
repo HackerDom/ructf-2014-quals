@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<quest series="hardware" id="hardware:400" proto="xmlquest-2.0">
+    <name>Microcontroller</name>
+    <task type="html" lang="en"><div><a href="static/mc.b8e612ed6c296b76cd213f21bdc9e2f3.zip">Task</a></div></task>
+    <task type="html" lang="ru"><div><a href="static/mc.b8e612ed6c296b76cd213f21bdc9e2f3.zip">Task</a></div></task>
+    <checker strict="yes">
+        <solution case="insensitive">424986074</solution>
+    </checker>
+</quest>
