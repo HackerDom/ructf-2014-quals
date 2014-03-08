@@ -14,8 +14,7 @@ It works like this:<br/>
 -------------------------------
 </pre>
 You have intercepted one authorized message: "b34c39b9e83f0e965cf392831b3d71b8 do test connection". Construct your own authorized message! Answer starts with 'RUCTF_'</task>
-    <task type="html" lang="ru">Сервер (python27.quals.ructf.org:12337) принимает только авторизованные сообщения.</br> Он работает примерно так:</br>
-
+    <task type="html" lang="ru">Сервер (python27.quals.ructf.org:12337) принимает только авторизованные сообщения.<br/> Он работает примерно так:<br/>
 <pre>
 -------------------------------
 	buf = c.recv(4096)

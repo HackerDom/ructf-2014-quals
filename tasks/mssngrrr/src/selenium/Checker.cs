@@ -42,7 +42,7 @@ namespace mssngrrrtest
 					break;
 
 				log.InfoFormat("Found {0} new items", msgs.Count);
-				msgs.AsParallel().ForAll(msgid => driversPool.UsingDriver(driver => DoIt.WithRetries(() =>
+				msgs.AsParallel().WithMergeOptions(ParallelMergeOptions.NotBuffered).ForAll(msgid => driversPool.UsingDriver(driver => DoIt.WithRetries(() =>
 				{
 					log.InfoFormat("Check item {0}", msgid.ToString("N"));
 					ClearBrowserData(driver);
@@ -50,7 +50,7 @@ namespace mssngrrrtest
 					Check(driver, msgid);
 					DoIt.Wait(() => DoIt.TryOrDefault(() => driver.ExecuteJavaScript<bool>("return $.isReady;")), 100, Settings.MaxWaitDocReady);
 					Thread.Sleep(Settings.WaitAsyncs);
-					ClearBrowserData(driver);
+					driver.Navigate().GoToUrl(Settings.BaseUri);
 					DbStorage.SetMessageRead(msgid);
 					log.InfoFormat("Set item {0} read", msgid.ToString("N"));
 				}, string.Format("Failed to process item {0}", msgid))));

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="reverse" id="reverse:100" proto="xmlquest-2.0">
     <name>Bad lib</name>
-    <task type="html" lang="en">Something wrong with <a href="static/main.asm">this</a> library source file. Decrypt our message about Hackerdom please:<br/>
-de540a2994f1ee070053ee470b83b3230b59dc0fd4916dc85ca060cb1ab345cc40425206ca78be0cc0d5b1f8afc241f4e68d106d1b3ef322f7cd7bfb5221d9911d1280206150eda0a3a2eeea6fd3771d2d93df5d3b9750452d606a914b745ec46b6460d7aad7aee7276ba69db7166e19a08b511c02bb96e3f24ec73ca50ac8d9990bc9f720095c2adcc06ed9a4f03a51d3d3e1599129367de64ee38afec0d219</task>
-    <task type="html" lang="ru">Что-то не так с <a href="static/main.asm">этой</a> функцией шифрования. Расшифруйте наше сообщение про Hackerdom:<br/>
-de540a2994f1ee070053ee470b83b3230b59dc0fd4916dc85ca060cb1ab345cc40425206ca78be0cc0d5b1f8afc241f4e68d106d1b3ef322f7cd7bfb5221d9911d1280206150eda0a3a2eeea6fd3771d2d93df5d3b9750452d606a914b745ec46b6460d7aad7aee7276ba69db7166e19a08b511c02bb96e3f24ec73ca50ac8d9990bc9f720095c2adcc06ed9a4f03a51d3d3e1599129367de64ee38afec0d219</task>
+    <task type="html" lang="en">Something wrong with <a href="static/main.asm">this</a> library source file. Decrypt our message about Hackerdom please (we used ECB for encrypt):<br/>
+fa9c995da75096eed02df9b2798e4f5e1fa41d3e1375b2fa93d66e44260156fdf9c8781f3a937ef573000b542784a1d2ce3c508ccc78e2e07e4da5ed4011fe7ab0667128c6a999487309452d92b1c85b44c47d9d7b9f3d138625fbcd422c93f89108738a4696c4d8b18a9097284e3b87653a168c6d92a6eb3d4c2bb0ccd2de93efe66b3f0c7e226c8994cb87ef439b721cf94f43de779745f5c0ec8142fdded5<br/>Answer starts with RUCTF_</task>
+    <task type="html" lang="ru">Что-то не так с <a href="static/main.asm">этой</a> функцией шифрования. Расшифруйте наше сообщение про Hackerdom (при шифровании мы использовали режим ECB):<br/>
+fa9c995da75096eed02df9b2798e4f5e1fa41d3e1375b2fa93d66e44260156fdf9c8781f3a937ef573000b542784a1d2ce3c508ccc78e2e07e4da5ed4011fe7ab0667128c6a999487309452d92b1c85b44c47d9d7b9f3d138625fbcd422c93f89108738a4696c4d8b18a9097284e3b87653a168c6d92a6eb3d4c2bb0ccd2de93efe66b3f0c7e226c8994cb87ef439b721cf94f43de779745f5c0ec8142fdded5<br/>Ответ начинается на RUCTF_</task>
     <checker strict="yes">
-        <solution case="sensitive">ructf_SBoxes_are_good_to_hide!1</solution>
+        <solution case="sensitive">RUCTF_SBoxes_are_good_to_hide!1</solution>
     </checker>
 </quest>

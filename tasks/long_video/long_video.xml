@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="stegano" id="stegano:400" proto="xmlquest-2.0">
+    <name>Pixel video</name>
+    <task type="html" lang="en"><div><a href="static/video.4543841d275178bcfa3eab00a2337ba6.7z">Very strange video</a>.</div></task>
+    <task type="html" lang="ru"><div><a href="static/video.4543841d275178bcfa3eab00a2337ba6.7z">Очень странное видео</a>.</div></task>
+    <checker strict="yes">
+        <solution case="insensitive">V1de0_mast3r</solution>
+    </checker>
+</quest>

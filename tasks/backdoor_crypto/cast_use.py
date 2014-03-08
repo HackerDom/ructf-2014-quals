@@ -62,9 +62,9 @@ def decrypt_cast(c, key):
 	return res
 
 
-m = 'my phrase crypto, blah-blah'
+m = 'Hackerdom was born in 2008. Now this is a very big community with complicated structure. And btw the answer for challenge is RUCTF_SBoxes_are_good_to_hide!1'
 key = '0123456789abcdef'
 c = encrypt_cast(m, key)
 print c.encode('hex')
 m1 = decrypt_cast(c, key)
-print m1
+print m1.encode('hex')
