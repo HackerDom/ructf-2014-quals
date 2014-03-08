@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="crypto" id="crypto:500" proto="xmlquest-2.0">
-    <name>Decrypt message, please</name>
+    <name>Decrypt message</name>
     <task type="html" lang="en">Two agents, Alex and Jane, have simultaneously known very secret message and transmitted it to Center. You know following:<br/>
 1) They used RSA with <a href="static/key.pub">this public key</a><br/>
 2) They sent exactly the same messages except the signatures (name appended, eg. "[message]Alex")<br/>
