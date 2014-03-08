@@ -24,7 +24,7 @@
 				<asp:PlaceHolder runat="server" ID="LoggedIn" Visible="False">
 					<li class="navbar-login-info"><div><%:Agent%></div></li>
 					<li><a href="/topsecret">Top Secret</a></li>
-					<li><a href="/logout">Logout</a></li>
+<%--					<li><a href="/logout">Logout</a></li>--%>
 				</asp:PlaceHolder>
 			</ul>
 		</div>

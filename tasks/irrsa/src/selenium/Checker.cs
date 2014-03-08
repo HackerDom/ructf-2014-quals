@@ -40,15 +40,19 @@ namespace irrsatest
 					break;
 
 				log.InfoFormat("Found {0} new items", msgs.Count);
-				msgs.AsParallel().ForAll(msgid => driversPool.UsingDriver(driver => DoIt.WithRetries(() =>
+				msgs.AsParallel().WithMergeOptions(ParallelMergeOptions.NotBuffered).WithDegreeOfParallelism(driversPool.Count).ForAll(msgid => driversPool.UsingDriver(driver => DoIt.WithRetries(() =>
 				{
 					log.InfoFormat("Check item {0}", msgid.ToString("N"));
 					ClearBrowserData(driver);
+					Thread.Sleep(200);
 					Login(driver);
+					Thread.Sleep(200);
 					Check(driver, msgid);
+					Thread.Sleep(200);
 					DoIt.Wait(() => DoIt.TryOrDefault(() => driver.ExecuteJavaScript<bool>("return $.isReady;")), 100, Settings.MaxWaitDocReady);
 					Thread.Sleep(Settings.WaitAsyncs);
 					Login(driver);
+					Thread.Sleep(200);
 					ClearBrowserData(driver);
 					DbStorage.SetMessageRead(msgid);
 					log.InfoFormat("Set item {0} read", msgid.ToString("N"));

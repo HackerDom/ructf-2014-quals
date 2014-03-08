@@ -50,6 +50,8 @@ namespace irrsatest
 			}
 		}
 
+		public int Count { get { return dict.Count; } }
+
 		private RemoteWebDriver StartNewDriver(string profilePath)
 		{
 			var profile = new FirefoxProfile(profilePath);
