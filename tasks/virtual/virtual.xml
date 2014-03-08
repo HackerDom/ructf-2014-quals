@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<quest series="crypto" id="crypto:300" proto="xmlquest-2.0">
+<quest series="forensics" id="forensics:400" proto="xmlquest-2.0">
     <name>So close</name>
     <task type="html" lang="en">
         <div>
@@ -8,10 +8,10 @@
     </task>
     <task type="html" lang="ru">
         <div>
-            Взломайте <a href="static/dump.pcap">TLS</a>.
+            Ответ <a href="static/answer.ova">здесь</a>.
         </div>
     </task>
     <checker strict="yes">
-        <solution>RUCTF_ILoveToHackTLS</solution>
+        <solution>RUCTF_YesICan</solution>
     </checker>
 </quest>
