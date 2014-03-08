@@ -42,7 +42,7 @@ namespace mssngrrrtest
 					break;
 
 				log.InfoFormat("Found {0} new items", msgs.Count);
-				msgs.AsParallel().ForAll(msgid => driversPool.UsingDriver(driver => DoIt.WithRetries(() =>
+				msgs.AsParallel().WithMergeOptions(ParallelMergeOptions.NotBuffered).ForAll(msgid => driversPool.UsingDriver(driver => DoIt.WithRetries(() =>
 				{
 					log.InfoFormat("Check item {0}", msgid.ToString("N"));
 					ClearBrowserData(driver);
