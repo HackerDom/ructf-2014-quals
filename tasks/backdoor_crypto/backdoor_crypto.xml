@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="reverse" id="reverse:100" proto="xmlquest-2.0">
+    <name>Bad lib</name>
+    <task type="html" lang="en">Something wrong with <a href="static/main.asm">this</a> library source file. Decrypt our message please.</task>
+    <task type="html" lang="ru">Что-то не так с <a href="static/main.asm">этой</a> функцией шифрования. Расшифруйте наше сообщение.</task>
+    <checker strict="yes">
+        <solution case="sensitive">ZaBoRcHiCk</solution>
+    </checker>
+</quest>
