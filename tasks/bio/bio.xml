@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="ppc" id="ppc:300" proto="xmlquest-2.0">
+    <name>Troubleshooting</name>
+    <task type="html" lang="en">
+        <div>
+            What is hidden with length 32 in my <a href="static/word.gz">code</a>?
+        </div>
+    </task>
+    <task type="html" lang="ru">
+        <div>
+            Что скрыто длины 32 в моём <a href="static/word.gz">коде</a>?
+        </div>
+    </task>
+    <checker strict="yes">
+        <solution case="sensitive">GGAACAAGTTACATGGGCCGAATGCTATTGTC</solution>
+    </checker>
+</quest>
