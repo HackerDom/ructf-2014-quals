@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="crypto" id="crypto:100" proto="xmlquest-2.0">
     <name>Bad lib</name>
-    <task type="html" lang="en">Server, that accepting only authorized messages are listening on port 12345.</br>
+    <task type="html" lang="en">Server (172.16.16.9:12345) accepts only authorized messages.</br>
 It works like this:</br>
 <pre>
 -------------------------------
-#!/usr/bin/python
-# checker
-import sys
-import socket
-from hashlib import md5
-
-password = ...
-port = int(sys.argv[1])
-s = socket.socket()
-s.bind(('127.0.0.1',port))
-s.listen(5)
-
-while 1:
-	c, a = s.accept()
-	c.settimeout(30)
-		try:
-			buf = c.recv(4096)
-			digest, msg = buf.split(" ", 1)
-			if (digest == md5(password+msg).hexdigest()):
-				c.send("Message accepted: {}\n".format(msg))
-			else:
-				c.send("Wrong signature\n")
-		except:
-			pass
-		finally:
-			c.close()
+	buf = c.recv(4096)
+	digest, msg = buf.split(" ", 1)
+	if (digest == md5(password+msg).hexdigest()):
+		#here I send a secret
+	else:
+		c.send("Wrong signature\n")
 -------------------------------
 </pre>
-You have intercepted one authorized message: "71061df348d5f5fa08a4ebcec51d7e06 my message". Construct your own authorized message</task>
-    <task type="html" lang="ru">Русской версии ещё нет</task>
+You have intercepted one authorized message: "b34c39b9e83f0e965cf392831b3d71b8 do test connection". Construct your own authorized message! Answer starts from 'ructf_'</task>
+    <task type="html" lang="ru">Сервер (172.16.16.9:12345) принимает только авторизованные сообщения.</br> Он работает примерно так:</br>
+<pre>
+-------------------------------
+	buf = c.recv(4096)
+	digest, msg = buf.split(" ", 1)
+	if (digest == md5(password+msg).hexdigest()):
+		#here I send a secret
+	else:
+		c.send("Wrong signature\n")
+-------------------------------
+</pre>
+Вы перехватили одно из авторизованных сообщений: "b34c39b9e83f0e965cf392831b3d71b8 do test connection". Теперь составьте своё! Ответ на таск начинается с 'ructf_'.
+</task>
     <checker strict="yes">
-        <solution case="sensitive">ZaBoRcHiCk</solution>
+        <solution case="sensitive">ructf_CryptoIsFunAndEasy</solution>
     </checker>
 </quest>
