@@ -37,7 +37,7 @@ post '/login' => sub {
   $self->app->ua->get($es->path("/es/user/$n"), sub {
       my ($ua, $tx) = @_;
 
-      $self->session(name => $n) if $tx->res->json('/_source/pass') // '' eq $p;
+      $self->session(name => $n) if ($tx->res->json('/_source/pass') // '') eq $p;
       $self->redirect_to('index');
   });
 } => 'login';
@@ -64,6 +64,8 @@ post '/register' => sub {
   my $self = shift;
   $self->render_later;
 
+  return $self->render_exception if 'admin' eq $self->req->param('name') // '';
+
   $self->app->ua->post($es->path(sprintf '/es/user/%s', $self->req->param('name')) => json => {
     name => $self->req->param('name'), pass => $self->req->param('pass')
   }, sub {
@@ -77,7 +79,7 @@ post '/register' => sub {
 } => 'register';
 
 get '/super/secret/flag' => sub {
-  shift->render(text => 'f1264d450b9feda62fec5a1e11faba1a');
+  shift->render(text => '054ad7a734437d6853383ad919526dc5');
 };
 
 get '/:short' => sub {
