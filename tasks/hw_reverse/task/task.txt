@@ -1,2 +1,0 @@
-(Ru) Q: Какой самый краткий верный код ?
-(En) Q: What is the shortest valid PIN ?
