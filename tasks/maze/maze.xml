@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="ppc" id="ppc:200" proto="xmlquest-2.0">
     <name>Maze</name>
-    <task type="html" lang="en"><div>Universal dangerous positive: 194.226.244.125:1024. Flag format is "RUCTF_.*" </div></task>
-    <task type="html" lang="ru"><div>Universal dangerous positive: 194.226.244.125:1024. Формат флага — "RUCTF_.*" </div></task>
+    <task type="html" lang="en"><div>Universal dangerous positive: 194.226.244.125:1024. Send me your password: "3k8bbz032mrap75c8iz8tmi7f4ou00". Flag format is "RUCTF_.*" </div></task>
+    <task type="html" lang="ru"><div>Universal dangerous positive: 194.226.244.125:1024. Отправь мне пароль: "3k8bbz032mrap75c8iz8tmi7f4ou00". Формат флага — "RUCTF_.*" </div></task>
     <checker strict="yes">
         <solution case="insensitive">RUCTF_77pd9u784g059t0z18hjtn5d</solution>
     </checker>
