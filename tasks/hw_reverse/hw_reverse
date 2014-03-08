@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use Digest::MD5 qw(md5_hex);
+$|=1;
 
 ################### Config ###################
 
@@ -74,7 +75,7 @@ sub newid {
 sub GetTryCount {
     my ($dir,$team) = @_;
     my $fname = "$dir/$team";
-    SetTryCount($dir,$team,$TRY_COUNT) unless -f $fname;
+    SetTryCount($dir,$team,$TRY_COUNT) unless -e $fname;
     open F, $fname or die "Error: cannot get try count for team $team\n";
     chomp(my $count = <F>);
     close F;
