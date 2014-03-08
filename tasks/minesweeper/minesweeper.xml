@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="ppc" id="ppc:400" proto="xmlquest-2.0">
     <name>Minesweeper</name>
-    <task type="html" lang="en"><div>Can you crack the world record for solving the old kind <a href="http://minesweeper.quals.ructf.ru/">minesweeper</a>? Several times successively :)<br/>Flag format is "RUCTF_.*"</div></task>
-    <task type="html" lang="ru"><div>Сможете ли вы побить мировой рекорд по решению старого доброго <a href="http://minesweeper.quals.ructf.ru/">сапера</a>? Несколько раз подряд :)<br/>Формат флага "RUCTF_.*"</div></task>
+    <task type="html" lang="en"><div>Can you crack the world record for solving the old kind <a href="http://saper.quals.ructf.ru/">minesweeper</a>? Several times successively :)<br/>Flag format is "RUCTF_.*"</div></task>
+    <task type="html" lang="ru"><div>Сможете ли вы побить мировой рекорд по решению старого доброго <a href="http://saper.quals.ructf.ru/">сапера</a>? Несколько раз подряд :)<br/>Формат флага "RUCTF_.*"</div></task>
     <checker strict="yes">
         <solution case="insensitive">RUCTF_7a81cfd2c9376c6f2f853e0230b95e04</solution>
     </checker>

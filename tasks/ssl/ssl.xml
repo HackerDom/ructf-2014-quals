@@ -3,12 +3,12 @@
     <name>TLS</name>
     <task type="html" lang="en">
         <div>
-            Just hack <a href="static/dump.pcap">TLS</a>.
+            Just hack <a href="static/dump.pcap">TLS.</a> <br/>Flag format is "RUCTF_.*"
         </div>
     </task>
     <task type="html" lang="ru">
         <div>
-            Взломайте <a href="static/dump.pcap">TLS</a>.
+            Взломайте <a href="static/dump.pcap">TLS.</a> <br/>Формат флага — "RUCTF_.*"
         </div>
     </task>
     <checker strict="yes">
