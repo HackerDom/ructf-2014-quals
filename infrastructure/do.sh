@@ -182,19 +182,72 @@ setup_iptables() {
     done
 }
 
+router=194.226.244.113
+vm_prefix=ructf2014q_
+
 router_setup_nat() {
-    router=194.226.244.113
     chain=ructf2014q
     python $MAIN gen_nat $router $chain | $ssh $router "sh -s"
     $ssh $router '/etc/init.d/iptables save active'
 }
 
 router_setup_fwd() {
-    router=194.226.244.113
     chain=ructf2014q
-    prefix=ructf2014q_
-    python $MAIN gen_fwd $router $chain $prefix | $ssh $router "sh -s"
+    python $MAIN gen_fwd $router $chain $vm_prefix | $ssh $router "sh -s"
     $ssh $router '/etc/init.d/iptables save active'
+}
+
+router_gen_nginx() {
+    list ":" | while read line; do
+        vm=${line##*:}
+        config=/etc/nginx/sites-available/ructf2014q-$vm
+        python $MAIN gen_nginx $vm | $ssh $router "cat > $config"
+    done
+}
+
+nudge_services() {
+    if [ "$iptables_needs_save" ]; then
+        $ssh $router '/etc/init.d/iptables save active'
+    fi
+    if [ "$nginx_needs_reload" ]; then
+        $ssh $router '/etc/init.d/nginx reload'
+    fi
+}
+
+router_enable() {
+    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    for line in ${vms[@]}; do
+        vm=${line##*:}
+        if [ "$(python $MAIN get_attr $vm tcp_ports)" != '[]' ] || \
+           [ "$(python $MAIN get_attr $vm udp_ports)" != '[]' ]; then
+            iptables_needs_save=1
+            chain=$vm_prefix$vm
+            $ssh $router "iptables -F $chain; iptables -A $chain -j UaA"
+        elif [ "$(python $MAIN get_attr $vm http)" == True ]; then
+            nginx_needs_reload=1
+            config=/etc/nginx/sites-available/ructf2014q-$vm
+            $ssh $router "ln -sf $config /etc/nginx/sites-enabled/"
+        fi
+    done
+    nudge_services
+}
+
+router_disable() {
+    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    for line in ${vms[@]}; do
+        vm=${line##*:}
+        if [ "$(python $MAIN get_attr $vm tcp_ports)" != '[]' ] || \
+           [ "$(python $MAIN get_attr $vm udp_ports)" != '[]' ]; then
+            iptables_needs_save=1
+            chain=$vm_prefix$vm
+            $ssh $router "iptables -F $chain"
+        elif [ "$(python $MAIN get_attr $vm http)" == True ]; then
+            nginx_needs_reload=1
+            link=/etc/nginx/sites-enabled/ructf2014q-$vm
+            $ssh $router "rm -f $link"
+        fi
+    done
+    nudge_services
 }
 
 prepare_partition() {

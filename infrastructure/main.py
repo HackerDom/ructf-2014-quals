@@ -130,8 +130,8 @@ def gen_xen_vnc(vms, args):
     return iptables.gen_xen_vnc(vms, *args)
 
 @cmd
-def gen_nginx(vms, _):
-    return nginx.gen(vms)
+def gen_nginx(vms, vm):
+    return nginx.gen(find(vms, args[0]))
 
 @cmd
 def customize(vms, args):
