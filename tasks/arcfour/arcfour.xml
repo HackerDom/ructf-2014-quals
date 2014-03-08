@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="reverse" id="reverse:400" proto="xmlquest-2.0">
     <name>Arcfour</name>
-    <task type="html" lang="en"><p><a href="static/arcfour.zip">crack me</a> please.<br>Flag format is "RUCTF_.*"</p></task>
-    <task type="html" lang="ru"><p><a href="static/arcfour.zip">crack me</a> please.<br>Формат флага "RUCTF_.*"</p></task>
+    <task type="html" lang="en"><div><a href="static/arcfour.zip">crack me</a> please.<br />Flag format is "RUCTF_.*"</div></task>
+    <task type="html" lang="ru"><div><a href="static/arcfour.zip">crack me</a> please.<br />Формат флага "RUCTF_.*"</div></task>
     <checker strict="yes">
         <solution case="sensitive">RUCTF_408f971883ccf6180eab2b3cf5</solution>
     </checker>
