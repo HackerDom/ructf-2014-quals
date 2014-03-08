@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="admin" id="admin:400" proto="xmlquest-2.0">
+    <name>Compile</name>
+    <task type="html" lang="en">
+        <div>
+            <a href="static/source">Compile me.</a> <br/>Flag format is "RUCTF_.*"
+        </div>
+    </task>
+    <task type="html" lang="ru">
+        <div>
+            <a href="static/source">Собери меня.</a> <br/>Формат флага — "RUCTF_.*"
+        </div>
+    </task>
+    <checker strict="yes">
+        <solution>RUCTF_0xc9a7c966dff1549b77cf18723cee2ffe5fb4127b9ba75b446990d330</solution>
+    </checker>
+</quest>
