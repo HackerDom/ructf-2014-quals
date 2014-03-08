@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="ppc" id="ppc:300" proto="xmlquest-2.0">
-    <name>Troubleshooting</name>
+    <name>Secret string</name>
     <task type="html" lang="en">
         <div>
             What is hidden with length 32 in my <a href="static/word.gz">code</a>?

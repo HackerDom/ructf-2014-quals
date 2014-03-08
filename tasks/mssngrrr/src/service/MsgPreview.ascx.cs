@@ -15,7 +15,7 @@ namespace mssngrrr
 				return;
 			if(!string.IsNullOrEmpty(Item.Img))
 			{
-				ImgPath = ResolveClientUrl(Path.Combine(Path.Combine(Settings.UploadPath, Item.To.ToString("N")), Item.Img));
+				ImgPath = ResolveClientUrl(Path.Combine(Path.Combine(Settings.UploadPath, Item.From.ToString("N")), Item.Img));
 				Img.Visible = true;
 			}
 			ThemeFiles.Visible =
