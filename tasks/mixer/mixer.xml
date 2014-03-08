@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="vuln" id="vuln:400" proto="xmlquest-2.0">
+    <name>Sample mixer</name>
+    <task type="text">
+        <p>mixer.quals.ructf.org<p>
+        <a href="/static/mixer">binary</a>
+        <p>Flag format is: RUCTF_.*</p>
+    </task>
+    <checker strict="yes">
+        <solution case="sensitive">RUCTF_c60a7334b7319b6f966bc3732e906b8a</solution>
+    </checker>
+</quest>
