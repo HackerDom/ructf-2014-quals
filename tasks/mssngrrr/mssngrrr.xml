@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="web" id="web:300" proto="xmlquest-2.0">
+	<name>Messengerrr</name>
+	<task type="html" lang="en"><div>We got Secure ID of Agent Dick Gill - d69e5ccddeed4c2a85fceea286e521fe. <a href="http://mssngrrr.quals.ructf.org/">Let's send</a> him an International Women's Day gift message ;)<br/>Auth: %TEAM%:%HASH%</div></task>
+	<task type="html" lang="ru"><div>Мы получили Secure ID агента Ричарда Джилла - d69e5ccddeed4c2a85fceea286e521fe. <a href="http://mssngrrr.quals.ructf.org/">Давайте поздравим</a> его с Международным Женским Днем ;)<br/>Auth: %TEAM%:%HASH%</div></task>
+	<checker strict="yes">
+		<solution case="sensitive">RUCTF_48e0945be711468e8cf17164957aeb33</solution>
+	</checker>
+</quest>
