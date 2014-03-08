@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="reverse" id="reverse:300" proto="xmlquest-2.0">
     <name>erl</name>
-    <task type="html" lang="en"><div><a href="static/r.beam">crack me</a></div></task>
-    <task type="html" lang="ru"><div><a href="static/r.beam">crack me</a></div></task>
+    <task type="html" lang="en"><div><a href="static/r.beam">crack me</a>. Flag format: RUCTF_.*</div></task>
+    <task type="html" lang="ru"><div><a href="static/r.beam">crack me</a>. Формат флага: RUCTF_.*</div></task>
     <checker strict="yes">
-        <solution case="sensitive">RuCTF_f1a1aac36d82d71f149b4e2caf61ee96</solution>
+        <solution case="sensitive">RUCTF_f1a1aac36d82d71f149b4e2caf61ee96</solution>
     </checker>
 </quest>
