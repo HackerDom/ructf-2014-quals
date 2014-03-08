@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="reverse" id="reverse:100" proto="xmlquest-2.0">
     <name>Bad lib</name>
-    <task type="html" lang="en">Something wrong with <a href="static/main.asm">this</a> library source file. Decrypt our message please.</task>
-    <task type="html" lang="ru">Что-то не так с <a href="static/main.asm">этой</a> функцией шифрования. Расшифруйте наше сообщение.</task>
+    <task type="html" lang="en">Something wrong with <a href="static/main.asm">this</a> library source file. Decrypt our message about Hackerdom please:</br>
+de540a2994f1ee070053ee470b83b3230b59dc0fd4916dc85ca060cb1ab345cc40425206ca78be0cc0d5b1f8afc241f4e68d106d1b3ef322f7cd7bfb5221d9911d1280206150eda0a3a2eeea6fd3771d2d93df5d3b9750452d606a914b745ec46b6460d7aad7aee7276ba69db7166e19a08b511c02bb96e3f24ec73ca50ac8d9990bc9f720095c2adcc06ed9a4f03a51d3d3e1599129367de64ee38afec0d219</task>
+    <task type="html" lang="ru">Что-то не так с <a href="static/main.asm">этой</a> функцией шифрования. Расшифруйте наше сообщение про Hackerdom:</br>
+de540a2994f1ee070053ee470b83b3230b59dc0fd4916dc85ca060cb1ab345cc40425206ca78be0cc0d5b1f8afc241f4e68d106d1b3ef322f7cd7bfb5221d9911d1280206150eda0a3a2eeea6fd3771d2d93df5d3b9750452d606a914b745ec46b6460d7aad7aee7276ba69db7166e19a08b511c02bb96e3f24ec73ca50ac8d9990bc9f720095c2adcc06ed9a4f03a51d3d3e1599129367de64ee38afec0d219</task>
     <checker strict="yes">
-        <solution case="sensitive">ZaBoRcHiCk</solution>
+        <solution case="sensitive">ructf_SBoxes_are_good_to_hide!1</solution>
     </checker>
 </quest>
