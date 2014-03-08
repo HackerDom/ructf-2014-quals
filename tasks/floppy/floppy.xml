@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="admin" id="admin:300" proto="xmlquest-2.0">
     <name>Strange image</name>
-    <task type="html" lang="en"><a href="static/task.ima">Find the key. Format is "RUCTF_.*"</a></task>
-    <task type="html" lang="ru"><a href="static/task.ima">Найдите ключ. Формат: "RUCTF_.*"</a></task>
+    <task type="html" lang="en">
+        <div>
+            <a href="static/task.ima">Find the key</a>.<br />
+            Format is "RUCTF_.*"
+        </div>
+    </task>
+    <task type="html" lang="ru">
+        <div>
+            <a href="static/task.ima">Найдите ключ</a>.<br />
+            Формат: "RUCTF_.*"
+        </div>
+    </task>
     <checker strict="yes">
         <solution case="sensitive">RUCTF_1m4g3_32202</solution>
     </checker>

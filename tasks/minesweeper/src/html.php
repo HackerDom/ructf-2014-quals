@@ -39,9 +39,7 @@
 		<img src=<?php echo rndsrc(get_num(TIME_LIMIT)); ?> id="time" />
 	</div>
 	<!--
-	<div style="position:absolute; left:800px; top:10px">
-		<textarea id="position" rows="20" cols="50"></textarea>
-	</div>
+	images/bitmaps.png
 	-->
 </body>
 </html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="admin" id="admin:200" proto="xmlquest-2.0">
+    <name>Troubleshooting</name>
+    <task type="html" lang="en">
+        <div>
+            Help the administrator to configure the <a href="static/network.tar.gz">network</a>.<br />
+            Which command is skipped on R1?
+        </div>
+    </task>
+    <task type="html" lang="ru">
+        <div>
+            Помогите администратору настроить <a href="static/network.tar.gz">сеть</a>.<br />
+            Какая команда пропущена на R1?
+        </div>
+    </task>
+    <checker strict="yes">
+        <solution case="sensitive">redistribute eigrp 1 subnets</solution>
+    </checker>
+</quest>

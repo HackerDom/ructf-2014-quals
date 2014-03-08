@@ -1,0 +1,527 @@
+0.00	info	Log_Standard	ngLog
+0.00	info	Log_Version	1.2
+0.00	info	Log_Info_URL	http://www.netgamesusa.com/ngLog/
+0.00	info	Game_Name	Unreal
+0.00	info	Game_Version	436
+0.00	info	Game_Creator	Epic MegaGames, Inc.
+0.00	info	Game_Creator_URL	http://www.epicgames.com/
+0.00	info	Game_Decoder_Ring_URL	http://unreal.epicgames.com/Unreal_Log_Decoder_Ring.html
+0.00	info	Absolute_Time	2012.07.21.01.42.52.299.+6.0
+0.00	info	Server_ServerName	zp2| [DQ] Sniper Server
+0.00	info	Server_AdminName	[DQ]Krait
+0.00	info	Server_AdminEmail	dqkrait@gmail.com
+0.00	info	Server_Region	0
+0.00	info	Server_MOTDLine1	
+0.00	info	Server_MOTDLine2	
+0.00	info	Server_MOTDLine3	
+0.00	info	Server_MOTDLine4	
+0.00	info	Server_IP	0.0.0.0
+0.00	info	Server_Port	7777
+0.00	map	Name	DM-Academy.unr
+0.00	map	Title	Unreal Academy
+0.00	map	Author	Gary Myers
+0.00	map	IdealPlayerCount	6-12
+0.00	map	LevelEnterText	
+0.00	game	GameMutator	Class Botpack.DMMutator
+0.00	game	GameMutator	Class MapVoteLA13.BDBMapVote
+0.00	game	GameMutator	Class ZPBasicWeaponsAddOnV208.SniperArena
+0.00	game	GameName	Tournament DeathMatch
+0.00	game	GameClass	Botpack.DeathMatchPlus
+0.00	game	GameVersion	436
+0.00	game	MinNetVersion	400
+0.00	game	NoMonsters	False
+0.00	game	MuteSpectators	False
+0.00	game	HumansOnly	False
+0.00	game	WeaponsStay	True
+0.00	game	ClassicDeathmessages	False
+0.00	game	LowGore	False
+0.00	game	VeryLowGore	False
+0.00	game	TeamGame	False
+0.00	game	GameSpeed	125
+0.00	game	MaxSpectators	2
+0.00	game	MaxPlayers	16
+0.00	game	FragLimit	20
+0.00	game	TimeLimit	0
+0.00	game	MultiPlayerBots	False
+0.00	game	HardCore	True
+0.00	game	MegaSpeed	False
+0.00	game	AirControl	0.350000
+0.00	game	JumpMatch	False
+0.00	game	UseTranslocator	False
+0.00	game	TournamentMode	False
+0.00	game	NetMode	DedicatedServer
+0.99	player	Rename	[DQ]Moe_Lesto	0
+0.99	player	Teamchange	0	1
+0.99	player	Connect	[DQ]Moe_Lesto	0	False
+0.99	player	TeamName	0	
+0.99	player	Team	0	1
+0.99	player	TeamID	0	0
+0.99	player	Ping	0	0
+0.99	player	IsABot	0	False
+0.99	player	Skill	0	1.000000
+0.99	player	Novice	0	False
+2.41	player	Rename	Mina	1
+2.41	player	Teamchange	1	0
+2.41	player	Connect	Mina	1	False
+2.41	player	TeamName	1	
+2.41	player	Team	1	0
+2.41	player	TeamID	1	0
+2.41	player	Ping	1	0
+2.41	player	IsABot	1	False
+2.41	player	Skill	1	1.000000
+2.41	player	Novice	1	False
+3.02	player	Rename	Sniper-Ace>Nero<	2
+3.02	player	Teamchange	2	0
+3.02	player	Connect	Sniper-Ace>Nero<	2	False
+3.02	player	TeamName	2	
+3.02	player	Team	2	0
+3.02	player	TeamID	2	0
+3.02	player	Ping	2	0
+3.02	player	IsABot	2	False
+3.02	player	Skill	2	1.000000
+3.02	player	Novice	2	False
+5.40	player	Rename	Dune2000	3
+5.40	player	Teamchange	3	1
+5.40	player	Connect	Dune2000	3	False
+5.40	player	TeamName	3	
+5.40	player	Team	3	1
+5.40	player	TeamID	3	0
+5.40	player	Ping	3	0
+5.40	player	IsABot	3	False
+5.40	player	Skill	3	1.000000
+5.40	player	Novice	3	False
+6.08	player	Rename	Fledi	4
+6.08	player	Teamchange	4	0
+6.08	player	Connect	Fledi	4	False
+6.08	player	TeamName	4	
+6.08	player	Team	4	0
+6.08	player	TeamID	4	0
+6.08	player	Ping	4	0
+6.08	player	IsABot	4	False
+6.08	player	Skill	4	1.000000
+6.08	player	Novice	4	False
+7.58	typing	False	2
+9.55	typing	True	2
+10.10	typing	False	2
+15.07	game_start
+18.14	item_get	Sniper Rifle	2
+22.49	headshot	0	3
+22.49	teamkill	0	Sniper Rifle	3	Sniper Rifle	Decapitated
+28.62	item_get	Sniper Rifle	0
+30.05	player	Ping	0	0
+30.05	player	Ping	0	25
+30.05	player	Ping	1	124
+30.05	player	Ping	2	129
+30.05	player	Ping	3	149
+30.05	player	Ping	4	124
+38.45	item_get	Super Health Pack	0
+47.06	item_get	Rifle Round	2
+47.06	item_get	Rifle Round	0
+48.09	item_get	Rifle Round	2
+49.60	headshot	0	2
+49.60	kill	0	Sniper Rifle	2	Sniper Rifle	Decapitated
+50.42	item_get	Rifle Round	0
+56.35	item_get	Sniper Rifle	0
+57.64	item_get	Sniper Rifle	3
+60.01	player	Ping	0	0
+60.01	player	Ping	0	25
+60.01	player	Ping	1	123
+60.01	player	Ping	2	133
+60.01	player	Ping	3	174
+60.01	player	Ping	4	123
+66.56	headshot	0	2
+66.56	kill	0	Sniper Rifle	2	Sniper Rifle	Decapitated
+67.99	item_get	Sniper Rifle	0
+69.08	item_get	Box of Rifle Rounds	2
+79.32	kill	2	Sniper Rifle	0	Sniper Rifle	shot
+81.91	item_get	Box of Rifle Rounds	3
+84.03	item_get	Body Armor	2
+88.53	item_get	ShieldBelt	0
+90.03	player	Ping	0	0
+90.03	player	Ping	0	25
+90.03	player	Ping	1	125
+90.03	player	Ping	2	130
+90.03	player	Ping	3	149
+90.03	player	Ping	4	124
+91.53	item_get	Super Health Pack	2
+93.65	item_get	Super Health Pack	0
+95.49	item_get	Box of Rifle Rounds	0
+97.95	item_get	AntiGrav Boots	0
+97.95	item_activate	AntiGrav Boots	0
+99.79	item_get	Box of Rifle Rounds	2
+109.87	item_get	AntiGrav Boots	0
+120.04	player	Ping	0	0
+120.04	player	Ping	0	25
+120.04	player	Ping	1	124
+120.04	player	Ping	2	131
+120.04	player	Ping	3	153
+120.04	player	Ping	4	124
+120.39	kill	0	Sniper Rifle	4	Sniper Rifle	shot
+123.60	typing	True	3
+126.55	item_get	Health Vial	1
+127.98	item_get	Body Armor	0
+129.49	item_get	Damage Amplifier	1
+129.49	item_activate	Damage Amplifier	1
+130.51	kill	4	Sniper Rifle	3	Sniper Rifle	shot
+137.00	kill	2	Sniper Rifle	0	Sniper Rifle	shot
+138.57	typing	False	3
+144.16	item_get	Sniper Rifle	1
+147.91	teamkill	1	Sniper Rifle	2	Sniper Rifle	shot
+148.73	headshot	1	0
+148.73	kill	1	Sniper Rifle	0	Sniper Rifle	Decapitated
+150.02	player	Ping	0	0
+150.02	player	Ping	0	25
+150.02	player	Ping	1	128
+150.02	player	Ping	2	144
+150.02	player	Ping	3	166
+150.02	player	Ping	4	124
+152.96	headshot	0	4
+152.96	kill	0	Sniper Rifle	4	Sniper Rifle	Decapitated
+154.99	item_get	Health Vial	1
+155.13	item_get	Health Vial	1
+156.97	item_get	Sniper Rifle	1
+157.11	item_get	Sniper Rifle	0
+157.59	kill	2	Sniper Rifle	0	Sniper Rifle	shot
+159.09	item_get	Health Vial	1
+159.22	item_get	Health Vial	1
+159.63	item_deactivate	Damage Amplifier	1
+160.79	headshot	0	2
+160.79	kill	0	Sniper Rifle	2	Sniper Rifle	Decapitated
+162.97	item_get	Box of Rifle Rounds	0
+173.89	item_get	Invisibility	0
+173.89	item_activate	Invisibility	0
+176.90	item_get	AntiGrav Boots	3
+176.90	item_activate	AntiGrav Boots	3
+177.92	item_get	AntiGrav Boots	1
+177.92	item_activate	AntiGrav Boots	1
+179.36	item_get	Box of Rifle Rounds	3
+180.05	player	Ping	0	0
+180.05	player	Ping	0	25
+180.05	player	Ping	1	124
+180.05	player	Ping	2	125
+180.05	player	Ping	3	150
+180.05	player	Ping	4	124
+184.97	item_get	Super Health Pack	3
+185.11	item_get	AsbestosSuit	0
+190.71	headshot	2	4
+190.71	teamkill	2	Sniper Rifle	4	Sniper Rifle	Decapitated
+193.85	item_get	Super Health Pack	1
+198.84	headshot	0	2
+198.84	kill	0	Sniper Rifle	2	Sniper Rifle	Decapitated
+202.33	item_deactivate	AntiGrav Boots	3
+205.67	item_deactivate	AntiGrav Boots	1
+209.62	item_get	Super Health Pack	2
+210.03	player	Ping	0	0
+210.03	player	Ping	0	25
+210.03	player	Ping	1	124
+210.03	player	Ping	2	211
+210.03	player	Ping	3	148
+210.03	player	Ping	4	126
+219.28	kill	1	Sniper Rifle	3	Sniper Rifle	shot
+221.79	item_get	Thigh Pads	4
+224.46	item_deactivate	Invisibility	0
+227.33	item_get	Body Armor	4
+228.57	item_get	Invisibility	0
+228.57	item_activate	Invisibility	0
+233.43	item_get	Box of Rifle Rounds	1
+234.39	item_get	Health Vial	4
+234.53	item_get	Health Vial	4
+236.51	item_get	Box of Rifle Rounds	3
+238.49	teamkill	1	Sniper Rifle	2	Sniper Rifle	shot
+240.00	player	Ping	0	0
+240.00	player	Ping	0	25
+240.00	player	Ping	1	125
+240.00	player	Ping	2	126
+240.00	player	Ping	3	149
+240.00	player	Ping	4	124
+243.61	headshot	2	0
+243.61	kill	2	Sniper Rifle	0	Sniper Rifle	Decapitated
+248.18	item_get	Sniper Rifle	2
+249.61	kill	1	Sniper Rifle	3	Sniper Rifle	shot
+250.83	headshot	2	0
+250.83	kill	2	Sniper Rifle	0	Sniper Rifle	Decapitated
+252.87	item_get	Body Armor	4
+258.46	item_get	AntiGrav Boots	4
+258.46	item_activate	AntiGrav Boots	4
+261.60	item_get	MedBox	1
+270.05	player	Ping	0	0
+270.05	player	Ping	0	25
+270.05	player	Ping	1	124
+270.05	player	Ping	2	127
+270.05	player	Ping	3	149
+270.05	player	Ping	4	124
+273.18	headshot	2	1
+273.18	teamkill	2	Sniper Rifle	1	Sniper Rifle	Decapitated
+274.95	item_get	AsbestosSuit	0
+282.78	item_get	Health Vial	0
+290.01	item_get	Sniper Rifle	1
+290.48	kill	0	Sniper Rifle	2	Sniper Rifle	shot
+298.24	item_get	ShieldBelt	3
+300.01	player	Ping	0	0
+300.01	player	Ping	0	25
+300.01	player	Ping	1	125
+300.01	player	Ping	2	127
+300.01	player	Ping	3	149
+300.01	player	Ping	4	124
+300.49	item_get	Sniper Rifle	2
+302.20	item_get	Health Vial	0
+306.15	item_get	AsbestosSuit	0
+309.49	item_get	Sniper Rifle	3
+311.87	item_get	Super Health Pack	3
+313.92	item_get	Health Vial	0
+314.05	item_get	Health Vial	0
+315.01	item_get	Box of Rifle Rounds	4
+318.55	kill	2	Sniper Rifle	0	Sniper Rifle	shot
+318.89	headshot	3	1
+318.89	kill	3	Sniper Rifle	1	Sniper Rifle	Decapitated
+320.19	item_get	Sniper Rifle	2
+320.39	typing	True	1
+321.01	item_get	Box of Rifle Rounds	0
+321.83	typing	False	1
+322.17	item_get	Sniper Rifle	2
+322.23	item_get	Box of Rifle Rounds	3
+325.16	item_get	AntiGrav Boots	3
+325.16	item_activate	AntiGrav Boots	3
+327.00	item_get	Health Vial	2
+328.02	item_get	Body Armor	4
+330.00	player	Ping	0	0
+330.00	player	Ping	0	25
+330.00	player	Ping	1	125
+330.00	player	Ping	2	124
+330.00	player	Ping	3	150
+330.00	player	Ping	4	124
+335.40	item_get	Thigh Pads	1
+336.56	item_get	Super Health Pack	0
+336.97	headshot	3	4
+336.97	kill	3	Sniper Rifle	4	Sniper Rifle	Decapitated
+339.76	item_get	Thigh Pads	0
+341.13	typing	True	3
+343.99	typing	True	4
+344.40	kill	0	Sniper Rifle	1	Sniper Rifle	shot
+349.60	item_get	Body Armor	0
+350.96	typing	False	4
+351.64	typing	False	3
+354.43	headshot	0	1
+354.43	kill	0	Sniper Rifle	1	Sniper Rifle	Decapitated
+360.01	player	Ping	0	0
+360.01	player	Ping	0	25
+360.01	player	Ping	1	134
+360.01	player	Ping	2	124
+360.01	player	Ping	3	162
+360.01	player	Ping	4	124
+360.62	item_get	Sniper Rifle	3
+361.10	item_get	MedBox	2
+361.31	item_get	MedBox	2
+365.73	item_get	AsbestosSuit	0
+370.77	item_get	Invisibility	4
+370.77	item_activate	Invisibility	4
+382.51	item_get	Super Health Pack	4
+382.85	item_get	AntiGrav Boots	2
+382.85	item_activate	AntiGrav Boots	2
+390.00	player	Ping	0	0
+390.00	player	Ping	0	25
+390.00	player	Ping	1	124
+390.00	player	Ping	2	131
+390.00	player	Ping	3	150
+390.00	player	Ping	4	124
+392.72	item_get	Sniper Rifle	2
+394.49	item_get	Invisibility	0
+394.49	item_activate	Invisibility	0
+401.40	teamkill	1	Sniper Rifle	2	Sniper Rifle	shot
+401.54	item_get	MedBox	0
+405.85	item_get	MedBox	0
+409.25	item_get	MedBox	0
+410.48	item_get	AntiGrav Boots	4
+410.48	item_activate	AntiGrav Boots	4
+412.52	item_get	Thigh Pads	0
+414.63	item_get	Box of Rifle Rounds	0
+415.58	item_get	Health Vial	0
+416.46	item_get	Health Vial	0
+417.07	item_get	Health Vial	0
+417.82	item_get	Health Vial	0
+418.50	item_get	Health Vial	0
+419.32	suicide	1	Sniper Rifle	Fell	None
+420.00	player	Ping	0	0
+420.00	player	Ping	0	25
+420.00	player	Ping	1	124
+420.00	player	Ping	2	125
+420.00	player	Ping	3	150
+420.00	player	Ping	4	123
+420.27	item_get	Sniper Rifle	0
+421.30	item_deactivate	Invisibility	4
+428.31	headshot	0	4
+428.31	kill	0	Sniper Rifle	4	Sniper Rifle	Decapitated
+433.27	typing	True	2
+442.45	typing	False	2
+443.06	item_get	AntiGrav Boots	0
+443.06	item_activate	AntiGrav Boots	0
+446.47	typing	True	3
+450.02	player	Ping	0	0
+450.02	player	Ping	0	25
+450.02	player	Ping	1	124
+450.02	player	Ping	2	133
+450.02	player	Ping	3	155
+450.02	player	Ping	4	124
+450.50	headshot	0	1
+450.50	kill	0	Sniper Rifle	1	Sniper Rifle	Decapitated
+458.89	item_get	Super Health Pack	0
+461.76	typing	False	3
+465.79	item_deactivate	AntiGrav Boots	0
+470.10	typing	True	2
+477.20	item_deactivate	AntiGrav Boots	3
+477.68	item_get	AntiGrav Boots	1
+477.68	item_activate	AntiGrav Boots	1
+479.58	typing	False	2
+480.06	player	Ping	0	0
+480.06	player	Ping	0	25
+480.06	player	Ping	1	126
+480.06	player	Ping	2	124
+480.06	player	Ping	3	149
+480.06	player	Ping	4	124
+487.29	item_get	Super Health Pack	2
+497.16	item_get	Dampener	3
+497.16	item_activate	Dampener	3
+510.05	player	Ping	0	0
+510.05	player	Ping	0	25
+510.05	player	Ping	1	126
+510.05	player	Ping	2	133
+510.05	player	Ping	3	148
+510.05	player	Ping	4	124
+516.88	item_get	AntiGrav Boots	3
+516.88	item_activate	AntiGrav Boots	3
+522.90	headshot	2	3
+522.90	kill	2	Sniper Rifle	3	Sniper Rifle	Decapitated
+525.84	item_get	Box of Rifle Rounds	2
+535.81	teamkill	2	Sniper Rifle	1	Sniper Rifle	shot
+540.04	player	Ping	0	0
+540.04	player	Ping	0	25
+540.04	player	Ping	1	128
+540.04	player	Ping	2	137
+540.04	player	Ping	3	149
+540.04	player	Ping	4	124
+540.86	item_get	Body Armor	0
+541.54	item_get	Body Armor	2
+548.94	item_get	Sniper Rifle	1
+549.56	item_get	AntiGrav Boots	0
+549.56	item_activate	AntiGrav Boots	0
+551.47	item_get	SCUBAGear	0
+551.47	item_activate	SCUBAGear	0
+551.54	teamkill	1	Sniper Rifle	4	Sniper Rifle	shot
+564.37	headshot	2	1
+564.37	teamkill	2	Sniper Rifle	1	Sniper Rifle	Decapitated
+570.02	player	Ping	0	0
+570.02	player	Ping	0	25
+570.02	player	Ping	1	123
+570.02	player	Ping	2	124
+570.02	player	Ping	3	155
+570.02	player	Ping	4	123
+573.63	item_deactivate	AntiGrav Boots	0
+583.38	kill	2	Sniper Rifle	3	Sniper Rifle	shot
+584.34	item_get	Thigh Pads	1
+593.03	teamkill	2	Sniper Rifle	1	Sniper Rifle	shot
+594.60	item_get	Sniper Rifle	4
+595.01	item_deactivate	Invisibility	0
+597.95	item_get	AntiGrav Boots	3
+597.95	item_activate	AntiGrav Boots	3
+600.00	player	Ping	0	0
+600.00	player	Ping	0	25
+600.00	player	Ping	1	124
+600.00	player	Ping	2	131
+600.00	player	Ping	3	160
+600.00	player	Ping	4	124
+600.34	headshot	0	2
+600.34	kill	0	Sniper Rifle	2	Sniper Rifle	Decapitated
+605.19	item_get	Health Vial	2
+605.32	item_get	Health Vial	2
+612.35	headshot	2	1
+612.35	teamkill	2	Sniper Rifle	1	Sniper Rifle	Decapitated
+612.62	item_get	AsbestosSuit	0
+615.01	item_deactivate	AntiGrav Boots	3
+616.44	item_get	Health Vial	2
+616.58	item_get	Health Vial	2
+619.85	item_get	Super Health Pack	3
+620.87	item_get	Body Armor	1
+621.75	item_get	Rifle Round	2
+630.00	player	Ping	0	0
+630.00	player	Ping	0	25
+630.00	player	Ping	1	124
+630.00	player	Ping	2	126
+630.00	player	Ping	3	148
+630.00	player	Ping	4	124
+632.79	item_get	Super Health Pack	1
+635.52	item_get	Box of Rifle Rounds	1
+639.81	item_get	Super Health Pack	4
+641.18	item_get	Rifle Round	2
+648.39	item_get	Invisibility	0
+648.39	item_activate	Invisibility	0
+654.66	headshot	2	1
+654.66	teamkill	2	Sniper Rifle	1	Sniper Rifle	Decapitated
+659.09	headshot	1	2
+659.09	teamkill	1	Sniper Rifle	2	Sniper Rifle	Decapitated
+660.05	player	Ping	0	0
+660.05	player	Ping	0	25
+660.05	player	Ping	1	126
+660.05	player	Ping	2	145
+660.05	player	Ping	3	154
+660.05	player	Ping	4	124
+673.91	headshot	4	1
+673.91	teamkill	4	Sniper Rifle	1	Sniper Rifle	Decapitated
+684.76	item_get	AntiGrav Boots	4
+684.76	item_activate	AntiGrav Boots	4
+685.78	kill	0	Sniper Rifle	2	Sniper Rifle	shot
+690.02	player	Ping	0	0
+690.02	player	Ping	0	25
+690.02	player	Ping	1	124
+690.02	player	Ping	2	142
+690.02	player	Ping	3	149
+690.02	player	Ping	4	123
+690.98	item_get	Super Health Pack	4
+691.39	teamkill	0	Sniper Rifle	3	Sniper Rifle	shot
+696.17	kill	0	Sniper Rifle	2	Sniper Rifle	shot
+699.58	item_get	Box of Rifle Rounds	4
+708.12	item_deactivate	AntiGrav Boots	4
+715.56	headshot	0	4
+715.56	kill	0	Sniper Rifle	4	Sniper Rifle	Decapitated
+716.31	headshot	2	1
+716.31	teamkill	2	Sniper Rifle	1	Sniper Rifle	Decapitated
+720.04	player	Ping	0	0
+720.04	player	Ping	0	25
+720.04	player	Ping	1	124
+720.04	player	Ping	2	124
+720.04	player	Ping	3	150
+720.04	player	Ping	4	185
+725.96	headshot	1	2
+725.96	teamkill	1	Sniper Rifle	2	Sniper Rifle	Decapitated
+727.74	item_get	Sniper Rifle	4
+735.52	headshot	0	3
+735.52	teamkill	0	Sniper Rifle	3	Sniper Rifle	Decapitated
+737.71	headshot	2	1
+737.71	teamkill	2	Sniper Rifle	1	Sniper Rifle	Decapitated
+740.17	item_get	Sniper Rifle	2
+741.75	item_get	Box of Rifle Rounds	0
+750.03	player	Ping	0	0
+750.03	player	Ping	0	25
+750.03	player	Ping	1	127
+750.03	player	Ping	2	126
+750.03	player	Ping	3	154
+750.03	player	Ping	4	124
+750.71	item_get	AntiGrav Boots	2
+750.71	item_activate	AntiGrav Boots	2
+752.07	typing	True	2
+756.58	item_get	Health Vial	4
+756.58	item_get	Health Vial	4
+757.19	headshot	1	4
+757.19	teamkill	1	Sniper Rifle	4	Sniper Rifle	Decapitated
+758.83	typing	False	2
+760.20	item_get	Thigh Pads	0
+764.71	kill	0	Sniper Rifle	1	Sniper Rifle	shot
+765.46	suicide	3	Sniper Rifle	Burned	Self
+780.02	player	Ping	0	0
+780.02	player	Ping	0	25
+780.02	player	Ping	1	124
+780.02	player	Ping	2	124
+780.02	player	Ping	3	155
+780.02	player	Ping	4	125
+788.34	headshot	0	2
+788.34	kill	0	Sniper Rifle	2	Sniper Rifle	Decapitated
+788.34	game_end	fraglimit
