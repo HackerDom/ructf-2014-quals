@@ -81,9 +81,11 @@ gen_user_chains() {
     python $MAIN gen_user_chains $ipp $iface $target | sh -s
 }
 
+
 gen_int_access() {
     chain=ructf2014q-int
-    python $MAIN gen_int_access $chain | sh -s
+    extra_cns=bay,bosonojka5,victor.samun
+    python $MAIN gen_int_access $chain $extra_cns | sh -s
 }
 
 gen_xen_vnc() {

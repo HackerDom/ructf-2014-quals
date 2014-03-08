@@ -63,10 +63,11 @@ def gen_user_chains(vms, ipp_name, iface, target):
             print ('iptables -A %s -i %s -s %s -p udp -m state --state NEW '
                 '-j %s' % (chain, iface, ip, target))
 
-def gen_int_access(vms, chain):
+def gen_int_access(vms, chain, extra_cns):
     init('filter', chain)
     CNs = set(map(lambda vm: vm.admin_cn,
                   filter(lambda vm: vm.admin_cn != '-', vms)))
+    CNs.update(extra_cns.split(','))
     for cn in CNs:
         print 'iptables -A %s -j %s' % (chain, cn2chain(cn))
 
