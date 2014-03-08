@@ -53,7 +53,7 @@ function save_to_img($field, $game, $filename, $gameover = false) {
 		for ($j = 0; $j < FIELD_W; ++$j) {
 			$img_ind = img_index($game[$i][$j], $field[$i][$j], $gameover);
 			$img = $images[$img_ind];
-			if ($game[$i][$j] == 1) {
+			if ($game[$i][$j] == 1 && $field[$i][$j] != 0) {
 				$color = imagecolorat($img, 9, 8);
 				imagecolorset($img, $color, rand(160, 210), rand(160, 210), rand(160, 210));
 			}
