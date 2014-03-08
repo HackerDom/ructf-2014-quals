@@ -3,12 +3,14 @@
     <name>Secret string</name>
     <task type="html" lang="en">
         <div>
-            What is hidden with length 32 in my <a href="static/word.gz">code</a>?
+			Guys, we were happy to get a Moomin's DNA! And we wonder, what substring is the origin of replication in the Moomin's DNA? Could you help us?<br/>
+            The only thing we know that it has length of 32. Find it in the <a href="static/word.gz">code</a>.
         </div>
     </task>
     <task type="html" lang="ru">
         <div>
-            Что, имеющее длину 32, скрыто в моём <a href="static/word.gz">коде</a>?
+			В нашем распоряжении оказалась ДНК снусмумрика. Нам очень интересно, с какой подстроки у снусмумрика начинается репликация ДНК? Настоящим ученым пока не до того, поэтому мы рассчитываем на вашу помощь.<br/>
+            Единственное, что нам известно об этой подстроке - что ее длина 32. Найдете ее в <a href="static/word.gz">коде</a>.
         </div>
     </task>
     <checker strict="yes">
