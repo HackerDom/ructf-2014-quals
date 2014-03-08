@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<quest series="vuln" id="vuln:400" proto="xmlquest-2.0">
+<quest series="vuln" id="vuln:500" proto="xmlquest-2.0">
     <name>Sample mixer</name>
     <task type="html" lang="en">
 	<div>

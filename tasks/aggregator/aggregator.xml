@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="vuln" id="vuln:200" proto="xmlquest-2.0">
     <name>Log aggregator</name>
-    <task type="html">
-        <p>aggregator.quals.ructf.org:16711</p>
-        <a href="/static/aggregator">binary</a>
-        <p>Flag format is: RUCTF_.*</p>
+    <task type="html" lang="en">
+	<div>
+		vuln1.quals.ructf.org:16711
+		<a href="static/aggregator">binary</a>
+		<br/>
+	        Flag format is "RUCTF_.*".
+	</div>
+    </task>
+    <task type="html" lang="ru">
+	<div>
+		vuln1.quals.ructf.org:16711
+		<a href="static/aggregator">бинарник</a>
+		<br/>
+	        Формат флага — "RUCTF_.*".
+	</div>
     </task>
     <checker strict="yes">
         <solution case="sensitive">RUCTF_5b75086a</solution>
