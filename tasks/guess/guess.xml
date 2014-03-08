@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="vuln" id="vuln:100" proto="xmlquest-2.0">
     <name>Guess the flag</name>
-    <task type="html">
-        <p>quest.quals.ructf.org:16712</p>
-        <a href="/static/guess">binary</a>
-        <p>Flag format is: RUCTF_.*</p>
+    <task type="html" lang="en">
+	<div>
+		guess.quals.ructf.org:16712
+		<a href="static/guess">binary</a>
+		<br/>
+	        Flag format is "RUCTF_.*".
+	</div>
+    </task>
+    <task type="html" lang="ru">
+	<div>
+		guess.quals.ructf.org:16712
+		<a href="static/guess">бинарник</a>
+		<br/>
+	        Формат флага — "RUCTF_.*".
+	</div>
     </task>
     <checker strict="yes">
         <solution case="sensitive">RUCTF_f4205156a73b7bd143ab06e7722e3c81f72b8429</solution>
