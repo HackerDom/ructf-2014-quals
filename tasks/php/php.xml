@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="web" id="web:100" proto="xmlquest-2.0">
   <name>php</name>
-  <task type="html" lang="en"><div><a href="http://w1.quals.ructf.org/">Find the key</a></div></task>
-  <task type="html" lang="ru"><div><a href="http://w1.quals.ructf.org/">Найдите ключ</a></div></task>
+  <task type="html" lang="en"><div><a href="http://w1.quals.ructf.org/">Find the key</a>.</div></task>
+  <task type="html" lang="ru"><div><a href="http://w1.quals.ructf.org/">Найдите ключ</a>.</div></task>
   <checker strict="yes">
-    <solution case="sensitive">5cf27d9bad2fe9d96d2bcf25c3b0bd14</solution>
+    <solution case="insensitive">5cf27d9bad2fe9d96d2bcf25c3b0bd14</solution>
   </checker>
 </quest>
