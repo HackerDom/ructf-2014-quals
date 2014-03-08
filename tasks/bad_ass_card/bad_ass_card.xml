@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<quest series="recon" id="recon:500" proto="xmlquest-2.0">
+    <name>Card</name>
+    <task type="html" lang="en"><div>Have you ever met Olimpiada Balalaykina? And what about her bad ass friend? Could you get his credit card number?</div></task>
+    <task type="html" lang="ru"><div>Вы знакомы с Олимпиадой Балалайкиной? А с ее криминальным другом? Сможете достать номер его карты?</div></task>
+    <checker strict="yes">
+        <solution case="insensitive">4172509030767200</solution>
+    </checker>
+</quest>
