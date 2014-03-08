@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<quest series="hardware" id="hardware:200" proto="xmlquest-2.0">
-    <name>Hw_reverse</name>
-    <task type="html" lang="en"><div>What is the shortest valid PIN code?<a href="static/hw_reverse.79377a87bcbe15a55d5b04fe5b8778eb.zip">Files</a></div></task>
-    <task type="html" lang="ru"><div>Какой самый краткий верный код? <a href="static/hw_reverse.79377a87bcbe15a55d5b04fe5b8778eb.zip">Файлы</a></div></task>
-    <checker strict="yes">
-        <solution case="insensitive">TODO: CREATE NOT-XML CHECKER TO LIMIT TRY COUNT !</solution>
-    </checker>
-</quest>
