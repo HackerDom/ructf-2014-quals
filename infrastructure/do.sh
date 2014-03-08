@@ -182,6 +182,21 @@ setup_iptables() {
     done
 }
 
+router_setup_nat() {
+    router=194.226.244.113
+    chain=ructf2014q
+    python $MAIN gen_nat $router $chain | $ssh $router "sh -s"
+    $ssh $router '/etc/init.d/iptables save active'
+}
+
+router_setup_fwd() {
+    router=194.226.244.113
+    chain=ructf2014q
+    prefix=ructf2014q_
+    python $MAIN gen_fwd $router $chain $prefix | $ssh $router "sh -s"
+    $ssh $router '/etc/init.d/iptables save active'
+}
+
 prepare_partition() {
     host=$1
     vm=$2

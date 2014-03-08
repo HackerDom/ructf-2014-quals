@@ -110,6 +110,10 @@ def check_res(vms, _):
                     capacity[host][res])
 
 @cmd
+def gen_nat(vms, args):
+    return iptables.gen_nat(vms, *args)
+
+@cmd
 def gen_fwd(vms, args):
     return iptables.gen_fwd(vms, *args)
 
