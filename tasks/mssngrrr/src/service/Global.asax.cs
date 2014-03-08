@@ -18,6 +18,7 @@ namespace mssngrrr
 
 		protected void Application_BeginRequest(object sender, EventArgs e)
 		{
+			Response.Headers.Remove("Server");
 			Response.AddHeader("X-Frame-Options", "SAMEORIGIN");
 			Response.AddHeader("X-XSS-Protection", "1; mode=block");
 			Response.AddHeader("X-Content-Type-Options", "nosniff");
