@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<quest series="hardware" id="hardware:100" proto="xmlquest-2.0">
+    <name>Ir_dump</name>
+    <task type="html" lang="en">What credit card number has been typed?<a href="static/dump.fcca5cbe12a7115b74c550c3ee09a2f7.zip">Dump</a></task>
+    <task type="html" lang="ru">Был введен номер кредитной карты. <a href="static/dump.fcca5cbe12a7115b74c550c3ee09a2f7.zip">Дамп</a></task>
+    <checker strict="yes">
+        <solution case="insensitive">4485248409495992</solution>
+    </checker>
+</quest>
