@@ -12,9 +12,11 @@ iface eth0 inet static
     address %s
     netmask %s
     gateway %s
+    post-up ip route add 172.16.10.0/24 via %s; exit 0
     post-up ip route add 172.16.19.0/24 via %s; exit 0
+    pre-down ip route del 172.16.10.0/24 via %s; exit 0
     pre-down ip route del 172.16.19.0/24 via %s; exit 0
-""" % (vm.addr, vm.network, router, dijkstra, dijkstra, dijkstra)
+""" % ((vm.addr, vm.network, router) + (dijkstra,) * 4)
     elif vm.iface == 'ext':
         print """
 auto lo
