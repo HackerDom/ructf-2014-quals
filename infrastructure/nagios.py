@@ -55,7 +55,7 @@ define host {
     alias      %s (%s, %s)
     hostgroups ructf2014q-vms
     address    %s
-    contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets
+    contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets, ructf2014q_dimmoborgir
 }
 """ % (vm.name, vm.name, vm.admin, vm.os, vm.addr, vm.admin.partition('@')[0])
         if vm.os in ['debian', 'debian32', 'arch']:
@@ -65,7 +65,7 @@ define service {
     host_name           %s
     service_description SSH server
     check_command       check_ssh
-    contacts            ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets
+    contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets, ructf2014q_dimmoborgir
 }
 """ % (vm.name, vm.admin.partition('@')[0])
             print """
@@ -78,7 +78,7 @@ define service {
     check_freshness         1
     freshness_threshold     12000
     check_command           no-backup-report
-    contacts                ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets
+    contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets, ructf2014q_dimmoborgir
 }
 """ % (vm.name, vm.admin.partition('@')[0])
 
@@ -89,6 +89,6 @@ define service {
     host_name           %s
     service_description Web server
     check_command       check_http
-    contacts            ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets
+    contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets, ructf2014q_dimmoborgir
 }
 """ % (vm.name, vm.admin.partition('@')[0])
