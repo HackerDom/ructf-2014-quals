@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<quest series="PPC" id="PPC:200" proto="xmlquest-2.0">
+<quest series="ppc" id="ppc:200" proto="xmlquest-2.0">
     <name>Universal dangerous positive maze</name>
-    <task type="html" lang="en">194.226.244.125:1024. Flag format is "RUCTF_.*" </task>
-    <task type="html" lang="ru">194.226.244.125:1024. ‘ÓÏ‡Ú ÙÎ‡„‡ &mdash; "RUCTF_.*" </task>
+    <task type="html" lang="en"><div>194.226.244.125:1024. Flag format is "RUCTF_.*" </div></task>
+    <task type="html" lang="ru"><div>194.226.244.125:1024. –§–æ—Ä–º–∞—Ç —Ñ–ª–∞–≥–∞ &mdash; "RUCTF_.*" </div></task>
     <checker strict="yes">
         <solution case="insensitive">RUCTF_77pd9u784g059t0z18hjtn5d</solution>
     </checker>
 </quest>
+
 
