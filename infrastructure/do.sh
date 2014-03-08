@@ -353,7 +353,7 @@ backup() {
   host=$1
   backup=$(dirname $0)/backup.sh
   user=backup-ructf2014q
-  IFS=$'\n' vms=($(list $1:)); IFS=$' '
+  IFS=$'\n' vms=($(list $1: linux)); IFS=$' '
   for line in ${vms[@]}; do
       vm=${line##*:}
       addr=$(python $MAIN get_attr $vm addr)
