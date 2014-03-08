@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<quest series="recon" id="recon:300" proto="xmlquest-2.0">
+    <name>Get the message</name>
+    <task type="html" lang="en"><div>Have you ever met Olimpiada Balalaykina?<br/>She is a young girl who likes to chat and dreams to meet Pavel Durov.<br/>Somebody is telegraphing her strange messages with secret password. Could you find that?<br/>Flag format is "RUCTF_.*"</div></task>
+    <task type="html" lang="ru"><div>Вы знакомы с Олимпиадой Балалайкиной?<br/>Она молодая современная девчонка, любит общаться и мечтает познакомиться с Пашей Дуровым.<br/>Кто-то постоянно телеграфирует ей секретный пароль. Что за пароль?<br/>Формат флага — "RUCTF_.*"</div></task>
+    <checker strict="yes">
+        <solution case="insensitive">RUCTF_THE_MOST_SECRET_PA$$_3V3R</solution>
+    </checker>
+</quest>
