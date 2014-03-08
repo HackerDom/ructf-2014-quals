@@ -34,9 +34,10 @@ if ($Cmd eq 'name') {
 
 if ($Cmd eq 'create') {
     my ($DumpDir, $TeamId) = @ARGV;
+    my $tryCount = GetTryCount($DumpDir, $TeamId);
     print "ID: ".newid($TeamId);
-    print "html[en]: <div>What is the shortest valid PIN code?<a href='$FILE'>Files</a></div>";
-    print "html[ru]: <div>Какой самый краткий верный код? <a href='$FILE'>Файлы</a></div>";
+    print "html[en]: <div>What is the shortest valid PIN code?<a href='$FILE'>Files</a>. Try count left: $tryCount</div>";
+    print "html[ru]: <div>Какой самый краткий верный код? <a href='$FILE'>Файлы</a>. Оставшееся кол-во попыток: $tryCount</div>";
     exit 0;
 }
 
