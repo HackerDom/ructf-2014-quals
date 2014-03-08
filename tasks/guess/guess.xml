@@ -3,7 +3,7 @@
     <name>Guess the flag</name>
     <task type="html" lang="en">
 	<div>
-		guess.quals.ructf.org:16712
+		vuln1.quals.ructf.org:16712
 		<a href="static/guess">binary</a>
 		<br/>
 	        Flag format is "RUCTF_.*".
@@ -11,7 +11,7 @@
     </task>
     <task type="html" lang="ru">
 	<div>
-		guess.quals.ructf.org:16712
+		vuln1.quals.ructf.org:16712
 		<a href="static/guess">бинарник</a>
 		<br/>
 	        Формат флага — "RUCTF_.*".
