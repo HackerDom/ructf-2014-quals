@@ -78,7 +78,7 @@ post '/register' => sub {
   });
 } => 'register';
 
-get '/super/secret/flag' => sub {
+get '/very/super/secret/flag' => sub {
   shift->render(text => '054ad7a734437d6853383ad919526dc5');
 };
 
