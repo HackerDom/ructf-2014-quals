@@ -349,6 +349,18 @@ customize() {
 END
 }
 
+backup() {
+  host=$1
+  backup=$(dirname $0)/backup.sh
+  user=backup-ructf2014q
+  IFS=$'\n' vms=($(list $1:)); IFS=$' '
+  for line in ${vms[@]}; do
+      vm=${line##*:}
+      addr=$(python $MAIN get_attr $vm addr)
+      su $user -c "$backup $addr $vm"
+  done
+}
+
 setup_debian() {
     list "$1" | while read line; do
         host=${line%%:*}
