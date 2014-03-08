@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="vuln" id="vuln:300" proto="xmlquest-2.0">
     <name>Posts</name>
-    <task type="text">Awersome post service ssh user:Ikiy7ei5</task>
+    <task type="text">Awesome post service -- ssh vuln2.quals.ructf.org -p 2022 user:Ikiy7ei5</task>
     <checker strict="yes">
-        <solution case="sensitive"></solution>
+        <solution case="sensitive">c4RJ4rbortpLxG6L0fKu6dyAA4d4y0Y8</solution>
     </checker>
 </quest>
