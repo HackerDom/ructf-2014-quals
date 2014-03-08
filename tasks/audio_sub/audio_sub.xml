@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="random" id="stegano:200" proto="xmlquest-2.0">
     <name>HP</name>
-    <task type="html" lang="en"><a href="static/HP.wav">Who?</a></task>
-    <task type="html" lang="ru"><a href="static/HP.wav">Кто?</a></task>
+    <task type="html" lang="en"><a href="static/HP.wav">What does he say?</a></task>
+    <task type="html" lang="ru"><a href="static/HP.wav">Что он говорит?</a></task>
     <checker strict="yes">
-        <solution case="insensitive">Dobby</solution>
-        <solution case="insensitive">Dobby has no master. Dobby is a free elf.</solution>
-        <solution case="insensitive">Dobby is a free elf</solution>
-        <solution case="insensitive">Free elf</solution>
+        <solution case="insensitive">you don't know power of the dark side.</solution>
+        <solution case="insensitive">you don't know power of the dark side</solution>
+        <solution case="insensitive">you dont know power of the dark side.</solution>
+        <solution case="insensitive">you dont know power of the dark side</solution>
     </checker>
 </quest>
