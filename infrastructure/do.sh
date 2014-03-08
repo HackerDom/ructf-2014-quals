@@ -5,7 +5,7 @@ MAIN=$(dirname $0)/main.py
 ssh='ssh -l root'
 
 list() {
-    python $MAIN list "$1"
+    python $MAIN list "$1" "$2" "$3"
 }
 
 gen_xen() {
@@ -265,6 +265,22 @@ setup_interfaces() {
             $ssh $addr "ifdown -a; ifup -a"
         fi
     done
+}
+
+pssh() {
+    patt=$1; shift
+    os=$1; shift
+    IFS=$'\n' vms=($(list $patt $os addr | cut -f3 -d:)); IFS=$' '
+    echo "$*" | parallel-ssh -l root -i -I -H "${vms[*]}"
+}
+
+pscp() {
+    patt=$1
+    os=$2
+    localfile=$3
+    remotefile=$4
+    list $patt $os addr | cut -f3 -d: | parallel-scp -v -h /dev/stdin \
+        -l root $localfile $remotefile
 }
 
 prepare_partition() {

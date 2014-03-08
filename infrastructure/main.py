@@ -19,9 +19,22 @@ def cmd(fn):
 @cmd
 def list(vms, args):
     [host_patt, vm_patt] = args[0].split(':')
-    print str.join('\n', map(lambda vm: '%s:%s' % (vm.host, vm.name), filter(
-        lambda vm: (re.match(host_patt, vm.host) != None and
-                    re.match(vm_patt, vm.name) != None), vms)))
+    match = lambda vm: True
+    if len(args) > 1 and len(args[1]) != 0:
+        filters = { 'debian' : lambda vm: vm.os in ['debian', 'debian32'],
+                    'arch'   : lambda vm: vm.os == 'arch',
+                    'linux'  : lambda vm: vm.os in ['debian', 'debian32', 'arch']}
+        patt = args[1]
+        if patt in filters:
+            match = filters[patt]
+        else:
+            raise Exception('unknown filter pattern %s' % patt)
+    attr = None if len(args) < 3 or len(args[2]) == 0 else args[2]
+    print str.join('\n', map(lambda vm: ('%s:%s' % (vm.host, vm.name))
+                                         if attr == None
+                                         else ('%s:%s:%s' % (vm.host, vm.name, getattr(vm, attr))),
+        filter(lambda vm: (re.match(host_patt, vm.host) != None and
+            re.match(vm_patt, vm.name) != None and match(vm)), vms)))
 
 @cmd
 def get_attr(vms, args):
