@@ -193,7 +193,7 @@ router_setup_nat() {
 
 router_setup_fwd() {
     chain=ructf2014q
-    python $MAIN gen_fwd $router $chain $vm_prefix | $ssh $router "sh -s"
+    python $MAIN gen_fwd $chain $vm_prefix | $ssh $router "sh -s"
     $ssh $router '/etc/init.d/iptables save active'
 }
 

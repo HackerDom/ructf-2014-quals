@@ -21,7 +21,7 @@ def gen_nat(vms, addr, chain):
     do_gen('tcp_ports', 'tcp')
     do_gen('udp_ports', 'udp')
 
-def gen_fwd(vms, addr, chain, prefix):
+def gen_fwd(vms, chain, prefix):
     init('filter', chain)
     def do_gen(ports, proto):
         for vm in filter(lambda vm: getattr(vm, ports) != None, vms):
@@ -31,7 +31,7 @@ def gen_fwd(vms, addr, chain, prefix):
                 for port in getattr(vm, ports):
                     print ("iptables -A %s -d %s -p %s -m state"
                         " --state NEW --dport %s -j %s" % (
-                            chain, addr, proto, port, vm_chain))
+                            chain, vm.addr, proto, port, vm_chain))
     do_gen('tcp_ports', 'tcp')
     do_gen('udp_ports', 'udp')
 
