@@ -32,6 +32,10 @@ define hostgroup {
     hostgroup_name ructf2014q-vms
     alias          RuCTF2014 Quals VMs
 }
+define command {
+    command_name    no-backup-report
+    command_line    $USER1$/check_dummy 2 "CRITICAL: Results of backup job were not reported!"
+}
 """
 
     for admin in set(map(lambda vm: vm.admin, vms) + ['andrey.malets@gmail.com']):
@@ -64,6 +68,20 @@ define service {
     contacts            ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets
 }
 """ % (vm.name, vm.admin.partition('@')[0])
+            print """
+define service {
+    use                     generic-service
+    host_name               %s
+    service_description     backup
+    active_checks_enabled   0
+    passive_checks_enabled  1
+    check_freshness         1
+    freshness_threshold     12000
+    check_command           no-backup-report
+    contacts                ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets
+}
+""" % (vm.name, vm.admin.partition('@')[0])
+
         if vm.http:
             print """
 define service {
