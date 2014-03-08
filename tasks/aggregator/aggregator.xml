@@ -2,7 +2,7 @@
 <quest series="vuln" id="vuln:200" proto="xmlquest-2.0">
     <name>Log aggregator</name>
     <task type="text">
-        <p>telnet://aggregator.quals.ructf.org:16711<p>
+        <p>aggregator.quals.ructf.org:16711<p>
         <a href="/static/aggregator">binary</a>
         <p>Flag format is: RUCTF_.*</p>
     </task>
