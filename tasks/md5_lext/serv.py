@@ -17,7 +17,7 @@ while 1:
 	try:
 		buf = c.recv(4096)
 		digest, msg = buf.split(" ", 1)
-		if (digest == md5(password+msg).hexdigest()):
+		if msg != 'my message' and digest == md5(password+msg).hexdigest():
 			c.send("Message accepted: {}\n".format(msg))
 		else:
 			c.send("Wrong signature\n")
