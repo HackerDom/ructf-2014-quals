@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="vuln" id="vuln:400" proto="xmlquest-2.0">
     <name>Quest Server</name>
-    <task type="text">
-        <p>telnet://quest.quals.ructf.org:16710<p>
+    <task type="html">
+        <p>telnet://quest.quals.ructf.org:16710</p>
         <a href="/static/quest">binary</a>
         <p>Flag format is: RUCTF_.*</p>
     </task>
     <checker strict="yes">
-        <solution case="sensitive">RUCTF_1eaff86c9e5a3ea71903ffdffc02d350</solution>
+        <solution case="insensitive">RUCTF_1eaff86c9e5a3ea71903ffdffc02d350</solution>
     </checker>
 </quest>
