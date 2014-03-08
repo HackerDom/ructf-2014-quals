@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <quest series="recon" id="recon:100" proto="xmlquest-2.0">
     <name>Favourite book</name>
-    <task type="html" lang="en">Have you ever met Olimpiada Balalaykina? If so, you must know her favourite book.</task>
-    <task type="html" lang="ru">Вы знакомы с Олимпиадой Балалайкиной? Если да, наверняка знаете ее любимую книгу.</task>
+    <task type="html" lang="en"><div>Have you ever met Olimpiada Balalaykina? If so, you must know her favourite book.</div></task>
+    <task type="html" lang="ru"><div>Вы знакомы с Олимпиадой Балалайкиной? Если да, наверняка знаете ее любимую книгу.</div></task>
     <checker strict="yes">
         <solution case="insensitive">Pride and Prejudice</solution>
     </checker>
