@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="crypto" id="crypto:300" proto="xmlquest-2.0">
+    <name>TLS</name>
+    <task type="html" lang="en">
+        <div>
+            Just hack <a href="static/dump.pcap">TLS</a>.
+        </div>
+    </task>
+    <task type="html" lang="ru">
+        <div>
+            Взломайте <a href="static/dump.pcap">TLS</a>.
+        </div>
+    </task>
+    <checker strict="yes">
+        <solution>RUCTF_ILoveToHackTLS</solution>
+    </checker>
+</quest>
