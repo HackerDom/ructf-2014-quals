@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <quest series="recon" id="recon:100" proto="xmlquest-2.0">
     <name>Favourite book</name>
-    <task type="html" lang="en"><div>Have you ever met Olimpiada Balalaykina? If so you must know her favorite book.</div></task>
-    <task type="html" lang="ru"><div>Вы знакомы с Олимпиадой Балалайкиной? Если да, то вы наверняка знаете её любимую книгу.</div></task>
+    <task type="html" lang="en"><div>Have you ever met Olimpiada Balalaykina?<br/>She is a young girl who likes to chat and dreams to meet Pavel Durov.<br/>We'd like to know her favorite book.</div></task>
+    <task type="html" lang="ru"><div>Вы знакомы с Олимпиадой Балалайкиной?<br/>Она молодая современная девчонка, любит общаться и мечтает познакомиться с Пашей Дуровым.<br/>Наверняка вам не составит труда узнать её любимую книгу.</div></task>
     <checker strict="yes">
         <solution case="insensitive">Pride and Prejudice</solution>
     </checker>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<quest series="recon" id="recon:300" proto="xmlquest-2.0">
+<quest series="recon" id="recon:200" proto="xmlquest-2.0">
     <name>Stolen camera</name>
-    <task type="html" lang="en"><div>Have you ever met Olimpiada Balalaykina? If so, you could name the city where her camera was stolen.</div></task>
-    <task type="html" lang="ru"><div>Вы знакомы с Олимпиадой Балалайкиной? Если да, то вам не составит труда сказать, в каком городе у неё украли фотоаппарат.</div></task>
+    <task type="html" lang="en"><div>Have you ever met Olimpiada Balalaykina?<br/>She is a young girl who likes to chat and dreams to meet Pavel Durov.<br/>Сould name the city where her camera was stolen.</div></task>
+    <task type="html" lang="ru"><div>Вы знакомы с Олимпиадой Балалайкиной?<br/>Она молодая современная девчонка, любит общаться и мечтает познакомиться с Пашей Дуровым.<br/>Узнайте, в каком городе у неё украли фотоаппарат.</div></task>
     <checker strict="yes">
         <solution case="insensitive">Grand Junction</solution>
     </checker>
