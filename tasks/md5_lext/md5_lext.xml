@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="crypto" id="crypto:100" proto="xmlquest-2.0">
-    <name>Bad lib</name>
+    <name>MD5</name>
     <task type="html" lang="en">Server (python27.quals.ructf.org:12337) accepts only authorized messages.<br/>
 It works like this:<br/>
 <pre>
