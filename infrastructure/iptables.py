@@ -3,16 +3,12 @@ import socket
 def init(table, chain):
     print ('if iptables -t %s -L %s 2>/dev/null >/dev/null; '
         'then iptables -t %s -F %s; '
-        'else iptables -t %s -N %s; fi' % (table, chain,
-                                           table, chain,
-                                           table, chain))
+        'else iptables -t %s -N %s; fi' % ((table, chain) * 3))
 
 def delete(table, chain):
     print ('if iptables -t %s -L %s 2>/dev/null >/dev/null; '
-        'then iptables -t %s -F %s; iptables -t %s -X %s; fi' % (table, chain,
-                                                                 table, chain,
-                                                                 table, chain))
-
+        'then iptables -t %s -F %s; iptables -t %s -X %s; fi'
+            % ((table, chain) * 3))
 
 def gen_nat(vms, addr, chain):
     init('nat', chain)
