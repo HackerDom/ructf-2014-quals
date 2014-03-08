@@ -2,8 +2,8 @@
 <quest series="forensics" id="forensics:300" proto="xmlquest-2.0">
     <name>Secure data storage</name>
     <task type="html" lang="en"><div>A friend of mine developed a <a href="static/main.cpp">special application</a> to store sensitive information. He was very confident to gave me his <a href="static/secret">secret</a>, claiming it's safe. I'm not that sure. Flag format is "RUCTF_.*".</div></task>
-    <task type="html" lang="ru"><div>Мой друг разработал<a href="static/main.cpp">специальную программу</a> чтобы хранить важную информацию. Он был настолько уверен в ее надежности, что дал мне свой <a href="static/secret">файл с секретом</a>, утверждая, что его невозможно взломать. Я не разделяю его уверенности. Формат флага &mdash; "RUCTF_.*"</div></task>
+    <task type="html" lang="ru"><div>Мой друг разработал<a href="static/main.cpp">специальную программу</a> чтобы хранить важную информацию. Он был настолько уверен в ее надежности, что дал мне свой <a href="static/secret">файл с секретом</a>, утверждая, что его невозможно взломать. Я не разделяю его уверенности. Формат флага — "RUCTF_.*"</div></task>
     <checker strict="yes">
-        <solution case="sensitive">RUCTF_please_dont_use_rand_and_dont_store_valuable_data_in_stack</solution>
+        <solution case="insensitive">RUCTF_please_dont_use_rand_and_dont_store_valuable_data_in_stack</solution>
     </checker>
 </quest>
