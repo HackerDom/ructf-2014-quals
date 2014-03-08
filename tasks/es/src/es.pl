@@ -2,6 +2,7 @@ use Mojolicious::Lite;
 
 my $es = Mojo::URL->new('http://localhost:9200/');
 
+app->config(hypnotoad => {listen => ['http://*:80'], user => 'es', group => 'es'});
 app->secrets(['ructf']);
 
 get '/' => sub { shift->render } => 'index';
