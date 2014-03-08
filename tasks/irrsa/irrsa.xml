@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="web" id="web:400" proto="xmlquest-2.0">
+	<name>irRSA</name>
+	<task type="html" lang="en"><div>Hi! We have unconfirmed information about our agent and developer of <a href="http://irrsa.quals.ructf.org/">our site</a>. His tasks includes processing requests from civilians. We think that he is double agent and works for irRational Security Agency. Help us to find evidence about that.<br/>Auth: %TEAM%:%HASH%</div></task>
+	<task type="html" lang="ru"><div>Привет! У нас есть неподтвержденная информация о нашем агенте и разработчике <a href="http://irrsa.quals.ructf.org/">нашего сайта</a>. В его задачи входит обработка запросов от гражданских. Мы думаем, что он является двойным агентом и работает на irRational Security Agency. Помогите нам найти доказательства.<br/>Auth: %TEAM%:%HASH%</div></task>
+	<checker strict="yes">
+		<solution case="sensitive">RUCTF_da965c127e954a5bb5d196d0ddfcb18b</solution>
+	</checker>
+</quest>
