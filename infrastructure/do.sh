@@ -250,6 +250,21 @@ router_disable() {
     nudge_services
 }
 
+setup_interfaces() {
+    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    for line in ${vms[@]}; do
+        vm=${line##*:}
+        os=$(python $MAIN get_attr $vm os)
+        addr=$(python $MAIN get_attr $vm addr)
+        if [ "$os" == 'debian' ] || [ "$os" == 'debian32' ] && \
+            [ "$vm" != router ]; then
+            python $MAIN gen_interfaces $vm | $ssh $addr \
+                'cat > /etc/network/interfaces'
+            $ssh $addr "ifdown -a; ifup -a"
+        fi
+    done
+}
+
 prepare_partition() {
     host=$1
     vm=$2

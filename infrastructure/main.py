@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import custom, iptables, nagios, nginx, vm
+import custom, iptables, nagios, nginx, net, vm
 import os, re, socket, sys
 
 CFG=os.path.dirname(os.path.realpath(__file__)) + '/vms.cfg'
@@ -139,6 +139,10 @@ def customize(vms, args):
         vms,
         find(vms, args[0]),
         os.path.dirname(os.path.realpath(__file__)) + '/keys')
+
+@cmd
+def gen_interfaces(vms, args):
+    return net.gen_interfaces(find(vms, args[0]))
 
 @cmd
 def get_ports(vms, args):
