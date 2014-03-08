@@ -2,7 +2,7 @@
 <quest series="misc" id="misc:500" proto="xmlquest-2.0">
     <name>GSM</name>
     <task type="html" lang="en"><div><a href="static/0d6d6b808766f952a6c20e07de45f94a/GSM.4ac71c244a9a5b7537cb0fd618df249c.zip">Find the key</a><br/>Flag format is "RUCTF_.*"</div></task>
-    <task type="html" lang="ru"><div><a href="static/0d6d6b808766f952a6c20e07de45f94a/GSM.4ac71c244a9a5b7537cb0fd618df249c.zip">Найдите ключ</a><br/>Формат флага &mdash; "RUCTF_.*"</div></task>
+    <task type="html" lang="ru"><div><a href="static/0d6d6b808766f952a6c20e07de45f94a/GSM.4ac71c244a9a5b7537cb0fd618df249c.zip">Найдите ключ</a><br/>Формат флага — "RUCTF_.*"</div></task>
     <checker strict="yes">
         <solution case="insensitive">RUCTF_CRACK_MY_GSM_WITH_20$_DONGLE</solution>
     </checker>

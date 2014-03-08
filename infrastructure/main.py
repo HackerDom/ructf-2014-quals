@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import custom, iptables, nagios, nginx, vm
+import custom, iptables, nagios, nginx, net, vm
 import os, re, socket, sys
 
 CFG=os.path.dirname(os.path.realpath(__file__)) + '/vms.cfg'
@@ -48,7 +48,7 @@ def gen_xen(vms, args):
     if len(match) != 1:
         raise Exception(match)
     vm = match[0]
-    if args[2] == 'setup' and not vm.os.startswith('debian'):
+    if args[2] == 'setup' and vm.os == '2k8r2':
         bootdev = 'd'
     else:
         bootdev = 'c'
@@ -61,8 +61,8 @@ def gen_xen(vms, args):
         disk_str = ('"phy://dev/data/ructf2014q-%s,ioemu:hda,w",' % vm.name +
             '"file://root/2k8r2.iso,hdc:cdrom,r"')
     elif vm.os == 'arch':
-        disk_str = ('"phy://dev/data/ructf2014q-%s,ioemu:hda,w",' % vm.name +
-            '"file://root/arch.iso,hdc:cdrom,r"')
+        disk_str = ('"phy://dev/data/ructf2014q-%s,ioemu:hda,w",' % vm.name)
+            #'"file://root/arch.iso,hdc:cdrom,r"')
     print """
 kernel="/usr/lib/xen-4.1/boot/hvmloader"
 builder="hvm"
@@ -110,6 +110,10 @@ def check_res(vms, _):
                     capacity[host][res])
 
 @cmd
+def gen_nat(vms, args):
+    return iptables.gen_nat(vms, *args)
+
+@cmd
 def gen_fwd(vms, args):
     return iptables.gen_fwd(vms, *args)
 
@@ -126,8 +130,8 @@ def gen_xen_vnc(vms, args):
     return iptables.gen_xen_vnc(vms, *args)
 
 @cmd
-def gen_nginx(vms, _):
-    return nginx.gen(vms)
+def gen_nginx(vms, vm):
+    return nginx.gen(find(vms, args[0]))
 
 @cmd
 def customize(vms, args):
@@ -135,6 +139,14 @@ def customize(vms, args):
         vms,
         find(vms, args[0]),
         os.path.dirname(os.path.realpath(__file__)) + '/keys')
+
+@cmd
+def gen_interfaces(vms, args):
+    return net.gen_interfaces(find(vms, args[0]))
+
+@cmd
+def get_ports(vms, args):
+    return iptables.get_ports(find(vms, args[0]))
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:

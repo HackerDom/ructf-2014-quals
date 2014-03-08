@@ -36,6 +36,9 @@ function exit_gameover($st, $msg = "") {
 
 session_start();
 
+if (empty($_SESSION)) {
+	exit_engine("error", "go to start page before");
+}
 //========================================================================
 
 if ($_SESSION["game_status"] != 0) {
@@ -70,7 +73,7 @@ $btn = (int) $_POST["btn"];
 if ($click_i < 0 || $click_i >= FIELD_H ||
 	$click_j < 0 || $click_j >= FIELD_W ||
 	$btn < 1 || $btn > 2) {
-	exit_engine("error", "_achtung_ incorrect values");
+	exit_engine("error", "_achtung_ incorrect values");//, "msg=".$_POST['i'].$_POST['j'].$_POST['btn']);
 }
 
 //========================================================================

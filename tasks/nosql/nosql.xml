@@ -2,7 +2,7 @@
 <quest series="forensics" id="forensics:200" proto="xmlquest-2.0">
     <name>Nosql</name>
     <task type="html" lang="en"><div>We have some <a href="static/nosql.7a213eefd016dadea7e9d793271ad504.zip">corrupted files</a>. Flag format is "RUCTF_.*"</div></task>
-    <task type="html" lang="ru"><div>У нас есть несколько <a href="static/nosql.7a213eefd016dadea7e9d793271ad504.zip">поврежденных файлов</a>. Формат флага &mdash; "RUCTF_.*"</div></task>
+    <task type="html" lang="ru"><div>У нас есть несколько <a href="static/nosql.7a213eefd016dadea7e9d793271ad504.zip">повреждённых файлов</a>. Формат флага — "RUCTF_.*"</div></task>
     <checker strict="yes">
         <solution case="insensitive">RUCTF_CFDE28B7B90447B582F82B7B9056B7F1</solution>
     </checker>

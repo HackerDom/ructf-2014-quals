@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAIN=`dirname $0`/main.py
+MAIN=$(dirname $0)/main.py
 
 ssh='ssh -l root'
 
@@ -25,7 +25,7 @@ gen_lvm() {
         size=$(python $MAIN get_attr $vm disk)
         $ssh $host "[ -e /dev/data/ructf2014q-$vm ] || lvcreate -L${size}G -nructf2014q-$vm data" \
             </dev/null
-   done
+    done
 }
 
 startvms() {
@@ -33,7 +33,7 @@ startvms() {
         host=${line%%:*}
         vm=${line##*:}
         $ssh $host "xm create /root/ructf2014-quals/ructf2014q-$vm.cfg" </dev/null
-   done
+    done
 }
 
 stopvms() {
@@ -41,7 +41,7 @@ stopvms() {
         host=${line%%:*}
         vm=${line##*:}
         $ssh $host "xm shutdown ructf2014q-$vm.cfg" </dev/null
-   done
+    done
 }
 
 killvms() {
@@ -49,6 +49,23 @@ killvms() {
         host=${line%%:*}
         vm=${line##*:}
         $ssh $host "xm destroy ructf2014q-$vm.cfg" </dev/null
+    done
+}
+
+add_startup() {
+    list "$1" | while read line; do
+        host=${line%%:*}
+        vm=${line##*:}
+        $ssh $host "ln -sf /root/ructf2014-quals/ructf2014q-$vm.cfg\
+                    /etc/xen/auto/" </dev/null
+   done
+}
+
+remove_startup() {
+    list "$1" | while read line; do
+        host=${line%%:*}
+        vm=${line##*:}
+        $ssh $host "rm -f /etc/xen/auto/ructf2014q-$vm.cfg" </dev/null
    done
 }
 
@@ -78,6 +95,7 @@ gen_iptables() {
     gen_user_chains
     gen_int_access
     gen_xen_vnc
+    echo "don't forget to /etc/init.d/iptables save active"
 }
 
 gen_nagios() {
@@ -87,6 +105,164 @@ gen_nagios() {
         mv $file.new $file
         /etc/init.d/nagios3 reload
     fi
+}
+
+gather_ssh() {
+    list ":" | while read line; do
+        vm=${line##*:}
+        addr=$(python $MAIN addr $vm)
+        os=$(python $MAIN get_attr $vm os)
+        if [ "$os" == debian ] || [ "$os" == debian32 ] || [ "$os" == arch ]; then
+            $ssh -o StrictHostKeyChecking=no $addr hostname </dev/null
+        fi
+    done
+}
+
+setup_iptables() {
+    custom="$2"
+    list "$1" | while read line; do
+        vm=${line##*:}
+        addr=$(python $MAIN addr $vm)
+        os=$(python $MAIN get_attr $vm os)
+        base=$(dirname $0)
+        if [ "$os" == debian ] || [ "$os" == debian32 ]; then
+            scp $base/iptables/init root@$addr:/etc/init.d/iptables
+            scp $base/iptables/default root@$addr:/etc/default/iptables
+            $ssh $addr update-rc.d iptables defaults </dev/null
+            $ssh $addr mkdir -p /var/lib/iptables </dev/null
+
+            $ssh $addr "\
+                iptables -P INPUT ACCEPT; iptables -P OUTPUT ACCEPT; \
+                iptables -F INPUT; iptables -F OUTPUT; \
+                \
+                if ! iptables -L custom-input &>/dev/null; then \
+                    iptables -N custom-input; \
+                fi; \
+                iptables -A INPUT -j custom-input; \
+                iptables -A INPUT -i lo -j ACCEPT; \
+                \
+                if ! iptables -L custom-output &>/dev/null; then \
+                    iptables -N custom-output; \
+                fi; \
+                iptables -A OUTPUT -j custom-output; \
+                iptables -A OUTPUT -o lo -j ACCEPT; \
+                \
+                iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT; \
+                iptables -A INPUT -p icmp -j ACCEPT; \
+                iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT; \
+                \
+                iptables -A OUTPUT -p icmp -j ACCEPT; \
+                iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT; \
+                :                                       DNS 1; \
+                iptables -A OUTPUT -p udp --dport 53 -d 194.226.244.126 \
+                    -m state --state NEW -j ACCEPT; \
+                :                                       DNS 2; \
+                iptables -A OUTPUT -p udp --dport 53 -d 194.226.235.22 \
+                    -m state --state NEW -j ACCEPT; \
+                :                                       mirror.yandex.ru; \
+                iptables -A OUTPUT -p tcp --dport 80 -d 213.180.204.183 \
+                    -m state --state NEW -j ACCEPT;
+            " </dev/null
+
+            if [ "$custom" == custom ]; then
+                python $MAIN get_ports $vm | while read portspec; do
+                    proto=${portspec%%:*}
+                    port=${portspec##*:}
+                    $ssh $addr "iptables -A INPUT -p $proto --dport $port \
+                                -m state --state NEW -j ACCEPT" </dev/null
+                done
+            fi
+
+            $ssh $addr "\
+                iptables -P INPUT DROP; iptables -P OUTPUT DROP; \
+                iptables -P FORWARD DROP; \
+                /etc/init.d/iptables save active
+            " </dev/null
+        fi
+    done
+}
+
+router=194.226.244.113
+vm_prefix=ructf2014q_
+
+router_setup_nat() {
+    chain=ructf2014q
+    python $MAIN gen_nat $router $chain | $ssh $router "sh -s"
+    $ssh $router '/etc/init.d/iptables save active'
+}
+
+router_setup_fwd() {
+    chain=ructf2014q
+    python $MAIN gen_fwd $chain $vm_prefix | $ssh $router "sh -s"
+    $ssh $router '/etc/init.d/iptables save active'
+}
+
+router_gen_nginx() {
+    list ":" | while read line; do
+        vm=${line##*:}
+        config=/etc/nginx/sites-available/ructf2014q-$vm
+        python $MAIN gen_nginx $vm | $ssh $router "cat > $config"
+    done
+}
+
+nudge_services() {
+    if [ "$iptables_needs_save" ]; then
+        $ssh $router '/etc/init.d/iptables save active'
+    fi
+    if [ "$nginx_needs_reload" ]; then
+        $ssh $router '/etc/init.d/nginx reload'
+    fi
+}
+
+router_enable() {
+    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    for line in ${vms[@]}; do
+        vm=${line##*:}
+        if [ "$(python $MAIN get_attr $vm tcp_ports)" != '[]' ] || \
+           [ "$(python $MAIN get_attr $vm udp_ports)" != '[]' ]; then
+            iptables_needs_save=1
+            chain=$vm_prefix$vm
+            $ssh $router "iptables -F $chain; iptables -A $chain -j UaA"
+        elif [ "$(python $MAIN get_attr $vm http)" == True ]; then
+            nginx_needs_reload=1
+            config=/etc/nginx/sites-available/ructf2014q-$vm
+            $ssh $router "ln -sf $config /etc/nginx/sites-enabled/"
+        fi
+    done
+    nudge_services
+}
+
+router_disable() {
+    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    for line in ${vms[@]}; do
+        vm=${line##*:}
+        if [ "$(python $MAIN get_attr $vm tcp_ports)" != '[]' ] || \
+           [ "$(python $MAIN get_attr $vm udp_ports)" != '[]' ]; then
+            iptables_needs_save=1
+            chain=$vm_prefix$vm
+            $ssh $router "iptables -F $chain"
+        elif [ "$(python $MAIN get_attr $vm http)" == True ]; then
+            nginx_needs_reload=1
+            link=/etc/nginx/sites-enabled/ructf2014q-$vm
+            $ssh $router "rm -f $link"
+        fi
+    done
+    nudge_services
+}
+
+setup_interfaces() {
+    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    for line in ${vms[@]}; do
+        vm=${line##*:}
+        os=$(python $MAIN get_attr $vm os)
+        addr=$(python $MAIN get_attr $vm addr)
+        if [ "$os" == 'debian' ] || [ "$os" == 'debian32' ] && \
+            [ "$vm" != router ]; then
+            python $MAIN gen_interfaces $vm | $ssh $addr \
+                'cat > /etc/network/interfaces'
+            $ssh $addr "ifdown -a; ifup -a"
+        fi
+    done
 }
 
 prepare_partition() {

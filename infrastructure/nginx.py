@@ -1,6 +1,7 @@
-def gen(vms):
-    for vm in filter(lambda vm: vm.http, vms):
-        print """server {
+def gen(vm):
+    if vm.http:
+        print """
+server {
     server_name %s.quals.ructf.org;
     listen 80;
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="forensics" id="forensics:400" proto="xmlquest-2.0">
+    <name>So close</name>
+    <task type="html" lang="en">
+        <div>
+            The answer is <a href="static/answer.ova">here.</a> <br/>Flag format is "RUCTF_.*"
+        </div>
+    </task>
+    <task type="html" lang="ru">
+        <div>
+            Ответ <a href="static/answer.ova">здесь.</a> <br/>Формат флага — "RUCTF_.*"
+        </div>
+    </task>
+    <checker strict="yes">
+        <solution>RUCTF_YesICan</solution>
+    </checker>
+</quest>

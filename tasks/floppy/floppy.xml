@@ -4,16 +4,16 @@
     <task type="html" lang="en">
         <div>
             <a href="static/task.ima">Find the key</a>.<br />
-            Format is "RUCTF_.*"
+            Flag format is "RUCTF_.*".
         </div>
     </task>
     <task type="html" lang="ru">
         <div>
             <a href="static/task.ima">Найдите ключ</a>.<br />
-            Формат: "RUCTF_.*"
+            Формат флага — "RUCTF_.*".
         </div>
     </task>
     <checker strict="yes">
-        <solution case="sensitive">RUCTF_1m4g3_32202</solution>
+        <solution case="insensitive">RUCTF_1m4g3_32202</solution>
     </checker>
 </quest>
