@@ -48,7 +48,7 @@ get '/' => sub
 
     my $tooFast = time - $keys{$key} < $MinTime;
     $keys{$key} = time;
-    return $self->render(status => 418, text => "I'm a teapot") if $tooFast;
+    return $self->render(status => 418, text => "Too frequent requests") if $tooFast;
 
     $delay =~ /^\d+\.?\d*$/ or return $self->render(status => 400, text => 'Bad param: delay');
     $count =~ /^\d+$/       or return $self->render(status => 400, text => 'Bad param: count');
