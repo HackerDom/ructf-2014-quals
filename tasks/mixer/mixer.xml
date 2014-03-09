@@ -3,14 +3,14 @@
     <name>Sample mixer</name>
     <task type="html" lang="en">
 	<div>
-	        <a href="static/mixer">This binary</a> works on <a href="http://mixer.quals.ructf.org/">mixer.quals.ructf.org</a>.
+	        <a href="static/mixer">This binary</a> works on <a href="http://echo.quals.ructf.org/">echo.quals.ructf.org</a>.
 		<br/>
 	        Flag format is "RUCTF_.*".
 	</div>
     </task>
     <task type="html" lang="ru">
 	<div>
-	        <a href="static/mixer">Этот файл</a> работает на <a href="http://mixer.quals.ructf.org/">mixer.quals.ructf.org</a>.
+	        <a href="static/mixer">Этот файл</a> работает на <a href="http://echo.quals.ructf.org/">echo.quals.ructf.org</a>.
 		<br/>
 	        Формат флага — "RUCTF_.*".
 	</div>
