@@ -12,8 +12,8 @@ SCORE = 500
 NAME = "Echo"
 
 #TODO: Fill!
-SHOUTCAST_SERVER = 'http://s10.myradiostream.com:4200/'
-SONG_TITLE_REGEX = r'Current Song: </font></td><td><font class=default><b>(?:.+?) - (.+?)</b>'
+SHOUTCAST_SERVER = 'http://172.16.16.1:8000/'
+SONG_TITLE_REGEX = r'Current Song:</td><td class="streamdata">(?:.+?) - (.+?)</b>'
 
 TIMEOUT = 120
 
