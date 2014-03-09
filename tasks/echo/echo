@@ -39,7 +39,7 @@ def check_task(answer):
     page = urlopen(req).read().decode('utf-8')
     m = re.search(SONG_TITLE_REGEX, page)
     if not m:
-        print('Failed to find pattern!')
+        sys.stderr.write('Failed to find pattern!')
         return False
     else:
         title = m.group(1)
@@ -62,7 +62,6 @@ elif action == 'user':
     answer = sys.stdin.readline().strip()
     status = check_task(answer)
     stat = 0 if status else 1
-    print("Exiting with " + str(status))
     exit(stat)
 else:
     sys.stderr.write("No such action: '{}' available actions are: id, series, name, create, user".format(action))
