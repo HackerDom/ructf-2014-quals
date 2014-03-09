@@ -40,7 +40,6 @@ def check_task(team_id):
     address = list(open(ADDRESSESFILE))[team_id]
     proxy = AuthServiceProxy("http://bitcoinrpc:8bY3PJ1jQ2cXqFiQGMiyawJNnBmUFMti6A8Gr9m1XBgm@172.16.16.13:28332")
     coins = proxy.getreceivedbyaddress(address)
-    print(coins)
     return coins >= 100
 
 
@@ -62,7 +61,6 @@ elif action == 'user':
     quid = int(sys.argv[3])
     status = check_task(quid)
     stat = 0 if status else 1
-    print("Exiting with " + str(status))
     exit(stat)
 else:
     print("No such action: '{}' available actions are: id, series, name, create, user".format(action), file=sys.stderr)
