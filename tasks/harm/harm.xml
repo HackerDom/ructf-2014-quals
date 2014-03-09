@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="reverse" id="reverse:200" proto="xmlquest-2.0">
     <name>Harm</name>
-    <task type="html" lang="en"><div>It sure should be a no problem for you to find an md5 digest of ragger.hsc file from harm0597 discmag.</div></task>
-    <task type="html" lang="ru"><div>Наверняка для вас не составит никакого труда найти md5 сумму файла ragger.hsc из дискмага harm0597.</div></task>
+    <task type="html" lang="en"><div>It sure should be a no problem for you to find an md5 digest of the biggest file from harm.dat of harm0597 discmag.</div></task>
+    <task type="html" lang="ru"><div>Наверняка для вас не составит никакого труда найти md5 сумму самого большого файла из harm.dat в дискмаге harm0597.</div></task>
     <checker strict="yes">
-        <solution case="insensitive">8fafa0b0ed4984edd8ffac5cd0f46089</solution>
+        <solution case="insensitive">8c0c4c5f223d9b3822a51eea0cabd524</solution>
     </checker>
 </quest>
