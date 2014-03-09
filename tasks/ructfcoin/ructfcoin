@@ -15,8 +15,8 @@ CATEGORY = 'crypto'
 SCORE = 400
 NAME = "RuCTFCoin"
 
-HTML_EN = ''' Check out our new cryptocurrency <a href="https://github.com/HackerDom/bitcoin">https://github.com/HackerDom/bitcoin</a> <br/>Mine and send us 100 coins to {} address and we'll score you points. You can use ANYTHING as an answer. For example, hash of money transfer transaction. '''
-HTML_RU = ''' Зацените нашу новейшую криптовалюту <a href="https://github.com/HackerDom/bitcoin">https://github.com/HackerDom/bitcoin</a> <br/>Намайните и пошлите нам 100 монет на адрес {} и мы начислим вам очки. В качестве ответа можете использовать ЛЮБОЕ значение. Например, хеш транзакции перевода нам монет. '''
+HTML_EN = ''' Check out our new cryptocurrency <a href="https://github.com/HackerDom/bitcoin">https://github.com/HackerDom/bitcoin</a> <br/>Mine and send us 10000 coins to {} address and we'll score you points. You can use ANYTHING as an answer. For example, hash of money transfer transaction. '''
+HTML_RU = ''' Зацените нашу новейшую криптовалюту <a href="https://github.com/HackerDom/bitcoin">https://github.com/HackerDom/bitcoin</a> <br/>Намайните и пошлите нам 10000 монет на адрес {} и мы начислим вам очки. В качестве ответа можете использовать ЛЮБОЕ значение. Например, хеш транзакции перевода нам монет. '''
 
 # Force utf8 output
 # sys.stdout = open(1, 'w', encoding='utf-8', closefd=False)
@@ -40,7 +40,7 @@ def check_task(team_id):
     address = list(open(ADDRESSESFILE))[team_id]
     proxy = AuthServiceProxy("http://bitcoinrpc:8bY3PJ1jQ2cXqFiQGMiyawJNnBmUFMti6A8Gr9m1XBgm@172.16.16.13:28332")
     coins = proxy.getreceivedbyaddress(address)
-    return coins >= 100
+    return coins >= 10000
 
 
 if action == 'id':
