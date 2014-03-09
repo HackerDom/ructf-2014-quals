@@ -1,8 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import sys
 
-from urllib.request import urlopen, Request
+from urllib2 import urlopen, Request
 import re
 import hashlib
 from os.path import join
@@ -19,10 +20,8 @@ TIMEOUT = 120
 HTML_EN = ''' Don't expect anything original from <a href="http://myradiostream.com/ructf">an echo</a>. '''
 HTML_RU = ''' Не ожидайте что-то оригинального от <a href="http://myradiostream.com/ructf">эхо</a>. '''
 
-sys.stdout = open(1, 'w', encoding='utf-8', closefd=False)
-
 if len(sys.argv) < 2:
-    print("You need to provide at least one argument", file=sys.stderr)
+    sys.stderr.write("You need to provide at least one argument\n")
     exit(1)
 
 action = sys.argv[1].lower()
@@ -66,7 +65,7 @@ elif action == 'user':
     print("Exiting with " + str(status))
     exit(stat)
 else:
-    print("No such action: '{}' available actions are: id, series, name, create, user".format(action), file=sys.stderr)
+    sys.stderr.write("No such action: '{}' available actions are: id, series, name, create, user".format(action))
     exit(1)
 
 exit(0)
