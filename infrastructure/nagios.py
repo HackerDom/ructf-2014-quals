@@ -118,3 +118,23 @@ define service {
     contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets, ructf2014q_dimmoborgir
 }
 """ % (vm.name, vm.admin.partition('@')[0])
+        if vm.tcp_ports:
+            for port in vm.tcp_ports:
+                print """
+define service {
+    use                 ructf2014q-service
+    host_name           %s
+    service_description %s/tcp internal
+    check_command       check_tcp!%s
+    contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets, ructf2014q_dimmoborgir
+}
+""" % (vm.name, port, port, vm.admin.partition('@')[0])
+                print """
+define service {
+    use                 ructf2014q-service
+    host_name           router
+    service_description %s/%s/tcp external
+    check_command       check_tcp!%s
+    contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets, ructf2014q_dimmoborgir
+}
+""" % (vm.name, port, port, vm.admin.partition('@')[0])
