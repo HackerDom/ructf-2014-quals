@@ -18,7 +18,7 @@ SONG_TITLE_REGEX = r'Current Song:</td>\n<td class="streamdata">(?:.+?) - (.+?)<
 TIMEOUT = 120
 
 HTML_EN = ''' Don't expect anything original from <a href="http://echo.quals.ructf.org:8000/echo.ogg">an echo</a>. '''
-HTML_RU = ''' Не ожидайте что-то оригинального от <a href="http://echo.quals.ructf.org:8000/echo.ogg">эхо</a>. '''
+HTML_RU = ''' Не ожидайте чего-то оригинального от <a href="http://echo.quals.ructf.org:8000/echo.ogg">эхо</a>. '''
 
 if len(sys.argv) < 2:
     sys.stderr.write("You need to provide at least one argument\n")
