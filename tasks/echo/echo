@@ -17,8 +17,8 @@ SONG_TITLE_REGEX = r'Current Song:</td>\n<td class="streamdata">(?:.+?) - (.+?)<
 
 TIMEOUT = 120
 
-HTML_EN = ''' Don't expect anything original from <a href="http://myradiostream.com/ructf">an echo</a>. '''
-HTML_RU = ''' Не ожидайте что-то оригинального от <a href="http://myradiostream.com/ructf">эхо</a>. '''
+HTML_EN = ''' Don't expect anything original from <a href="http://echo.quals.ructf.org:8000/echo.ogg">an echo</a>. '''
+HTML_RU = ''' Не ожидайте что-то оригинального от <a href="http://echo.quals.ructf.org:8000/echo.ogg">эхо</a>. '''
 
 if len(sys.argv) < 2:
     sys.stderr.write("You need to provide at least one argument\n")
@@ -57,7 +57,6 @@ elif action == 'name':
 elif action == 'create':
     print("html[en]:{}".format(HTML_EN))
     print("html[ru]:{}".format(HTML_RU))
-    print("timeout:" + str(TIMEOUT))
 elif action == 'user':
     answer = sys.stdin.readline().strip()
     status = check_task(answer)
