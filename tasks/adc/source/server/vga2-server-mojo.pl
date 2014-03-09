@@ -100,9 +100,11 @@ sub NewTask
     my ($delay,$count) = @_;
 
     my $pixelsDelta = $delay/$PixelTime;
+    my $time = time * 1000000;
 
-    my $time = time * 1000000 + int(rand 10000000)/10;
-    my $pixel = int rand @data;
+    my $startDelay = int(rand 10000000)/10;
+    $time += $startDelay;
+    my $pixel = $startDelay/$PixelTime;
 
     my @result;
     for (1..$count) {
