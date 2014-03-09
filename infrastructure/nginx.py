@@ -1,4 +1,10 @@
-def gen(vm):
+def gen(vm, bandir):
+    bans = []
+    try:
+        with open('%s/%s' % (bandir, vm.name), 'r') as banfile:
+            bans = map(str.strip, [ban for ban in banfile])
+    except:
+        pass
     if vm.http:
         print """
 server {
@@ -13,6 +19,11 @@ server {
 
     location / {
         proxy_pass      http://%s;
+        %s
     }
 }
-""" % (vm.name, vm.name, vm.name, vm.addr)
+""" % (vm.name,
+       vm.name,
+       vm.name,
+       vm.addr,
+       '\n        '.join(map(lambda ban: 'deny            %s;' % ban, bans)))
