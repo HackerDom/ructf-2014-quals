@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 7200	; 2 hours
 quals.ructf.org		IN SOA	dijkstra.urgu.org. uzer.hackerdom.ru. (
-				    2014030802 ; serial
+				    2014030900 ; serial
 				    7200       ; refresh (2 hours)
 				    7200       ; retry (2 hours)
 				    2419200    ; expire (4 weeks)
@@ -10,6 +10,8 @@ quals.ructf.org		IN SOA	dijkstra.urgu.org. uzer.hackerdom.ru. (
 			NS	dijkstra.urgu.org.
 			A	194.226.244.113
 $ORIGIN quals.ructf.org.
+i              3600 IN NS dijkstra.urgu.org.
+
 echo           3600 IN A 194.226.244.113
 i2p            3600 IN A 194.226.244.124
 irrsa          3600 IN A 194.226.244.113
