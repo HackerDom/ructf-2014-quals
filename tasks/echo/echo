@@ -42,9 +42,10 @@ def check_task(answer):
         print('Failed to find pattern!')
         return False
     else:
-        print('Title: %s' % m.group(1))
-        corrent_ans = 'RUCTF_' + md5(m.group(1))
-        return corrent_ans == answer
+        title = m.group(1)
+        print('Title: %s' % title)
+        corrent_ans = 'RUCTF_' + md5(title)
+        return corrent_ans.lower() == answer.lower()
 
 
 
