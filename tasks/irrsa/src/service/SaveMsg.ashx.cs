@@ -46,6 +46,9 @@ namespace irrsa
 			if(text.Length > Settings.MaxMessageLength)
 				throw new AjaxException("Message size exceeded");
 
+			var ip = context.Request.Headers["X-Forwarded-For"];
+			var ua = context.Request.UserAgent.SubstringSafe(0, Settings.MaxUserAgentLength);
+
 			msgid = new Guid(MD5.Create().ComputeHash(Guid.NewGuid().ToByteArray()));
 			DbStorage.AddMessage(new DbItem
 			{
@@ -55,8 +58,8 @@ namespace irrsa
 				Email = email,
 				Phone = phone,
 				Text = text,
-				IP = context.Request.UserHostAddress,
-				UA = context.Request.UserAgent.SubstringSafe(0, Settings.MaxUserAgentLength),
+				IP = ip != null && !ip.StartsWith("172.") ? ip : null,
+				UA = ua,
 				Date = DateTime.UtcNow
 			}, true);
 

@@ -4,6 +4,6 @@
     <task type="html" lang="en"><div><a href="http://secritter.quals.ructf.org">Read</a> my private messages.. @root.</div></task>
     <task type="html" lang="ru"><div><a href="http://secritter.quals.ructf.org">Прочтите</a> мои приватные сообщения.. @root.</div></task>
     <checker strict="yes">
-        <solution case="insensitive">???</solution>
+        <solution case="insensitive">RUCTF_INTERNET_IS_NOT_SECURE</solution>
     </checker>
 </quest>
