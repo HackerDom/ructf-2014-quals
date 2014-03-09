@@ -11,9 +11,8 @@ CATEGORY = 'stegano'
 SCORE = 500
 NAME = "Echo"
 
-#TODO: Fill!
 SHOUTCAST_SERVER = 'http://172.16.16.1:8000/'
-SONG_TITLE_REGEX = r'Current Song:</td><td class="streamdata">(?:.+?) - (.+?)</b>'
+SONG_TITLE_REGEX = r'Current Song:</td>\n<td class="streamdata">(?:.+?) - (.+?)</td>'
 
 TIMEOUT = 120
 
