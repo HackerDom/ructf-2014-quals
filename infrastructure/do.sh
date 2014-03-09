@@ -5,7 +5,7 @@ MAIN=$(dirname $0)/main.py
 ssh='ssh -l root'
 
 list() {
-    python $MAIN list "$1"
+    python $MAIN list "$1" "$2" "$3"
 }
 
 gen_xen() {
@@ -81,9 +81,11 @@ gen_user_chains() {
     python $MAIN gen_user_chains $ipp $iface $target | sh -s
 }
 
+
 gen_int_access() {
     chain=ructf2014q-int
-    python $MAIN gen_int_access $chain | sh -s
+    extra_cns=bay,bosonojka5,victor.samun
+    python $MAIN gen_int_access $chain $extra_cns | sh -s
 }
 
 gen_xen_vnc() {
@@ -265,6 +267,22 @@ setup_interfaces() {
     done
 }
 
+pssh() {
+    patt=$1; shift
+    os=$1; shift
+    IFS=$'\n' vms=($(list $patt $os addr | cut -f3 -d:)); IFS=$' '
+    echo "$*" | parallel-ssh -l root -i -I -H "${vms[*]}"
+}
+
+pscp() {
+    patt=$1
+    os=$2
+    localfile=$3
+    remotefile=$4
+    list $patt $os addr | cut -f3 -d: | parallel-scp -v -h /dev/stdin \
+        -l root $localfile $remotefile
+}
+
 prepare_partition() {
     host=$1
     vm=$2
@@ -329,6 +347,18 @@ customize() {
         umount $target
         kpartx -d $disk
 END
+}
+
+backup() {
+  host=$1
+  backup=$(dirname $0)/backup.sh
+  user=backup-ructf2014q
+  IFS=$'\n' vms=($(list $1: linux)); IFS=$' '
+  for line in ${vms[@]}; do
+      vm=${line##*:}
+      addr=$(python $MAIN get_attr $vm addr)
+      su $user -c "$backup $addr $vm"
+  done
 }
 
 setup_debian() {
