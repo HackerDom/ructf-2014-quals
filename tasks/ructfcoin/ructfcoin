@@ -7,9 +7,9 @@ import sys
 
 import random
 import hashlib
-from os.path import join
+from os.path import join, abspath, dirname
 
-ADDRESSESFILE = 'addrs'
+ADDRESSESFILE = join(abspath(dirname(__file__)), 'addrs')
 
 CATEGORY = 'crypto'
 SCORE = 400
