@@ -42,7 +42,7 @@ namespace irrsa
 				}));
 		}
 
-		public static void RemoveSessionId(Guid ssid)
+		/*public static void RemoveSessionId(Guid ssid)
 		{
 			Settings.ConnectionString.UsingConnection(conn => conn.UsingCommand("delete from sessions where ssid = @ssid",
 				cmd =>
@@ -50,7 +50,7 @@ namespace irrsa
 					cmd.AddParam("ssid", ssid, DbType.Guid);
 					cmd.ExecuteNonQuery();
 				}));
-		}
+		}*/
 
 		public static void AddMessage(DbItem item, bool preview)
 		{

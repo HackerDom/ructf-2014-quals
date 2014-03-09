@@ -4,6 +4,6 @@
   <task type="html" lang="en"><div><a href="http://w2.quals.ructf.org/">Find the key</a>.</div></task>
   <task type="html" lang="ru"><div><a href="http://w2.quals.ructf.org/">Найдите ключ</a>.</div></task>
   <checker strict="yes">
-    <solution case="insensitive">f1264d450b9feda62fec5a1e11faba1a</solution>
+    <solution case="insensitive">054ad7a734437d6853383ad919526dc5</solution>
   </checker>
 </quest>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quest series="crypto" id="crypto:200" proto="xmlquest-2.0">
-    <name>Mary Queen of Scots goes chinese</name>
-    <task type="html" lang="en">We <a href="static/7c0aaca1f531dd40dd407f3a7721dfd0/d8cb57bf1b34bf8c58836724ee2b0b71">capture</a> secret message from prison where Mary Queen stands. Help us figure out what message means.</task>
-    <task type="html" lang="ru">Мы <a href="static/7c0aaca1f531dd40dd407f3a7721dfd0/d8cb57bf1b34bf8c58836724ee2b0b71">перехватили</a> секретное сообщение из тюрьмы где Mary Queen of Scots находится. Помогите нам понять это сообщение.</task>
+    <name>Mary Queen</name>
+    <task type="html" lang="en"><div>Mary Queen of Scots goes chinese. We <a href="static/7c0aaca1f531dd40dd407f3a7721dfd0/d8cb57bf1b34bf8c58836724ee2b0b71">capture</a> secret message from prison where Mary Queen stands. Help us figure out what message means.</div></task>
+    <task type="html" lang="ru"><div>Mary Queen of Scots goes chinese. Мы <a href="static/7c0aaca1f531dd40dd407f3a7721dfd0/d8cb57bf1b34bf8c58836724ee2b0b71">перехватили</a> секретное сообщение из тюрьмы где Mary Queen of Scots находится. Помогите нам понять это сообщение.</div></task>
     <checker strict="yes">
         <solution case="insensitive">Alice's Adventures in Wonderland</solution>
         <solution case="insensitive">Алиса в стране чудес</solution>

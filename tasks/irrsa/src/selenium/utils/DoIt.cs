@@ -7,8 +7,9 @@ namespace irrsatest.utils
 {
 	internal class DoIt
 	{
-		public static void WithRetries(Action action, string errorMsg, int retries = 3, int timeout = 1000)
+		public static void WithRetries(Action action, string errorMsg, out Exception exception, int retries = 3, int timeout = 1000)
 		{
+			exception = null;
 			for(int i = 0; i < retries; i++)
 			{
 				try
@@ -19,7 +20,10 @@ namespace irrsatest.utils
 				catch(Exception e)
 				{
 					if(i == retries - 1)
+					{
+						exception = e;
 						return;
+					}
 					log.Error(errorMsg, e);
 					Thread.Sleep(timeout * i);
 				}

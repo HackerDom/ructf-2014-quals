@@ -3,12 +3,12 @@
     <name>So close</name>
     <task type="html" lang="en">
         <div>
-            The answer is <a href="static/answer.ova">here.</a> <br/>Flag format is "RUCTF_.*"
+            The answer is <a href="static/answer.ova">here.</a> <br/>Flag format is "RUCTF_.*".
         </div>
     </task>
     <task type="html" lang="ru">
         <div>
-            Ответ <a href="static/answer.ova">здесь.</a> <br/>Формат флага — "RUCTF_.*"
+            Ответ <a href="static/answer.ova">здесь.</a> <br/>Формат флага — "RUCTF_.*".
         </div>
     </task>
     <checker strict="yes">

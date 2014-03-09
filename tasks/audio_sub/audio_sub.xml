@@ -8,6 +8,10 @@
         <solution case="insensitive">you don't know power of the dark side</solution>
         <solution case="insensitive">you dont know power of the dark side.</solution>
         <solution case="insensitive">you dont know power of the dark side</solution>
+        <solution case="insensitive">you don't know the power of the dark side</solution>
+        <solution case="insensitive">you don't know the power of the dark side.</solution>
+        <solution case="insensitive">you dont know the power of the dark side</solution>
+        <solution case="insensitive">you dont know the power of the dark side.</solution>
     </checker>
 </quest>
 

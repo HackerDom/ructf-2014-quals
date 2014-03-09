@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="forensics" id="forensics:100" proto="xmlquest-2.0">
+    <name>Secret host</name>
+    <task type="html" lang="en"><div>We intercepted <a href="static/openvpn.5df2789228a89cdcd1ff58e3e650df0f.7z">configs and dump</a>. What were they hide on <a href="http://10.100.0.1/">http://10.100.0.1/</a>?</div></task>
+    <task type="html" lang="ru"><div>Мы перехватили <a href="static/openvpn.5df2789228a89cdcd1ff58e3e650df0f.7z">конфиги и дамп</a>. Что они спрятали на <a href="http://10.100.0.1/">http://10.100.0.1/</a>?</div></task>
+    <checker strict="yes">
+        <solution case="insensitive">RUCTF_29793ced32a8c89481c83827cf24647a</solution>
+    </checker>
+</quest>
