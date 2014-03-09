@@ -11,6 +11,7 @@ namespace irrsatest
 		public static string FirefoxPath { get { return ConfigurationManager.AppSettings["FirefoxPath"]; } }
 
 		public static Uri BaseUri { get { return new Uri(ConfigurationManager.AppSettings["BaseUrl"]); } }
+		public static int ItemsBeforeReinitializeDrivers { get { return int.Parse(ConfigurationManager.AppSettings["ItemsBeforeReinitializeDrivers"]); } }
 
 		public static TimeSpan PageLoadTimeout { get { return TimeSpan.FromSeconds(int.Parse(ConfigurationManager.AppSettings["PageLoadTimeoutSec"])); } }
 		public static TimeSpan ScriptTimeout { get { return TimeSpan.FromSeconds(int.Parse(ConfigurationManager.AppSettings["ScriptTimeoutSec"])); } }
