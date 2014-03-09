@@ -200,7 +200,7 @@ router_setup_fwd() {
 }
 
 router_gen_nginx() {
-    ban=$(dirname $)/ban
+    ban=$(dirname $0)/ban
     list ":" | while read line; do
         vm=${line##*:}
         config=/etc/nginx/sites-available/ructf2014q-$vm
@@ -218,7 +218,7 @@ nudge_services() {
 }
 
 router_enable() {
-    ban=$(dirname $)/ban
+    ban=$(dirname $0)/ban
     IFS=$'\n' vms=($(list $1)); IFS=$' '
     for line in ${vms[@]}; do
         vm=${line##*:}
