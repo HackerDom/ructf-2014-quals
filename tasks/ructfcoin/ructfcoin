@@ -15,8 +15,8 @@ CATEGORY = 'crypto'
 SCORE = 400
 NAME = "RuCTFCoin"
 
-HTML_EN = ''' Check out our new cryptocurrency https://github.com/HackerDom/bitcoin <br/>Mine and send us 100 coins to {} address and we'll score you points. You can use ANYTHING as an answer. For example, hash of money transfer transaction. '''
-HTML_RU = ''' Зацените нашу новейшую криптовалюту https://github.com/HackerDom/bitcoin <br/>Намайните и пошлите нам 100 монет на адрес {} и мы начислим вам очки. В качестве ответа можете использовать ЛЮБОЕ значение. Например, хеш транзакции перевода нам монет. '''
+HTML_EN = ''' Check out our new cryptocurrency <a href="https://github.com/HackerDom/bitcoin">https://github.com/HackerDom/bitcoin</a> <br/>Mine and send us 100 coins to {} address and we'll score you points. You can use ANYTHING as an answer. For example, hash of money transfer transaction. '''
+HTML_RU = ''' Зацените нашу новейшую криптовалюту <a href="https://github.com/HackerDom/bitcoin">https://github.com/HackerDom/bitcoin</a> <br/>Намайните и пошлите нам 100 монет на адрес {} и мы начислим вам очки. В качестве ответа можете использовать ЛЮБОЕ значение. Например, хеш транзакции перевода нам монет. '''
 
 # Force utf8 output
 # sys.stdout = open(1, 'w', encoding='utf-8', closefd=False)
