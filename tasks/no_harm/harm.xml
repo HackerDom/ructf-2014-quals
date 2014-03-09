@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quest series="reverse" id="reverse:200" proto="xmlquest-2.0">
+    <name>No harm</name>
+    <task type="html" lang="en"><div>... but it may be a little bit harder to find an md5 digest of the biggest file from harm.dat of harm0597 discmag.</div></task>
+    <task type="html" lang="ru"><div>... а вот найти md5 сумму самого большого файла из harm.dat в дискмаге harm0597 может оказаться немного сложнее.</div></task>
+    <checker strict="yes">
+        <solution case="insensitive">8c0c4c5f223d9b3822a51eea0cabd524</solution>
+    </checker>
+</quest>
