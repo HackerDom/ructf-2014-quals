@@ -1,8 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import sys
 
-from urllib.request import urlopen, Request
+from urllib2 import urlopen, Request
 import re
 import hashlib
 from os.path import join
@@ -11,19 +12,16 @@ CATEGORY = 'stegano'
 SCORE = 500
 NAME = "Echo"
 
-#TODO: Fill!
-SHOUTCAST_SERVER = 'http://s10.myradiostream.com:4200/'
-SONG_TITLE_REGEX = r'Current Song: </font></td><td><font class=default><b>(?:.+?) - (.+?)</b>'
+SHOUTCAST_SERVER = 'http://172.16.16.1:8000/'
+SONG_TITLE_REGEX = r'Current Song:</td>\n<td class="streamdata">(?:.+?) - (.+?)</td>'
 
 TIMEOUT = 120
 
-HTML_EN = ''' Don't expect anything original from <a href="http://myradiostream.com/ructf">an echo</a>. '''
-HTML_RU = ''' Не ожидайте что-то оригинального от <a href="http://myradiostream.com/ructf">эхо</a>. '''
-
-sys.stdout = open(1, 'w', encoding='utf-8', closefd=False)
+HTML_EN = ''' Don't expect anything original from <a href="http://echo.quals.ructf.org:8000/echo.ogg">an echo</a>. '''
+HTML_RU = ''' Не ожидайте чего-то оригинального от <a href="http://echo.quals.ructf.org:8000/echo.ogg">эхо</a>. '''
 
 if len(sys.argv) < 2:
-    print("You need to provide at least one argument", file=sys.stderr)
+    sys.stderr.write("You need to provide at least one argument\n")
     exit(1)
 
 action = sys.argv[1].lower()
@@ -41,12 +39,13 @@ def check_task(answer):
     page = urlopen(req).read().decode('utf-8')
     m = re.search(SONG_TITLE_REGEX, page)
     if not m:
-        print('Failed to find pattern!')
+        sys.stderr.write('Failed to find pattern!')
         return False
     else:
-        print('Title: %s' % m.group(1))
-        corrent_ans = 'RUCTF_' + md5(m.group(1))
-        return corrent_ans == answer
+        title = m.group(1)
+        sys.stderr.write('Title: %s\n' % title)
+        corrent_ans = 'RUCTF_' + md5(title)
+        return corrent_ans.lower() == answer.lower()
 
 
 
@@ -59,15 +58,13 @@ elif action == 'name':
 elif action == 'create':
     print("html[en]:{}".format(HTML_EN))
     print("html[ru]:{}".format(HTML_RU))
-    print("timeout:" + str(TIMEOUT))
 elif action == 'user':
     answer = sys.stdin.readline().strip()
     status = check_task(answer)
     stat = 0 if status else 1
-    print("Exiting with " + str(status))
     exit(stat)
 else:
-    print("No such action: '{}' available actions are: id, series, name, create, user".format(action), file=sys.stderr)
+    sys.stderr.write("No such action: '{}' available actions are: id, series, name, create, user".format(action))
     exit(1)
 
 exit(0)
