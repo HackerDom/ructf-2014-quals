@@ -43,7 +43,7 @@ def check_task(answer):
         return False
     else:
         title = m.group(1)
-        print('Title: %s' % title)
+        sys.stderr.write('Title: %s\n' % title)
         corrent_ans = 'RUCTF_' + md5(title)
         return corrent_ans.lower() == answer.lower()
 
