@@ -144,7 +144,7 @@ def gen_xen_vnc(vms, args):
 
 @cmd
 def gen_nginx(vms, vm):
-    return nginx.gen(find(vms, args[0]))
+    return nginx.gen(find(vms, args[0]), args[1])
 
 @cmd
 def customize(vms, args):

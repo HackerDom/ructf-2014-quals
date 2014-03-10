@@ -75,11 +75,14 @@ namespace irrsatest
 			driver.Navigate().GoToUrl(new Uri(Settings.BaseUri, "/login"));
 			var loginField = driver.FindElementById("login");
 			loginField.Clear();
+			Thread.Sleep(200);
 			loginField.SendKeys(Settings.Login);
 			var passwordField = driver.FindElementById("password");
 			passwordField.Clear();
+			Thread.Sleep(200);
 			passwordField.SendKeys(Settings.Pass);
 			var form = driver.FindElementByClassName("form-signin");
+			Thread.Sleep(200);
 			form.Submit();
 		}
 

@@ -13,41 +13,61 @@ namespace irrsatest
 		public DriversPool()
 		{
 			semaphore = new Semaphore(Settings.FirefoxProfiles.Length, Settings.FirefoxProfiles.Length);
-			dict = new ConcurrentDictionary<RemoteWebDriver, bool>();
+			dict = new ConcurrentDictionary<DriverInfo, bool>();
 			foreach(string profile in Settings.FirefoxProfiles)
 			{
-				var driver = StartNewDriver(profile);
-				dict[driver] = false;
+				var driverInfo = new DriverInfo {Driver = StartNewDriver(profile), ProfilePath = profile, AcquireCount = 0};
+				dict[driverInfo] = false;
 			}
 		}
 
 		public void UsingDriver(Action<RemoteWebDriver> action)
 		{
 			semaphore.WaitOne();
-			var driver = dict.FirstOrDefault(pair => dict.TryUpdate(pair.Key, true, false)).Key;
+			var driverInfo = dict.FirstOrDefault(pair => dict.TryUpdate(pair.Key, true, false)).Key;
 			try
 			{
-				using(ThreadContext.Stacks["driver"].Push(driver.GetHashCode().ToString("x8")))
-					action(driver);
+				using(ThreadContext.Stacks["driver"].Push(driverInfo.Driver.GetHashCode().ToString("x8")))
+					action(driverInfo.Driver);
 			}
 			finally
 			{
-				dict[driver] = false;
+				if(++driverInfo.AcquireCount >= Settings.ItemsBeforeReinitializeDrivers && Settings.ItemsBeforeReinitializeDrivers != 0)
+				{
+					var oldDriver = driverInfo.Driver;
+					log.InfoFormat("Driver acquired {0} times - restarting", driverInfo.AcquireCount);
+					try
+					{
+						driverInfo.Driver = StartNewDriver(driverInfo.ProfilePath);
+						QuitAndDispose(oldDriver);
+						driverInfo.AcquireCount = 0;
+					}
+					catch(Exception e)
+					{
+						log.Error("Failed to restart driver", e);
+					}
+				}
+				dict[driverInfo] = false;
 				semaphore.Release();
 			}
 		}
 
 		public void Dispose()
 		{
-			foreach(var driver in dict.Keys)
+			foreach(var driverInfo in dict.Keys)
 			{
-				try
-				{
-					driver.Quit();
-				}
-				catch {}
-				driver.Dispose();
+				QuitAndDispose(driverInfo.Driver);
 			}
+		}
+
+		private void QuitAndDispose(RemoteWebDriver driver)
+		{
+			try
+			{
+				driver.Quit();
+			}
+			catch {}
+			driver.Dispose();
 		}
 
 		public int Count { get { return dict.Count; } }
@@ -64,8 +84,15 @@ namespace irrsatest
 			return driver;
 		}
 
+		private class DriverInfo
+		{
+			public RemoteWebDriver Driver;
+			public string ProfilePath;
+			public int AcquireCount;
+		}
+
 		private static readonly ILog log = LogManager.GetLogger(typeof(DriversPool));
-		private readonly ConcurrentDictionary<RemoteWebDriver, bool> dict;
+		private readonly ConcurrentDictionary<DriverInfo, bool> dict;
 		private readonly Semaphore semaphore;
 	}
 }

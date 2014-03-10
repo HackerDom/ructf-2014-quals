@@ -200,10 +200,11 @@ router_setup_fwd() {
 }
 
 router_gen_nginx() {
+    ban=$(dirname $0)/ban
     list ":" | while read line; do
         vm=${line##*:}
         config=/etc/nginx/sites-available/ructf2014q-$vm
-        python $MAIN gen_nginx $vm | $ssh $router "cat > $config"
+        python $MAIN gen_nginx $vm $ban | $ssh $router "cat > $config"
     done
 }
 
@@ -217,6 +218,7 @@ nudge_services() {
 }
 
 router_enable() {
+    ban=$(dirname $0)/ban
     IFS=$'\n' vms=($(list $1)); IFS=$' '
     for line in ${vms[@]}; do
         vm=${line##*:}
@@ -224,10 +226,19 @@ router_enable() {
            [ "$(python $MAIN get_attr $vm udp_ports)" != '[]' ]; then
             iptables_needs_save=1
             chain=$vm_prefix$vm
-            $ssh $router "iptables -F $chain; iptables -A $chain -j UaA"
+            { echo -n "iptables -F $chain; "
+              if [ -e "$ban/$vm" ]; then
+                IFS=$'\n' bans=($(cat "$ban/$vm")); IFS=$' '
+                for banned in ${bans[@]}; do
+                    echo -n "iptables -A $chain -s $banned -j DROP; "
+                done
+              fi
+              echo "iptables -A $chain -j UaA"
+            } | $ssh $router 'sh -s'
         elif [ "$(python $MAIN get_attr $vm http)" == True ]; then
             nginx_needs_reload=1
             config=/etc/nginx/sites-available/ructf2014q-$vm
+            python $MAIN gen_nginx $vm $ban | $ssh $router "cat > $config"
             $ssh $router "ln -sf $config /etc/nginx/sites-enabled/"
         fi
     done
