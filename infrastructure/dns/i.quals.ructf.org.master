@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 7200	; 2 hours
 i.quals.ructf.org	IN SOA	dijkstra.urgu.org. uzer.hackerdom.ru. (
-				    2014030901 ; serial
+				    2014031000 ; serial
 				    7200       ; refresh (2 hours)
 				    7200       ; retry (2 hours)
 				    2419200    ; expire (4 weeks)
@@ -12,7 +12,7 @@ $ORIGIN i.quals.ructf.org.
 echo           3600 IN A 172.16.16.1
 i2p            3600 IN A 194.226.244.124
 irrsa          3600 IN A 172.16.16.3
-maze           3600 IN A 194.226.244.124
+maze           3600 IN A 194.226.244.125
 ml             3600 IN A 172.16.16.5
 mssngrrr       3600 IN A 172.16.16.6
 secritter      3600 IN A 172.16.16.7
