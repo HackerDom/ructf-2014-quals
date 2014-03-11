@@ -103,6 +103,7 @@ define service {
     passive_checks_enabled  1
     check_freshness         1
     freshness_threshold     12000
+    max_check_attempts      1
     check_command           no-backup-report
     contacts   ructf2014q_%s, ructf2014q_last_g, ructf2014q_andrey.malets, ructf2014q_dimmoborgir
 }
