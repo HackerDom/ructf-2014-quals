@@ -387,7 +387,7 @@ setup_debian() {
 
 gen_dolbilka() {
     # TODO(uzer): just for example
-    clients=3
+    clients=5
 
     partition=managed
     dolbilka_cfg=/tmp/ructf2014q-dolbilka.cfg
