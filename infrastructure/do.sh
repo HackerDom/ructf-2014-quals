@@ -385,4 +385,23 @@ setup_debian() {
     done
 }
 
+gen_dolbilka() {
+    # TODO(uzer): just for example
+    clients=3
+
+    partition=managed
+    dolbilka_cfg=/tmp/ructf2014q-dolbilka.cfg
+
+    nodes=$(tempfile)
+    sinfo -p $partition -t idle -h -o '%n' > $nodes
+    nnodes=$(sinfo -p $partition -t idle -h -o '%n' | wc -l)
+
+    cfg=$(tempfile)
+    python $MAIN gen_dolbilka $nnodes $clients > $cfg
+
+    parallel-scp -v -h $nodes $cfg $dolbilka_cfg
+
+    rm $nodes $cfg
+}
+
 $@

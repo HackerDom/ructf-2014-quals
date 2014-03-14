@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import custom, iptables, nagios, nginx, net, vm
+import custom, dolbilka, iptables, nagios, nginx, net, vm
 import os, re, socket, sys
 
 CFG=os.path.dirname(os.path.realpath(__file__)) + '/vms.cfg'
@@ -160,6 +160,10 @@ def gen_interfaces(vms, args):
 @cmd
 def get_ports(vms, args):
     return iptables.get_ports(find(vms, args[0]))
+
+@cmd
+def gen_dolbilka(vms, args):
+    return dolbilka.gen_config(vms, *args)
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
