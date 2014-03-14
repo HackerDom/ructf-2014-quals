@@ -391,6 +391,7 @@ gen_dolbilka() {
 
     partition=managed
     dolbilka_cfg=/tmp/ructf2014q-dolbilka.cfg
+    knock=/tmp/ructf2014q-knock.sh
 
     nodes=$(tempfile)
     sinfo -p $partition -t idle -h -o '%n' > $nodes
@@ -400,8 +401,15 @@ gen_dolbilka() {
     python $MAIN gen_dolbilka $nnodes $clients > $cfg
 
     parallel-scp -v -h $nodes $cfg $dolbilka_cfg
+    parallel-scp -v -h $nodes $(dirname $0)/knock.sh $knock
 
     rm $nodes $cfg
+}
+
+dolbim() {
+    partition=managed
+    knock=/tmp/ructf2014q-knock.sh
+    srun -D/ -N1-100 -p $partition $knock
 }
 
 $@
