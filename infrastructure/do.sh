@@ -1,13 +1,13 @@
 #!/bin/bash
 
 BASE=`dirname $0`
-MAIN="$BASE/main.py"
+MAIN="python $BASE/main.py"
 SERIAL="python $BASE/dns/serial.py"
 
 ssh='ssh -l root'
 
 list() {
-    python $MAIN list "$1" "$2" "$3"
+    $MAIN list "$1" "$2" "$3"
 }
 
 gen_xen() {
@@ -15,7 +15,7 @@ gen_xen() {
         host=${line%%:*}
         vm=${line##*:}
         $ssh $host "mkdir -p /root/ructf2014-quals" </dev/null
-        python $MAIN gen_xen $host $vm "$2" </dev/null \
+        $MAIN gen_xen $host $vm "$2" </dev/null \
             | $ssh $host "cat >/root/ructf2014-quals/ructf2014q-$vm.cfg"
     done
 }
@@ -24,7 +24,7 @@ gen_lvm() {
     list "$1" | while read line; do
         host=${line%%:*}
         vm=${line##*:}
-        size=$(python $MAIN get_attr $vm disk)
+        size=$($MAIN get_attr $vm disk)
         $ssh $host "[ -e /dev/data/ructf2014q-$vm ] || lvcreate -L${size}G -nructf2014q-$vm data" \
             </dev/null
     done
@@ -72,7 +72,7 @@ remove_startup() {
 }
 
 check_res() {
-    python $MAIN check_res
+    $MAIN check_res
 }
 
 gen_user_chains() {
@@ -80,19 +80,19 @@ gen_user_chains() {
     iface=tun0
     target=UaA
 
-    python $MAIN gen_user_chains $ipp $iface $target | sh -s
+    $MAIN gen_user_chains $ipp $iface $target | sh -s
 }
 
 
 gen_int_access() {
     chain=ructf2014q-int
     extra_cns=bay,bosonojka5,victor.samun
-    python $MAIN gen_int_access $chain $extra_cns | sh -s
+    $MAIN gen_int_access $chain $extra_cns | sh -s
 }
 
 gen_xen_vnc() {
     chain=ructf2014q-xen
-    python $MAIN gen_xen_vnc $chain | sh -s
+    $MAIN gen_xen_vnc $chain | sh -s
 }
 
 gen_iptables() {
@@ -104,7 +104,7 @@ gen_iptables() {
 
 gen_nagios() {
     file=/var/lib/cfg/nagios/ructf2014q.cfg
-    python $MAIN gen_nagios > $file.new
+    $MAIN gen_nagios > $file.new
     if ! [ -e $file ] || ! cmp $file.new $file; then
         mv $file.new $file
         /etc/init.d/nagios3 reload
@@ -114,8 +114,8 @@ gen_nagios() {
 gather_ssh() {
     list ":" | while read line; do
         vm=${line##*:}
-        addr=$(python $MAIN addr $vm)
-        os=$(python $MAIN get_attr $vm os)
+        addr=$($MAIN addr $vm)
+        os=$($MAIN get_attr $vm os)
         if [ "$os" == debian ] || [ "$os" == debian32 ] || [ "$os" == arch ]; then
             $ssh -o StrictHostKeyChecking=no $addr hostname </dev/null
         fi
@@ -126,8 +126,8 @@ setup_iptables() {
     custom="$2"
     list "$1" | while read line; do
         vm=${line##*:}
-        addr=$(python $MAIN addr $vm)
-        os=$(python $MAIN get_attr $vm os)
+        addr=$($MAIN addr $vm)
+        os=$($MAIN get_attr $vm os)
         base=$(dirname $0)
         if [ "$os" == debian ] || [ "$os" == debian32 ]; then
             scp $base/iptables/init root@$addr:/etc/init.d/iptables
@@ -169,7 +169,7 @@ setup_iptables() {
             " </dev/null
 
             if [ "$custom" == custom ]; then
-                python $MAIN get_ports $vm | while read portspec; do
+                $MAIN get_ports $vm | while read portspec; do
                     proto=${portspec%%:*}
                     port=${portspec##*:}
                     $ssh $addr "iptables -A INPUT -p $proto --dport $port \
@@ -191,13 +191,13 @@ vm_prefix=ructf2014q_
 
 router_setup_nat() {
     chain=ructf2014q
-    python $MAIN gen_nat $router $chain | $ssh $router "sh -s"
+    $MAIN gen_nat $router $chain | $ssh $router "sh -s"
     $ssh $router '/etc/init.d/iptables save active'
 }
 
 router_setup_fwd() {
     chain=ructf2014q
-    python $MAIN gen_fwd $chain $vm_prefix | $ssh $router "sh -s"
+    $MAIN gen_fwd $chain $vm_prefix | $ssh $router "sh -s"
     $ssh $router '/etc/init.d/iptables save active'
 }
 
@@ -206,7 +206,7 @@ router_gen_nginx() {
     list ":" | while read line; do
         vm=${line##*:}
         config=/etc/nginx/sites-available/ructf2014q-$vm
-        python $MAIN gen_nginx $vm $ban | $ssh $router "cat > $config"
+        $MAIN gen_nginx $vm $ban | $ssh $router "cat > $config"
     done
 }
 
@@ -224,8 +224,8 @@ router_enable() {
     IFS=$'\n' vms=($(list $1)); IFS=$' '
     for line in ${vms[@]}; do
         vm=${line##*:}
-        if [ "$(python $MAIN get_attr $vm tcp_ports)" != '[]' ] || \
-           [ "$(python $MAIN get_attr $vm udp_ports)" != '[]' ]; then
+        if [ "$($MAIN get_attr $vm tcp_ports)" != '[]' ] || \
+           [ "$($MAIN get_attr $vm udp_ports)" != '[]' ]; then
             iptables_needs_save=1
             chain=$vm_prefix$vm
             { echo -n "iptables -F $chain; "
@@ -237,10 +237,10 @@ router_enable() {
               fi
               echo "iptables -A $chain -j UaA"
             } | $ssh $router 'sh -s'
-        elif [ "$(python $MAIN get_attr $vm http)" == True ]; then
+        elif [ "$($MAIN get_attr $vm http)" == True ]; then
             nginx_needs_reload=1
             config=/etc/nginx/sites-available/ructf2014q-$vm
-            python $MAIN gen_nginx $vm $ban | $ssh $router "cat > $config"
+            $MAIN gen_nginx $vm $ban | $ssh $router "cat > $config"
             $ssh $router "ln -sf $config /etc/nginx/sites-enabled/"
         fi
     done
@@ -251,12 +251,12 @@ router_disable() {
     IFS=$'\n' vms=($(list $1)); IFS=$' '
     for line in ${vms[@]}; do
         vm=${line##*:}
-        if [ "$(python $MAIN get_attr $vm tcp_ports)" != '[]' ] || \
-           [ "$(python $MAIN get_attr $vm udp_ports)" != '[]' ]; then
+        if [ "$($MAIN get_attr $vm tcp_ports)" != '[]' ] || \
+           [ "$($MAIN get_attr $vm udp_ports)" != '[]' ]; then
             iptables_needs_save=1
             chain=$vm_prefix$vm
             $ssh $router "iptables -F $chain"
-        elif [ "$(python $MAIN get_attr $vm http)" == True ]; then
+        elif [ "$($MAIN get_attr $vm http)" == True ]; then
             nginx_needs_reload=1
             link=/etc/nginx/sites-enabled/ructf2014q-$vm
             $ssh $router "rm -f $link"
@@ -269,11 +269,11 @@ setup_interfaces() {
     IFS=$'\n' vms=($(list $1)); IFS=$' '
     for line in ${vms[@]}; do
         vm=${line##*:}
-        os=$(python $MAIN get_attr $vm os)
-        addr=$(python $MAIN get_attr $vm addr)
+        os=$($MAIN get_attr $vm os)
+        addr=$($MAIN get_attr $vm addr)
         if [ "$os" == 'debian' ] || [ "$os" == 'debian32' ] && \
             [ "$vm" != router ]; then
-            python $MAIN gen_interfaces $vm | $ssh $addr \
+            $MAIN gen_interfaces $vm | $ssh $addr \
                 'cat > /etc/network/interfaces'
             $ssh $addr "ifdown -a; ifup -a"
         fi
@@ -347,7 +347,7 @@ customize() {
     host=$1
     vm=$2
     script="/root/ructf2014-quals/ructf2014q-$vm.custom"
-    python $MAIN customize $vm | $ssh $host "cat > $script"
+    $MAIN customize $vm | $ssh $host "cat > $script"
     disk=/dev/data/ructf2014q-$vm
     target="/root/ructf2014-quals/ructf2014q-$vm"
     $ssh $host <<END
@@ -369,7 +369,7 @@ backup() {
   IFS=$'\n' vms=($(list $1: linux)); IFS=$' '
   for line in ${vms[@]}; do
       vm=${line##*:}
-      addr=$(python $MAIN get_attr $vm addr)
+      addr=$($MAIN get_attr $vm addr)
       su $user -c "$backup $addr $vm"
   done
 }
@@ -378,7 +378,7 @@ setup_debian() {
     list "$1" | while read line; do
         host=${line%%:*}
         vm=${line##*:}
-        os=$(python $MAIN get_attr $vm os)
+        os=$($MAIN get_attr $vm os)
         if [ "$os" == 'debian' ] || [ "$os" == 'debian32' ]; then
             prepare_partition $host $vm
             debootstrap $host $vm $os
@@ -400,7 +400,7 @@ gen_dolbilka() {
     nnodes=$(sinfo -p $partition -t idle -h -o '%n' | wc -l)
 
     cfg=$(tempfile)
-    python $MAIN gen_dolbilka $nnodes $clients > $cfg
+    $MAIN gen_dolbilka $nnodes $clients > $cfg
 
     parallel-scp -v -h $nodes $cfg $dolbilka_cfg
     parallel-scp -v -h $nodes $(dirname $0)/knock.sh $knock
