@@ -1,0 +1,22 @@
+$ORIGIN .
+$TTL 3600       ; 2 hours
+quals.ructf.org         IN SOA  dijkstra.urgu.org. uzer.hackerdom.ru. (
+                                    {{ "%-12s"|format(serial) }} ; serial
+                                    7200         ; refresh (2 hours)
+                                    7200         ; retry (2 hours)
+                                    2419200      ; expire (4 weeks)
+                                    86400        ; minimum (1 day)
+                                )
+                        NS      dijkstra.urgu.org.
+                        A       {{ router.addr }}
+
+$ORIGIN quals.ructf.org.
+{%- for vm in vms %}
+{%- if vm.iface == 'int' %}
+{{ "%-16s"|format(vm.name) }} IN A     {{ router.addr }}
+{%- else %}
+{{ "%-16s"|format(vm.name) }} IN A     {{ vm.addr }}
+{%- endif %}
+{%- endfor %}
+
+; vim: sw=8 ts=8 ft=none expandtab

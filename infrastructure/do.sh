@@ -1,6 +1,8 @@
 #!/bin/bash
 
-MAIN=$(dirname $0)/main.py
+BASE=`dirname $0`
+MAIN="$BASE/main.py"
+SERIAL="python $BASE/dns/serial.py"
 
 ssh='ssh -l root'
 
@@ -410,6 +412,51 @@ dolbim() {
     partition=managed
     knock=/tmp/ructf2014q-knock.sh
     srun -D/ -N1-100 -p $partition $knock
+}
+
+cmp_files() {
+    set +e; cmp -s $1 $2; local rv=$?; set -e
+    return $rv
+}
+
+gen_dns() {
+    DATA=/var/lib/cfg
+    RELOAD=0
+
+    gen_zone() {
+        CMD=$1
+        ZONE=$2
+        TEMPLATE=$BASE/dns/$ZONE.master.template
+
+        local SFILE=$DATA/$ZONE.serial
+        local CUR=$DATA/$ZONE.master
+        local OLD=$CUR.old NEW=$CUR.new
+
+        set +e; SOLD=$($SERIAL get $SFILE 2>/dev/null); rv=$?; set -e
+        if [ $rv -ne 0 ]; then
+            RELOAD=1
+            local SNEW=$($SERIAL inc $SFILE)
+            $MAIN $CMD $TEMPLATE $SNEW > $CUR
+        else
+            $MAIN $CMD $TEMPLATE $SOLD > $OLD
+            if ! cmp_files $CUR $OLD; then
+                RELOAD=1
+                rm $OLD
+                SNEW=$($SERIAL inc $SFILE)
+                $MAIN $CMD $TEMPLATE $SNEW > $NEW
+                mv $NEW $CUR
+            else
+                rm $OLD
+            fi
+        fi
+    }
+
+    gen_zone gen_int_dns i.quals.ructf.org
+    gen_zone gen_ext_dns quals.ructf.org
+
+    if [ $RELOAD -ne 0 ]; then
+        /etc/init.d/bind9 reload
+    fi
 }
 
 $@

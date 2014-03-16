@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import custom, dolbilka, iptables, nagios, nginx, net, vm
+import custom, dns, dolbilka, iptables, nagios, nginx, net, vm
 import os, re, socket, sys
 
 CFG=os.path.dirname(os.path.realpath(__file__)) + '/vms.cfg'
@@ -164,6 +164,14 @@ def get_ports(vms, args):
 @cmd
 def gen_dolbilka(vms, args):
     return dolbilka.gen_config(vms, *args)
+
+@cmd
+def gen_ext_dns(vms, args):
+    return dns.gen_ext_dns(vms, *args)
+
+@cmd
+def gen_int_dns(vms, args):
+    return dns.gen_int_dns(vms, *args)
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
