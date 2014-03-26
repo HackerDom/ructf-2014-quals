@@ -221,7 +221,7 @@ nudge_services() {
 
 router_enable() {
     ban=$(dirname $0)/ban
-    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    vms=($(list $1))
     for line in ${vms[@]}; do
         vm=${line##*:}
         if [ "$($MAIN get_attr $vm tcp_ports)" != '[]' ] || \
@@ -248,7 +248,7 @@ router_enable() {
 }
 
 router_disable() {
-    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    vms=($(list $1))
     for line in ${vms[@]}; do
         vm=${line##*:}
         if [ "$($MAIN get_attr $vm tcp_ports)" != '[]' ] || \
@@ -266,7 +266,7 @@ router_disable() {
 }
 
 setup_interfaces() {
-    IFS=$'\n' vms=($(list $1)); IFS=$' '
+    vms=($(list $1))
     for line in ${vms[@]}; do
         vm=${line##*:}
         os=$($MAIN get_attr $vm os)
@@ -283,7 +283,7 @@ setup_interfaces() {
 pssh() {
     patt=$1; shift
     os=$1; shift
-    IFS=$'\n' vms=($(list $patt $os addr | cut -f3 -d:)); IFS=$' '
+    vms=($(list $patt $os addr | cut -f3 -d:))
     echo "$*" | parallel-ssh -l root -i -I -H "${vms[*]}"
 }
 
