@@ -83,3 +83,15 @@ def get_ports(vm):
     if vm.http: print 'tcp:80'
     for port in vm.tcp_ports: print 'tcp:%s' % port
     for port in vm.udp_ports: print 'udp:%s' % port
+
+def gen_router_out(vms, chain, target):
+    init('filter', chain)
+    for vm in vms:
+        for proto, port in vm.out_ports:
+            print ('iptables -A %s -s %s -p %s --dport %s -m state --state NEW '
+                ' -j %s' % (chain, vm.addr, proto, port, target))
+
+def gen_vm_out(vm, chain):
+    for proto, port in vm.out_ports:
+        print ('iptables -A %s -p %s --dport %s -m state --state NEW '
+            ' -j ACCEPT' % (chain, proto, port))

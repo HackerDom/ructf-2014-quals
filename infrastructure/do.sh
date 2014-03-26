@@ -149,6 +149,10 @@ setup_iptables() {
                     iptables -N custom-output; \
                 fi; \
                 iptables -A OUTPUT -j custom-output; \
+                if ! iptables -L vm-output &>/dev/null; then \
+                    iptables -N vm-output; \
+                fi; \
+                iptables -A OUTPUT -j vm-output; \
                 iptables -A OUTPUT -o lo -j ACCEPT; \
                 \
                 iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT; \
@@ -175,6 +179,8 @@ setup_iptables() {
                     $ssh $addr "iptables -A INPUT -p $proto --dport $port \
                                 -m state --state NEW -j ACCEPT" </dev/null
                 done
+
+                $MAIN gen_vm_out $vm vm-output | $ssh $addr "sh -s"
             fi
 
             $ssh $addr "\
@@ -198,6 +204,14 @@ router_setup_nat() {
 router_setup_fwd() {
     chain=ructf2014q
     $MAIN gen_fwd $chain $vm_prefix | $ssh $router "sh -s"
+    $ssh $router '/etc/init.d/iptables save active'
+}
+
+router_setup_out() {
+    chain=ructf2014q-out
+    target=UaA
+
+    $MAIN gen_router_out $chain $target | $ssh $router "sh -s"
     $ssh $router '/etc/init.d/iptables save active'
 }
 

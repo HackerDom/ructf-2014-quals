@@ -162,6 +162,14 @@ def get_ports(vms, args):
     return iptables.get_ports(find(vms, args[0]))
 
 @cmd
+def gen_router_out(vms, args):
+    return iptables.gen_router_out(vms, *args)
+
+@cmd
+def gen_vm_out(vms, args):
+    return iptables.gen_vm_out(find(vms, args[0]), args[1])
+
+@cmd
 def gen_dolbilka(vms, args):
     return dolbilka.gen_config(vms, *args)
 
